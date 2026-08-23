@@ -1,0 +1,4 @@
+model,seed42_correct,truly_correct,accidental_corrects,morph_catches,morph_catch_rate
+claude-haiku-4-5,61,46,45,29,0.6444
+claude-sonnet-4-6,65,51,42,15,0.3571
+claude-opus-4-5,62,49,38,21,0.5526

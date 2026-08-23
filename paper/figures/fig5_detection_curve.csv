@@ -1,5 +1,5 @@
-method,python_runs_per_program,micro_mutation_score
-no_verifier,0,0.0000
-universal_only,4,0.0160
-filter_agg,25,0.6146
-full_morph_da,40,0.6465
+method,python_runs_per_program,micro_mutation_score,ci_low,ci_high,description
+no_verifier,0,0.0000,0.0000,0.0000,Execution only (baseline)
+universal_only,4,0.0160,0.0040,0.0310,MR-U1/U2/U3/U4 only
+filter_agg,25,0.6146,0.5500,0.6770,Universal + Filter + Aggregation families
+full_morph_da_single_seed,40,0.6465,0.5850,0.7050,Full MORPH-DA rng_seed=42

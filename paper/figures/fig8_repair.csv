@@ -1,0 +1,5 @@
+strategy,description,fixed,total,rate
+R0_no_retry,No feedback (baseline),0,91,0.0000
+R2_generic,"Your program has a bug",5,91,0.0549
+R6_relation_name,Named relation violated (e.g. MR-F1),11,91,0.1209
+R7_witness,Full counterexample + diagnosis,11,91,0.1209

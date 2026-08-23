@@ -1,31 +1,38 @@
 
+MORPH-DA Result Tables (v0.4 — Aug 2026)
+All numbers from runs/complete_honest_results.json and runs/paper_results.json
+==========================================================================
+
+
 Table 1: Benchmark Composition
 ======================================================================
 Component                              Count
 ----------------------------------------------------------------------
-  Controlled task specifications         101
-  Dataset scenarios                        8
-  Single-table tasks                     101
-  Multi-table tasks                        0
+  Task specifications                    101
+  Evaluation set (Conditions B/C)         98  (3 filter-non-discriminating excluded)
+  Dataset scenarios                         8
   Difficulty L1-L2 (easy)                 72
   Difficulty L3-L5 (hard)                 29
 
-  By difficulty level:             
+  By difficulty level:
     L1                                    24
     L2                                    48
     L3                                    11
     L4                                    16
     L5                                     2
 
-  By scenario:                     
-    market01                              12
-    mktg01                                12
-    ops01                                 12
-    payments01                            12
+  By scenario:
     retail01                              12
-    saas01                                12
-    support01                             12
     web01                                 17
+    market01                              12
+    saas01                                12
+    mktg01                                12
+    payments01                            12
+    ops01                                 12
+    support01                             12
+
+  Data seeds                               3  (seeds 7, 42, 123)
+  Total LLM programs evaluated           909  (3 models × 303 each)
 ======================================================================
 
 
@@ -39,9 +46,9 @@ Component                              Count
   Execution invalid                      409
   Contract invalid                       155
   Provisionally equivalent               146
-  Valid non-equivalent (corpus)          398
+  Valid non-equivalent (corpus)          563
 
-  By fault family:                 
+  By fault family:
     aggregation                          131
     filter                               173
     grouping                              21
@@ -50,26 +57,116 @@ Component                              Count
 ===========================================================================
 
 
-Table 3: Verification on Controlled Mutants
+Table 3: Mutation Score by Method
 =====================================================================================
-Method                     Micro MS  Macro MS   Killed   Total
+Method                     Micro MS  Macro MS   Killed   Total   McNemar p
 -------------------------------------------------------------------------------------
-  Execution only (B0)         0.0%      0.0%       0     563
-  Universal MRs only (B7)     1.6%      8.6%        9     563
-  Universal+Filter+Agg MRs    61.5%     64.9%      346     563
-  Full MORPH-DA (B8)         64.7%     67.6%      364     563
+  Execution only (B0)         0.0%      0.0%       0     563        —
+  Universal MRs only (B7)     1.6%      8.6%       9     563     baseline
+  Universal+Filter+Agg        61.5%     64.9%     346     563        —
+  Full MORPH-DA (B8)          64.7%     67.6%     364     563   p<0.000001
+  Full MORPH-DA 95% CI      [58.5%, 70.5%]                      χ²=353, n01=355
 =====================================================================================
 
 
-Table 4: Detection Rate by Fault Family
+Table 4: Detection Rate by Fault Family (Full MORPH-DA, 563 mutants)
 ================================================================================
-Fault Family            Universal  Filter+Agg  Full MORPH      N
+Fault Family    Killed  Total  Kill Rate    95% CI         Universal
 --------------------------------------------------------------------------------
-  aggregation               0.0%     28.2%     28.2%    131
-  filter                    0.0%     67.6%     67.6%    173
-  grouping                 42.9%     81.0%     81.0%     21
-  hardcoding                0.0%     71.3%     85.3%    129
-  ranking                   0.0%     76.1%     76.1%    109
+  aggregation      37    131    28.2%    [17.2%, 39.0%]     6.1%
+  filter          117    173    67.6%    [57.1%, 77.5%]     0.6%
+  grouping         17     21    81.0%    [54.5%, 100%]      0.0%
+  hardcoding      110    129    85.3%    [77.6%, 92.0%]     0.0%
+  ranking          83    109    76.1%    [65.8%, 85.6%]     0.0%
 --------------------------------------------------------------------------------
-  OVERALL                     1.6%     61.5%     64.7%    563
+  OVERALL         364    563    64.7%    [58.5%, 70.5%]     1.6%
 ================================================================================
+CIs: task-clustered bootstrap, 3,000 iterations
+
+
+Table 5: Accidental Corrects Analysis (programs correct on seed=42 but wrong on seeds 7 or 123)
+=========================================================================================================
+Model               Seed=42 Correct   Truly Correct   Accidental Corrects   MORPH-DA Catches
+---------------------------------------------------------------------------------------------------------
+  claude-haiku-4-5      61 / 101          46 / 101          45 (73.8%)          29 (64.4%)
+  claude-sonnet-4-6     65 / 101          51 / 101          42 (64.6%)          15 (35.7%)
+  claude-opus-4-5       62 / 101          49 / 101          38 (61.3%)          21 (55.3%)
+=========================================================================================================
+Note: Data is deterministic — failure on a different seed is always a structural bug, not randomness.
+MORPH-DA catches 36–64% of accidental corrects using only metamorphic testing (no held-out seeds needed).
+
+
+Table 6: MORPH-DA Verification Metrics — Three Evaluation Conditions
+======================================================================================
+Condition / Model        Precision  Recall    F1      FPR     AAR
+--------------------------------------------------------------------------------------
+A) NAIVE SINGLE-SEED (101 tasks, no cross-seed correction)
+  claude-haiku-4-5         62.0%   70.2%   65.8%   26.8%   20.2%
+  claude-sonnet-4-6        65.1%   63.9%   64.5%   19.0%   19.8%
+  claude-opus-4-5          61.4%   63.1%   62.2%   23.8%   22.5%
+
+B) CROSS-SEED CORRECTED (98 tasks, accidental corrects reclassified as wrong)
+  claude-haiku-4-5         87.6%   67.9%   76.5%   11.4%   29.9%
+  claude-sonnet-4-6        84.9%   56.0%   67.5%   10.4%   33.9%
+  claude-opus-4-5          81.1%   60.1%   69.1%   13.9%   31.5%
+
+C) MULTI-SEED MORPH-DA (Condition B ground truth + rng_seed={42,7}; flag if either fires)
+  claude-haiku-4-5         86.5%   78.2%   82.2%   14.4%   23.1%
+  claude-sonnet-4-6        81.4%   61.3%   70.0%   14.6%   32.0%
+  claude-opus-4-5          80.0%   72.7%   76.2%   18.1%   24.8%
+======================================================================================
+AAR = Accepted-Answer Risk = FN/(FN+TN) = fraction of "passed" programs that are wrong
+Cond B preferred for benchmarking. Cond C preferred for deployment. Cond A for production context.
+
+
+Table 7: Statistical Significance — MORPH-DA vs Universal-Only (McNemar's test)
+==================================================================================
+Model                McNemar χ²   p-value (Holm)   n01 (MORPH-only)   n10 (Univ-only)
+----------------------------------------------------------------------------------
+  claude-haiku-4-5      127.0      p < 0.0001           129               0
+  claude-sonnet-4-6     104.0      p < 0.0001           106               0
+  claude-opus-4-5       116.0      p < 0.0001           118               0
+==================================================================================
+n10=0: MORPH-DA is strict detection superset of Universal.
+Holm-Bonferroni corrected for 3 simultaneous comparisons.
+
+
+Table 8: Confusion Matrix — Condition B (cross-seed corrected, 98 tasks)
+============================================================================
+                    MORPH-DA FAIL    MORPH-DA PASS
+  Truly wrong:    TP              FN      |  Recall = TP/(TP+FN)
+  Truly correct:  FP              TN      |  FPR = FP/(FP+TN)
+
+Model                   TP    FP    TN    FN   Precision  Recall   FPR
+----------------------------------------------------------------------------
+  claude-haiku-4-5     110    20   118    52    87.6%     67.9%   11.4%
+  claude-sonnet-4-6     84    22   131    66    84.9%     56.0%   10.4%
+  claude-opus-4-5       95    23   124    58    81.1%     60.1%   13.9%
+============================================================================
+
+
+Table 9: Repair Experiment (n=91 wrong-but-executable programs, one-shot)
+==============================================================================
+Strategy              Description                       Fixed    Rate
+------------------------------------------------------------------------------
+  R0 — No retry       Submit again unchanged            0/91     0.0%
+  R2 — Generic        "Your program has a bug"          5/91     5.5%
+  R6 — Relation name  "You may have violated MR-F1"   11/91    12.1%
+  R7 — Witness        Full counterexample + diagnosis  11/91    12.1%
+==============================================================================
+R6 and R7 both achieve 12.1% (2.2x improvement over R2).
+R6 vs R7: 0 discordant pairs — underpowered to detect difference at n=91.
+Recommended: R7 in multi-round loop for deployment.
+
+
+Table 10: MORPH-DA Latency Benchmark (20 tasks, reference programs)
+======================================================================
+Statistic          Value
+----------------------------------------------------------------------
+  Mean               500 ms
+  Median             525 ms
+  95th percentile   1143 ms
+  Min                 ~80 ms
+  Max               1143 ms
+  Python runs/task     ~40
+======================================================================

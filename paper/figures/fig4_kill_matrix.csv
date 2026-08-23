@@ -1,6 +1,7 @@
-mutation_family,killed,total,kill_rate
-aggregation,37,131,0.2824
-filter,117,173,0.6763
-grouping,17,21,0.8095
-hardcoding,110,129,0.8527
-ranking,83,109,0.7615
+mutation_family,killed,total,kill_rate,ci_low,ci_high,universal_rate
+aggregation,37,131,0.2824,0.172,0.390,0.0610
+filter,117,173,0.6763,0.571,0.775,0.0058
+grouping,17,21,0.8095,0.545,1.000,0.0000
+hardcoding,110,129,0.8527,0.776,0.920,0.0000
+ranking,83,109,0.7615,0.658,0.856,0.0000
+TOTAL,364,563,0.6465,0.585,0.705,0.0160
