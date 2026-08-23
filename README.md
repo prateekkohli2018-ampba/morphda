@@ -20,7 +20,7 @@ There are two ways they slip through:
 
 **1. Execution-only testing catches 0%** — if the program runs without crashing, it passes.
 
-**2. Single-seed gold-answer comparison is unreliable** — a program can accidentally return the correct answer on one dataset but fail on others. We call these **accidental corrects**: their filter or aggregation logic is wrong, but it doesn't happen to matter on that particular data distribution. In our experiments, **38–45 programs per model** passed single-seed evaluation this way.
+**2. Single-seed gold-answer comparison is unreliable** — a program can accidentally return the correct answer on one dataset but fail on others. We call these **accidental corrects**: their filter or aggregation logic is wrong, but it doesn't happen to matter on that particular data distribution. In our experiments, **13–16 programs per model** passed single-seed evaluation this way.
 
 ---
 
@@ -77,19 +77,19 @@ Results are reported under three conditions with increasing rigor:
 
 | Model | Condition | Precision | Recall | FPR | F1 |
 |---|---|---|---|---|---|
-| claude-haiku-4-5 | A) Naive | 62.0% | 70.2% | 26.8% | 65.8% |
-| | B) Cross-seed corrected | **87.6%** | 67.9% | **11.4%** | 76.5% |
-| | C) Multi-seed MORPH-DA | 86.5% | **78.2%** | 14.4% | **82.2%** |
-| claude-sonnet-4-6 | A) Naive | 65.1% | 63.9% | 19.0% | 64.5% |
-| | B) Cross-seed corrected | **84.9%** | 56.0% | **10.4%** | 67.5% |
-| | C) Multi-seed MORPH-DA | 81.4% | **61.3%** | 14.6% | **70.0%** |
-| claude-opus-4-5 | A) Naive | 61.4% | 63.1% | 23.8% | 62.2% |
-| | B) Cross-seed corrected | **81.1%** | 60.1% | **13.9%** | 69.1% |
-| | C) Multi-seed MORPH-DA | 80.0% | **72.7%** | 18.1% | **76.2%** |
+| claude-haiku-4-5 | A) Naive | 58.8% | 79.0% | 34.4% | 67.4% |
+| | B) Cross-seed corrected | **87.5%** | **79.2%** | **14.0%** | **83.2%** |
+| | C) Multi-seed MORPH-DA | 86.0% | 81.1% | 16.3% | 83.5% |
+| claude-sonnet-4-6 | A) Naive | 66.7% | 72.2% | 20.0% | 69.3% |
+| | B) Cross-seed corrected | **89.2%** | **67.3%** | **8.2%** | **76.7%** |
+| | C) Multi-seed MORPH-DA | 86.8% | 67.3% | 10.2% | 75.9% |
+| claude-opus-4-5 | A) Naive | 58.8% | 81.1% | 33.9% | 68.2% |
+| | B) Cross-seed corrected | **79.2%** | **79.2%** | **20.8%** | **79.2%** |
+| | C) Multi-seed MORPH-DA | 78.0% | 81.2% | 22.9% | 79.6% |
 
 McNemar χ² vs universal baseline: all p < 0.0001 (Holm-Bonferroni corrected).
 
-**MORPH-DA catches 36–64% of accidental corrects** using single-seed transformations alone, without cross-seed access.
+**MORPH-DA catches 54–81% of accidental corrects** using single-seed transformations alone, without cross-seed access.
 
 ### Repair Experiment (n=91 wrong programs)
 

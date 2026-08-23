@@ -8,34 +8,34 @@
         42,
         123
       ],
-      "truly_correct": 46,
-      "lucky_correct": 15,
+      "truly_correct": 45,
+      "lucky_correct": 16,
       "tp": 110,
       "fp": 20,
       "tn": 118,
       "fn": 52,
-      "precision": 0.8462,
-      "recall": 0.679,
-      "fpr": 0.1449,
-      "f1": 0.7534,
-      "accepted_answer_risk": 0.3059,
+      "precision": 0.875,
+      "recall": 0.7925,
+      "fpr": 0.1395,
+      "f1": 0.8317,
+      "accepted_answer_risk": 0.2292,
       "prec_ci": [
-        0.746,
-        0.9323
+        0.7708,
+        0.9583
       ],
       "rec_ci": [
-        0.589,
-        0.7669
+        0.6792,
+        0.9057
       ],
       "fpr_ci": [
-        0.058,
-        0.2391
+        0.0465,
+        0.2558
       ],
       "univ_precision": 1.0,
       "univ_recall": 0.0062,
-      "mcnemar_chi2": 127.01,
-      "mcnemar_p": 1.8504929373502363e-29,
-      "mcnemar_n01": 129,
+      "mcnemar_chi2": 45.02,
+      "mcnemar_p": 1.9490522561169273e-11,
+      "mcnemar_n01": 47,
       "mcnemar_n10": 0,
       "by_difficulty": {
         "1": {
@@ -159,11 +159,57 @@
         }
       },
       "mcnemar_p_holm": 0.0,
-      "lucky_correct_morph_confirmed": 12,
+      "lucky_correct_morph_confirmed": 13,
       "lucky_correct_morph_missed": 3,
       "seed42_correct": 61,
       "seed42_wrong": 40,
-      "lucky_correct_note": "Lucky-correct = passes seed=42 but fails >=1 other seed. Data is deterministic so this is ALWAYS a structural bug. MORPH-DA confirms most; missed ones represent recall gap not data variation."
+      "lucky_correct_note": "Lucky-correct = passes seed=42 but fails >=1 other seed. Data is deterministic so this is ALWAYS a structural bug. MORPH-DA confirms most; missed ones represent recall gap not data variation.",
+      "methodology": "seed42_program_reexecuted_on_seeds_7_123",
+      "naive_metrics": {
+        "precision": 0.5882,
+        "recall": 0.7895,
+        "fpr": 0.3443,
+        "f1": 0.6742,
+        "aar": 0.1667,
+        "tp": 30,
+        "fp": 21,
+        "tn": 40,
+        "fn": 8
+      },
+      "cross_seed_metrics": {
+        "precision": 0.875,
+        "recall": 0.7925,
+        "fpr": 0.1395,
+        "f1": 0.8317,
+        "aar": 0.2292,
+        "tp": 42,
+        "fp": 6,
+        "tn": 37,
+        "fn": 11,
+        "prec_ci": [
+          0.7708,
+          0.9583
+        ],
+        "rec_ci": [
+          0.6792,
+          0.9057
+        ],
+        "fpr_ci": [
+          0.0465,
+          0.2558
+        ]
+      },
+      "multi_seed_metrics": {
+        "precision": 0.86,
+        "recall": 0.8113,
+        "fpr": 0.1628,
+        "f1": 0.835,
+        "aar": 0.2174,
+        "tp": 43,
+        "fp": 7,
+        "tn": 36,
+        "fn": 10
+      }
     },
     "claude_sonnet_4_6": {
       "name": "claude-sonnet-4-6",
@@ -173,34 +219,34 @@
         42,
         123
       ],
-      "truly_correct": 51,
-      "lucky_correct": 14,
+      "truly_correct": 52,
+      "lucky_correct": 13,
       "tp": 84,
       "fp": 22,
       "tn": 131,
       "fn": 66,
-      "precision": 0.7925,
-      "recall": 0.56,
-      "fpr": 0.1438,
-      "f1": 0.6562,
-      "accepted_answer_risk": 0.335,
+      "precision": 0.8919,
+      "recall": 0.6735,
+      "fpr": 0.0816,
+      "f1": 0.7674,
+      "accepted_answer_risk": 0.2623,
       "prec_ci": [
-        0.6634,
-        0.9072
+        0.7838,
+        0.973
       ],
       "rec_ci": [
-        0.4467,
-        0.6733
+        0.5306,
+        0.7959
       ],
       "fpr_ci": [
-        0.0588,
-        0.2353
+        0.0204,
+        0.1837
       ],
       "univ_precision": 0,
       "univ_recall": 0.0,
-      "mcnemar_chi2": 104.01,
-      "mcnemar_p": 2.0135501579388846e-24,
-      "mcnemar_n01": 106,
+      "mcnemar_chi2": 35.03,
+      "mcnemar_p": 3.251606172649687e-09,
+      "mcnemar_n01": 37,
       "mcnemar_n10": 0,
       "by_difficulty": {
         "1": {
@@ -324,11 +370,57 @@
         }
       },
       "mcnemar_p_holm": 0.0,
-      "lucky_correct_morph_confirmed": 4,
-      "lucky_correct_morph_missed": 10,
+      "lucky_correct_morph_confirmed": 7,
+      "lucky_correct_morph_missed": 6,
       "seed42_correct": 65,
       "seed42_wrong": 36,
-      "lucky_correct_note": "Lucky-correct = passes seed=42 but fails >=1 other seed. Data is deterministic so this is ALWAYS a structural bug. MORPH-DA confirms most; missed ones represent recall gap not data variation."
+      "lucky_correct_note": "Lucky-correct = passes seed=42 but fails >=1 other seed. Data is deterministic so this is ALWAYS a structural bug. MORPH-DA confirms most; missed ones represent recall gap not data variation.",
+      "methodology": "seed42_program_reexecuted_on_seeds_7_123",
+      "naive_metrics": {
+        "precision": 0.6667,
+        "recall": 0.7222,
+        "fpr": 0.2,
+        "f1": 0.6933,
+        "aar": 0.1613,
+        "tp": 26,
+        "fp": 13,
+        "tn": 52,
+        "fn": 10
+      },
+      "cross_seed_metrics": {
+        "precision": 0.8919,
+        "recall": 0.6735,
+        "fpr": 0.0816,
+        "f1": 0.7674,
+        "aar": 0.2623,
+        "tp": 33,
+        "fp": 4,
+        "tn": 45,
+        "fn": 16,
+        "prec_ci": [
+          0.7838,
+          0.973
+        ],
+        "rec_ci": [
+          0.5306,
+          0.7959
+        ],
+        "fpr_ci": [
+          0.0204,
+          0.1837
+        ]
+      },
+      "multi_seed_metrics": {
+        "precision": 0.8684,
+        "recall": 0.6735,
+        "fpr": 0.102,
+        "f1": 0.7586,
+        "aar": 0.2667,
+        "tp": 33,
+        "fp": 5,
+        "tn": 44,
+        "fn": 16
+      }
     },
     "claude_opus_4_5": {
       "name": "claude-opus-4-5",
@@ -344,28 +436,28 @@
       "fp": 23,
       "tn": 124,
       "fn": 58,
-      "precision": 0.8051,
-      "recall": 0.6209,
-      "fpr": 0.1565,
-      "f1": 0.7011,
-      "accepted_answer_risk": 0.3187,
+      "precision": 0.7917,
+      "recall": 0.7917,
+      "fpr": 0.2083,
+      "f1": 0.7917,
+      "accepted_answer_risk": 0.2083,
       "prec_ci": [
-        0.6923,
-        0.9106
+        0.6875,
+        0.8958
       ],
       "rec_ci": [
-        0.5235,
-        0.7219
+        0.6667,
+        0.8958
       ],
       "fpr_ci": [
-        0.0748,
-        0.2517
+        0.1042,
+        0.3333
       ],
       "univ_precision": 0,
       "univ_recall": 0.0,
-      "mcnemar_chi2": 116.01,
-      "mcnemar_p": 4.7326982919297275e-27,
-      "mcnemar_n01": 118,
+      "mcnemar_chi2": 46.02,
+      "mcnemar_p": 1.1700213117066312e-11,
+      "mcnemar_n01": 48,
       "mcnemar_n10": 0,
       "by_difficulty": {
         "1": {
@@ -493,7 +585,53 @@
       "lucky_correct_morph_missed": 3,
       "seed42_correct": 62,
       "seed42_wrong": 39,
-      "lucky_correct_note": "Lucky-correct = passes seed=42 but fails >=1 other seed. Data is deterministic so this is ALWAYS a structural bug. MORPH-DA confirms most; missed ones represent recall gap not data variation."
+      "lucky_correct_note": "Lucky-correct = passes seed=42 but fails >=1 other seed. Data is deterministic so this is ALWAYS a structural bug. MORPH-DA confirms most; missed ones represent recall gap not data variation.",
+      "methodology": "seed42_program_reexecuted_on_seeds_7_123",
+      "naive_metrics": {
+        "precision": 0.5882,
+        "recall": 0.8108,
+        "fpr": 0.3387,
+        "f1": 0.6818,
+        "aar": 0.1458,
+        "tp": 30,
+        "fp": 21,
+        "tn": 41,
+        "fn": 7
+      },
+      "cross_seed_metrics": {
+        "precision": 0.7917,
+        "recall": 0.7917,
+        "fpr": 0.2083,
+        "f1": 0.7917,
+        "aar": 0.2083,
+        "tp": 38,
+        "fp": 10,
+        "tn": 38,
+        "fn": 10,
+        "prec_ci": [
+          0.6875,
+          0.8958
+        ],
+        "rec_ci": [
+          0.6667,
+          0.8958
+        ],
+        "fpr_ci": [
+          0.1042,
+          0.3333
+        ]
+      },
+      "multi_seed_metrics": {
+        "precision": 0.78,
+        "recall": 0.8125,
+        "fpr": 0.2292,
+        "f1": 0.7959,
+        "aar": 0.1957,
+        "tp": 39,
+        "fp": 11,
+        "tn": 37,
+        "fn": 9
+      }
     }
   },
   "mutation": {
@@ -559,33 +697,27 @@
   },
   "repair": {
     "R0_no_retry": {
-      "n": 25,
+      "n": 91,
       "fixed": 0,
       "rate": 0.0
     },
     "R2_generic": {
-      "n": 25,
-      "fixed": 1,
-      "rate": 0.04
+      "n": 91,
+      "fixed": 5,
+      "rate": 0.0549
     },
     "R6_relation_name": {
-      "n": 25,
-      "fixed": 1,
-      "rate": 0.04
+      "n": 91,
+      "fixed": 11,
+      "rate": 0.1209
     },
     "R7_witness": {
-      "n": 25,
-      "fixed": 1,
-      "rate": 0.04
+      "n": 91,
+      "fixed": 11,
+      "rate": 0.1209
     },
-    "mcnemar_R7_vs_R0": [
-      0.0,
-      1.0
-    ],
-    "mcnemar_R7_vs_R2": [
-      0.0,
-      1.0
-    ]
+    "source_file": "runs/repair/repair_results.jsonl",
+    "n_total": 91
   },
   "meta": {
     "n_tasks": 101,
