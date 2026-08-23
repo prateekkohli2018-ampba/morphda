@@ -1,364 +1,364 @@
-{"task_id": "retail01_l2_004", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_005", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_006", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l4_010", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_016", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_016", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_017", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_022", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_024", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_025", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_026", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_026", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l5_028", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_036", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_037", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l3_038", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l4_040", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_045", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_047", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_049", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l3_050", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l4_051", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l4_052", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l1_054", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_057", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_057", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l3_062", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_063", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_064", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_071", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_072", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l3_074", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_075", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_076", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_076", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_081", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_083", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_085", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_085", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l4_087", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_096", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_097", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l4_099", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_004", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_006", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l4_011", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_017", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_022", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l5_027", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_034", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_035", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_036", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_037", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l3_038", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_049", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l4_052", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_060", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_063", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l4_088", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_095", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_097", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_004", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "retail01_l2_005", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_006", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l4_010", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_016", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_016", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_017", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_022", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_024", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_025", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_026", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_026", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l5_028", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_036", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_037", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l3_038", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l4_040", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_045", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_047", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_049", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l3_050", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l4_051", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l4_052", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l1_054", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_057", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_057", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l3_062", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_063", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_064", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_071", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_072", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l3_074", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_075", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_076", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_076", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_081", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "ops01_l2_083", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_085", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_085", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l4_087", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_096", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_097", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l4_099", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_004", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_006", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l4_011", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_017", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_022", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l5_027", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_034", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_035", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_036", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_037", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l3_038", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_049", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l4_052", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "mktg01_l2_060", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_063", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l4_088", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_095", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_097", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_004", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "retail01_l2_005", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_006", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l4_010", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_016", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_016", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_017", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_022", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_024", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_025", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_026", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_026", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l5_028", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_036", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_037", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l3_038", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l4_040", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_045", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_047", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_049", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l3_050", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l4_051", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l4_052", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l1_054", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "mktg01_l2_057", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_057", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l3_062", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_063", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_064", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_071", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "payments01_l2_072", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l3_074", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_075", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_076", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_076", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_081", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "ops01_l2_083", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "ops01_l2_085", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_085", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l4_087", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_096", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_097", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l4_099", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_004", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_006", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l4_011", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_017", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_022", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l5_027", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_034", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "market01_l2_035", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_036", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_037", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l3_038", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_049", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "saas01_l4_052", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "mktg01_l2_060", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_063", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l4_088", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_095", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_097", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_004", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "retail01_l2_005", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "retail01_l2_006", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l4_010", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_016", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_016", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_017", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_022", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_024", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_025", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_026", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l4_026", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l5_028", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_036", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "market01_l2_037", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l3_038", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l4_040", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_045", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_047", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_049", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l3_050", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l4_051", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "saas01_l4_052", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l1_054", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_057", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_057", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l3_062", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_063", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_064", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_071", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "payments01_l2_072", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l3_074", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_075", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_076", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l4_076", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_081", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "ops01_l2_083", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_085", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l2_085", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l4_087", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_096", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_097", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l4_099", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_004", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_006", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_007", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l2_008", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "retail01_l4_011", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_017", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_018", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_019", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l2_020", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_021", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_022", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l3_023", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "web01_l5_027", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_034", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_035", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "market01_l2_036", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l2_037", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "market01_l3_038", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l2_049", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "saas01_l4_052", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_059", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false}
-{"task_id": "mktg01_l2_060", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l2_061", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "mktg01_l4_063", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "payments01_l2_073", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "ops01_l4_088", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_095", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
-{"task_id": "support01_l2_097", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false}
+{"task_id": "retail01_l2_004", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_004_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "c0b389f467e1"}
+{"task_id": "retail01_l2_004", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_004_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "c0b389f467e1"}
+{"task_id": "retail01_l2_004", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_004_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "c0b389f467e1"}
+{"task_id": "retail01_l2_004", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_004_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "c0b389f467e1"}
+{"task_id": "retail01_l2_005", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_005_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "3deaa8603a8a"}
+{"task_id": "retail01_l2_005", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_005_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "3deaa8603a8a"}
+{"task_id": "retail01_l2_005", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_005_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "3deaa8603a8a"}
+{"task_id": "retail01_l2_005", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_005_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "3deaa8603a8a"}
+{"task_id": "retail01_l2_006", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_006_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "c62e610c927f"}
+{"task_id": "retail01_l2_006", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_006_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "c62e610c927f"}
+{"task_id": "retail01_l2_006", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_006_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "c62e610c927f"}
+{"task_id": "retail01_l2_006", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_006_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "c62e610c927f"}
+{"task_id": "retail01_l2_007", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e8c10360824f"}
+{"task_id": "retail01_l2_007", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e8c10360824f"}
+{"task_id": "retail01_l2_007", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e8c10360824f"}
+{"task_id": "retail01_l2_007", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e8c10360824f"}
+{"task_id": "retail01_l2_007", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "66c0b4bad536"}
+{"task_id": "retail01_l2_007", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "66c0b4bad536"}
+{"task_id": "retail01_l2_007", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "66c0b4bad536"}
+{"task_id": "retail01_l2_007", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "66c0b4bad536"}
+{"task_id": "retail01_l2_008", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "b84774267daf"}
+{"task_id": "retail01_l2_008", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "b84774267daf"}
+{"task_id": "retail01_l2_008", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "b84774267daf"}
+{"task_id": "retail01_l2_008", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "b84774267daf"}
+{"task_id": "retail01_l2_008", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "61d5ab3dbadb"}
+{"task_id": "retail01_l2_008", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "61d5ab3dbadb"}
+{"task_id": "retail01_l2_008", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "61d5ab3dbadb"}
+{"task_id": "retail01_l2_008", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "61d5ab3dbadb"}
+{"task_id": "retail01_l4_010", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l4_010_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "7a4b9d099037"}
+{"task_id": "retail01_l4_010", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l4_010_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "7a4b9d099037"}
+{"task_id": "retail01_l4_010", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l4_010_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "7a4b9d099037"}
+{"task_id": "retail01_l4_010", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l4_010_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "7a4b9d099037"}
+{"task_id": "web01_l2_016", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_016_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f9a28e9946e5"}
+{"task_id": "web01_l2_016", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_016_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f9a28e9946e5"}
+{"task_id": "web01_l2_016", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_016_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f9a28e9946e5"}
+{"task_id": "web01_l2_016", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_016_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f9a28e9946e5"}
+{"task_id": "web01_l2_016", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_016_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "fbeb4b4ad4cf"}
+{"task_id": "web01_l2_016", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_016_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "fbeb4b4ad4cf"}
+{"task_id": "web01_l2_016", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_016_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "fbeb4b4ad4cf"}
+{"task_id": "web01_l2_016", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_016_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "fbeb4b4ad4cf"}
+{"task_id": "web01_l2_017", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_017_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f95b7ce13b8f"}
+{"task_id": "web01_l2_017", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_017_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f95b7ce13b8f"}
+{"task_id": "web01_l2_017", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_017_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f95b7ce13b8f"}
+{"task_id": "web01_l2_017", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_017_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f95b7ce13b8f"}
+{"task_id": "web01_l2_018", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "304b1a1cd0a4"}
+{"task_id": "web01_l2_018", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "304b1a1cd0a4"}
+{"task_id": "web01_l2_018", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "304b1a1cd0a4"}
+{"task_id": "web01_l2_018", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "304b1a1cd0a4"}
+{"task_id": "web01_l2_018", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "ec99e19f4485"}
+{"task_id": "web01_l2_018", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "ec99e19f4485"}
+{"task_id": "web01_l2_018", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "ec99e19f4485"}
+{"task_id": "web01_l2_018", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "ec99e19f4485"}
+{"task_id": "web01_l2_019", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "6b429304d740"}
+{"task_id": "web01_l2_019", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "6b429304d740"}
+{"task_id": "web01_l2_019", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "6b429304d740"}
+{"task_id": "web01_l2_019", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "6b429304d740"}
+{"task_id": "web01_l2_019", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "c0995e106e68"}
+{"task_id": "web01_l2_019", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "c0995e106e68"}
+{"task_id": "web01_l2_019", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "c0995e106e68"}
+{"task_id": "web01_l2_019", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "c0995e106e68"}
+{"task_id": "web01_l2_020", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f947a9560f25"}
+{"task_id": "web01_l2_020", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f947a9560f25"}
+{"task_id": "web01_l2_020", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f947a9560f25"}
+{"task_id": "web01_l2_020", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "f947a9560f25"}
+{"task_id": "web01_l2_020", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "1c4f4ee7648f"}
+{"task_id": "web01_l2_020", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "1c4f4ee7648f"}
+{"task_id": "web01_l2_020", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "1c4f4ee7648f"}
+{"task_id": "web01_l2_020", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "1c4f4ee7648f"}
+{"task_id": "web01_l3_021", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "75a1fa157ac5"}
+{"task_id": "web01_l3_021", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "75a1fa157ac5"}
+{"task_id": "web01_l3_021", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "75a1fa157ac5"}
+{"task_id": "web01_l3_021", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "75a1fa157ac5"}
+{"task_id": "web01_l3_021", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "24fc04f0a015"}
+{"task_id": "web01_l3_021", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "24fc04f0a015"}
+{"task_id": "web01_l3_021", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "24fc04f0a015"}
+{"task_id": "web01_l3_021", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "24fc04f0a015"}
+{"task_id": "web01_l3_022", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_022_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "87f633b203c5"}
+{"task_id": "web01_l3_022", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_022_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "87f633b203c5"}
+{"task_id": "web01_l3_022", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_022_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "87f633b203c5"}
+{"task_id": "web01_l3_022", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_022_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "87f633b203c5"}
+{"task_id": "web01_l3_023", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "1ab1bdf3a0d1"}
+{"task_id": "web01_l3_023", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "1ab1bdf3a0d1"}
+{"task_id": "web01_l3_023", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "1ab1bdf3a0d1"}
+{"task_id": "web01_l3_023", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "1ab1bdf3a0d1"}
+{"task_id": "web01_l3_023", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "7e597fc67c3e"}
+{"task_id": "web01_l3_023", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "7e597fc67c3e"}
+{"task_id": "web01_l3_023", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "7e597fc67c3e"}
+{"task_id": "web01_l3_023", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "7e597fc67c3e"}
+{"task_id": "web01_l3_024", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_024_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "15aa02f2c6b9"}
+{"task_id": "web01_l3_024", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_024_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "15aa02f2c6b9"}
+{"task_id": "web01_l3_024", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_024_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "15aa02f2c6b9"}
+{"task_id": "web01_l3_024", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_024_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "15aa02f2c6b9"}
+{"task_id": "web01_l4_025", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_025_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "3875331c5d71"}
+{"task_id": "web01_l4_025", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_025_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "3875331c5d71"}
+{"task_id": "web01_l4_025", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_025_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "3875331c5d71"}
+{"task_id": "web01_l4_025", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_025_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "3875331c5d71"}
+{"task_id": "web01_l4_026", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_026_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "c465e296dac0"}
+{"task_id": "web01_l4_026", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_026_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "c465e296dac0"}
+{"task_id": "web01_l4_026", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_026_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "c465e296dac0"}
+{"task_id": "web01_l4_026", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_026_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "c465e296dac0"}
+{"task_id": "web01_l4_026", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_026_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "977d220a05cf"}
+{"task_id": "web01_l4_026", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_026_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "977d220a05cf"}
+{"task_id": "web01_l4_026", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_026_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "977d220a05cf"}
+{"task_id": "web01_l4_026", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l4_026_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "977d220a05cf"}
+{"task_id": "web01_l5_028", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l5_028_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "67e172a173bf"}
+{"task_id": "web01_l5_028", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l5_028_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "67e172a173bf"}
+{"task_id": "web01_l5_028", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l5_028_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "67e172a173bf"}
+{"task_id": "web01_l5_028", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l5_028_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "67e172a173bf"}
+{"task_id": "market01_l2_036", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_036_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "a767592578c7"}
+{"task_id": "market01_l2_036", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_036_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "a767592578c7"}
+{"task_id": "market01_l2_036", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_036_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "a767592578c7"}
+{"task_id": "market01_l2_036", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_036_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "a767592578c7"}
+{"task_id": "market01_l2_037", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_037_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "218bb545e6ae"}
+{"task_id": "market01_l2_037", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_037_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "218bb545e6ae"}
+{"task_id": "market01_l2_037", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_037_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "218bb545e6ae"}
+{"task_id": "market01_l2_037", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_037_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "218bb545e6ae"}
+{"task_id": "market01_l3_038", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l3_038_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "94606fb0fa17"}
+{"task_id": "market01_l3_038", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l3_038_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "94606fb0fa17"}
+{"task_id": "market01_l3_038", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l3_038_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "94606fb0fa17"}
+{"task_id": "market01_l3_038", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l3_038_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "94606fb0fa17"}
+{"task_id": "market01_l4_040", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l4_040_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "88597ef22d38"}
+{"task_id": "market01_l4_040", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l4_040_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "88597ef22d38"}
+{"task_id": "market01_l4_040", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l4_040_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "88597ef22d38"}
+{"task_id": "market01_l4_040", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l4_040_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "88597ef22d38"}
+{"task_id": "saas01_l2_045", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_045_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "130db9ff9b4b"}
+{"task_id": "saas01_l2_045", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_045_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "130db9ff9b4b"}
+{"task_id": "saas01_l2_045", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_045_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "130db9ff9b4b"}
+{"task_id": "saas01_l2_045", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_045_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "130db9ff9b4b"}
+{"task_id": "saas01_l2_047", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_047_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "66c0adb48308"}
+{"task_id": "saas01_l2_047", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_047_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "66c0adb48308"}
+{"task_id": "saas01_l2_047", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_047_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "66c0adb48308"}
+{"task_id": "saas01_l2_047", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_047_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "66c0adb48308"}
+{"task_id": "saas01_l2_049", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_049_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "6f75bbf41a27"}
+{"task_id": "saas01_l2_049", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_049_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "6f75bbf41a27"}
+{"task_id": "saas01_l2_049", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_049_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "6f75bbf41a27"}
+{"task_id": "saas01_l2_049", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_049_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "6f75bbf41a27"}
+{"task_id": "saas01_l3_050", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l3_050_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "9b710ca20b5f"}
+{"task_id": "saas01_l3_050", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l3_050_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "9b710ca20b5f"}
+{"task_id": "saas01_l3_050", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l3_050_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "9b710ca20b5f"}
+{"task_id": "saas01_l3_050", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l3_050_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "9b710ca20b5f"}
+{"task_id": "saas01_l4_051", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_051_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "57fba02c092b"}
+{"task_id": "saas01_l4_051", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_051_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "57fba02c092b"}
+{"task_id": "saas01_l4_051", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_051_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "57fba02c092b"}
+{"task_id": "saas01_l4_051", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_051_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "57fba02c092b"}
+{"task_id": "saas01_l4_052", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_052_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e314277245ff"}
+{"task_id": "saas01_l4_052", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_052_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e314277245ff"}
+{"task_id": "saas01_l4_052", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_052_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e314277245ff"}
+{"task_id": "saas01_l4_052", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_052_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e314277245ff"}
+{"task_id": "mktg01_l1_054", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l1_054_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "79fed76e10c9"}
+{"task_id": "mktg01_l1_054", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l1_054_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "79fed76e10c9"}
+{"task_id": "mktg01_l1_054", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l1_054_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "79fed76e10c9"}
+{"task_id": "mktg01_l1_054", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l1_054_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "79fed76e10c9"}
+{"task_id": "mktg01_l2_057", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_057_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "cf6e87d4e6f6"}
+{"task_id": "mktg01_l2_057", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_057_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "cf6e87d4e6f6"}
+{"task_id": "mktg01_l2_057", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_057_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "cf6e87d4e6f6"}
+{"task_id": "mktg01_l2_057", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_057_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "cf6e87d4e6f6"}
+{"task_id": "mktg01_l2_057", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_057_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "cf6e87d4e6f6"}
+{"task_id": "mktg01_l2_057", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_057_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "cf6e87d4e6f6"}
+{"task_id": "mktg01_l2_057", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_057_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "cf6e87d4e6f6"}
+{"task_id": "mktg01_l2_057", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_057_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "cf6e87d4e6f6"}
+{"task_id": "mktg01_l2_059", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0eee0450ea6d"}
+{"task_id": "mktg01_l2_059", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0eee0450ea6d"}
+{"task_id": "mktg01_l2_059", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0eee0450ea6d"}
+{"task_id": "mktg01_l2_059", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0eee0450ea6d"}
+{"task_id": "mktg01_l2_059", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "b26a8036336e"}
+{"task_id": "mktg01_l2_059", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "b26a8036336e"}
+{"task_id": "mktg01_l2_059", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "b26a8036336e"}
+{"task_id": "mktg01_l2_059", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "b26a8036336e"}
+{"task_id": "mktg01_l2_061", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "8b6cdda1ccb0"}
+{"task_id": "mktg01_l2_061", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "8b6cdda1ccb0"}
+{"task_id": "mktg01_l2_061", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "8b6cdda1ccb0"}
+{"task_id": "mktg01_l2_061", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "8b6cdda1ccb0"}
+{"task_id": "mktg01_l2_061", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "1ca8acc306bb"}
+{"task_id": "mktg01_l2_061", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "1ca8acc306bb"}
+{"task_id": "mktg01_l2_061", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "1ca8acc306bb"}
+{"task_id": "mktg01_l2_061", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "1ca8acc306bb"}
+{"task_id": "mktg01_l3_062", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l3_062_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "a80d795d67be"}
+{"task_id": "mktg01_l3_062", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l3_062_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "a80d795d67be"}
+{"task_id": "mktg01_l3_062", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l3_062_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "a80d795d67be"}
+{"task_id": "mktg01_l3_062", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l3_062_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "a80d795d67be"}
+{"task_id": "mktg01_l4_063", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_063_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "50ee4ceee5b5"}
+{"task_id": "mktg01_l4_063", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_063_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "50ee4ceee5b5"}
+{"task_id": "mktg01_l4_063", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_063_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "50ee4ceee5b5"}
+{"task_id": "mktg01_l4_063", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_063_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "50ee4ceee5b5"}
+{"task_id": "mktg01_l4_064", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_064_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "41c15eaf153c"}
+{"task_id": "mktg01_l4_064", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_064_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "41c15eaf153c"}
+{"task_id": "mktg01_l4_064", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_064_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "41c15eaf153c"}
+{"task_id": "mktg01_l4_064", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_064_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "41c15eaf153c"}
+{"task_id": "payments01_l2_071", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_071_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "3e0c088cfb88"}
+{"task_id": "payments01_l2_071", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_071_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "3e0c088cfb88"}
+{"task_id": "payments01_l2_071", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_071_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "3e0c088cfb88"}
+{"task_id": "payments01_l2_071", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_071_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "3e0c088cfb88"}
+{"task_id": "payments01_l2_072", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_072_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "92e2b2e762f9"}
+{"task_id": "payments01_l2_072", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_072_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "92e2b2e762f9"}
+{"task_id": "payments01_l2_072", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_072_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "92e2b2e762f9"}
+{"task_id": "payments01_l2_072", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_072_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "92e2b2e762f9"}
+{"task_id": "payments01_l2_073", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0b730f8c21e8"}
+{"task_id": "payments01_l2_073", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0b730f8c21e8"}
+{"task_id": "payments01_l2_073", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0b730f8c21e8"}
+{"task_id": "payments01_l2_073", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0b730f8c21e8"}
+{"task_id": "payments01_l2_073", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "ef8b94585576"}
+{"task_id": "payments01_l2_073", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "ef8b94585576"}
+{"task_id": "payments01_l2_073", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "ef8b94585576"}
+{"task_id": "payments01_l2_073", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "ef8b94585576"}
+{"task_id": "payments01_l3_074", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l3_074_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "1e6d422dcb4f"}
+{"task_id": "payments01_l3_074", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l3_074_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "1e6d422dcb4f"}
+{"task_id": "payments01_l3_074", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l3_074_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "1e6d422dcb4f"}
+{"task_id": "payments01_l3_074", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l3_074_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "1e6d422dcb4f"}
+{"task_id": "payments01_l4_075", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_075_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "8619d5715095"}
+{"task_id": "payments01_l4_075", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_075_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "8619d5715095"}
+{"task_id": "payments01_l4_075", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_075_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "8619d5715095"}
+{"task_id": "payments01_l4_075", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_075_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "8619d5715095"}
+{"task_id": "payments01_l4_076", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_076_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "fe768516baac"}
+{"task_id": "payments01_l4_076", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_076_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "fe768516baac"}
+{"task_id": "payments01_l4_076", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_076_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "fe768516baac"}
+{"task_id": "payments01_l4_076", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_076_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "fe768516baac"}
+{"task_id": "payments01_l4_076", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_076_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "9de8fa392b72"}
+{"task_id": "payments01_l4_076", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_076_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "9de8fa392b72"}
+{"task_id": "payments01_l4_076", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_076_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "9de8fa392b72"}
+{"task_id": "payments01_l4_076", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l4_076_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "9de8fa392b72"}
+{"task_id": "ops01_l2_081", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_081_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "940c8a6a1f2f"}
+{"task_id": "ops01_l2_081", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_081_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "940c8a6a1f2f"}
+{"task_id": "ops01_l2_081", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_081_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "940c8a6a1f2f"}
+{"task_id": "ops01_l2_081", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_081_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "940c8a6a1f2f"}
+{"task_id": "ops01_l2_083", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_083_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0733e7d636b2"}
+{"task_id": "ops01_l2_083", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_083_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0733e7d636b2"}
+{"task_id": "ops01_l2_083", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_083_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0733e7d636b2"}
+{"task_id": "ops01_l2_083", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_083_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "0733e7d636b2"}
+{"task_id": "ops01_l2_085", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_085_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "5dd3e6d8b4b4"}
+{"task_id": "ops01_l2_085", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_085_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "5dd3e6d8b4b4"}
+{"task_id": "ops01_l2_085", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_085_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "5dd3e6d8b4b4"}
+{"task_id": "ops01_l2_085", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_085_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "5dd3e6d8b4b4"}
+{"task_id": "ops01_l2_085", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_085_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "78b6457ce2b1"}
+{"task_id": "ops01_l2_085", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_085_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "78b6457ce2b1"}
+{"task_id": "ops01_l2_085", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_085_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "78b6457ce2b1"}
+{"task_id": "ops01_l2_085", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l2_085_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "78b6457ce2b1"}
+{"task_id": "ops01_l4_087", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l4_087_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "0f9b7b943116"}
+{"task_id": "ops01_l4_087", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l4_087_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "0f9b7b943116"}
+{"task_id": "ops01_l4_087", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l4_087_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "0f9b7b943116"}
+{"task_id": "ops01_l4_087", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l4_087_s7", "model": "claude-haiku-4-5", "seed": 7, "source_hash": "0f9b7b943116"}
+{"task_id": "support01_l2_096", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_096_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "81ebc832bd93"}
+{"task_id": "support01_l2_096", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_096_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "81ebc832bd93"}
+{"task_id": "support01_l2_096", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_096_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "81ebc832bd93"}
+{"task_id": "support01_l2_096", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_096_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "81ebc832bd93"}
+{"task_id": "support01_l2_097", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_097_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e6bde24ca43e"}
+{"task_id": "support01_l2_097", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_097_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e6bde24ca43e"}
+{"task_id": "support01_l2_097", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_097_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e6bde24ca43e"}
+{"task_id": "support01_l2_097", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_097_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "e6bde24ca43e"}
+{"task_id": "support01_l4_099", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l4_099_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "5da0bdd28d98"}
+{"task_id": "support01_l4_099", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l4_099_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "5da0bdd28d98"}
+{"task_id": "support01_l4_099", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l4_099_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "5da0bdd28d98"}
+{"task_id": "support01_l4_099", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l4_099_s42", "model": "claude-haiku-4-5", "seed": 42, "source_hash": "5da0bdd28d98"}
+{"task_id": "retail01_l2_004", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_004_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "396a5954e547"}
+{"task_id": "retail01_l2_004", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_004_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "396a5954e547"}
+{"task_id": "retail01_l2_004", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_004_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "396a5954e547"}
+{"task_id": "retail01_l2_004", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_004_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "396a5954e547"}
+{"task_id": "retail01_l2_006", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_006_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c62e610c927f"}
+{"task_id": "retail01_l2_006", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_006_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c62e610c927f"}
+{"task_id": "retail01_l2_006", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_006_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c62e610c927f"}
+{"task_id": "retail01_l2_006", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_006_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c62e610c927f"}
+{"task_id": "retail01_l2_007", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "062a53809119"}
+{"task_id": "retail01_l2_007", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "062a53809119"}
+{"task_id": "retail01_l2_007", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "062a53809119"}
+{"task_id": "retail01_l2_007", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_007_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "062a53809119"}
+{"task_id": "retail01_l2_008", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "b296e06d96c3"}
+{"task_id": "retail01_l2_008", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "b296e06d96c3"}
+{"task_id": "retail01_l2_008", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "b296e06d96c3"}
+{"task_id": "retail01_l2_008", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l2_008_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "b296e06d96c3"}
+{"task_id": "retail01_l4_011", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l4_011_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "76b636d15248"}
+{"task_id": "retail01_l4_011", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l4_011_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "76b636d15248"}
+{"task_id": "retail01_l4_011", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l4_011_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "76b636d15248"}
+{"task_id": "retail01_l4_011", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_retail01_l4_011_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "76b636d15248"}
+{"task_id": "web01_l2_017", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_017_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "78a37aae6fa9"}
+{"task_id": "web01_l2_017", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_017_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "78a37aae6fa9"}
+{"task_id": "web01_l2_017", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_017_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "78a37aae6fa9"}
+{"task_id": "web01_l2_017", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_017_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "78a37aae6fa9"}
+{"task_id": "web01_l2_018", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "018fad153551"}
+{"task_id": "web01_l2_018", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "018fad153551"}
+{"task_id": "web01_l2_018", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "018fad153551"}
+{"task_id": "web01_l2_018", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_018_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "018fad153551"}
+{"task_id": "web01_l2_019", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c2738003a8b1"}
+{"task_id": "web01_l2_019", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c2738003a8b1"}
+{"task_id": "web01_l2_019", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c2738003a8b1"}
+{"task_id": "web01_l2_019", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_019_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c2738003a8b1"}
+{"task_id": "web01_l2_020", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "10b185198c59"}
+{"task_id": "web01_l2_020", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "10b185198c59"}
+{"task_id": "web01_l2_020", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "10b185198c59"}
+{"task_id": "web01_l2_020", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l2_020_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "10b185198c59"}
+{"task_id": "web01_l3_021", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "a433dc2abce1"}
+{"task_id": "web01_l3_021", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "a433dc2abce1"}
+{"task_id": "web01_l3_021", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "a433dc2abce1"}
+{"task_id": "web01_l3_021", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_021_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "a433dc2abce1"}
+{"task_id": "web01_l3_022", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_022_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "61b0f17fc6b9"}
+{"task_id": "web01_l3_022", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_022_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "61b0f17fc6b9"}
+{"task_id": "web01_l3_022", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_022_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "61b0f17fc6b9"}
+{"task_id": "web01_l3_022", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_022_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "61b0f17fc6b9"}
+{"task_id": "web01_l3_023", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c174cd6a8a95"}
+{"task_id": "web01_l3_023", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c174cd6a8a95"}
+{"task_id": "web01_l3_023", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c174cd6a8a95"}
+{"task_id": "web01_l3_023", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l3_023_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c174cd6a8a95"}
+{"task_id": "web01_l5_027", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l5_027_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "f98d0c453b8c"}
+{"task_id": "web01_l5_027", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l5_027_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "f98d0c453b8c"}
+{"task_id": "web01_l5_027", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l5_027_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "f98d0c453b8c"}
+{"task_id": "web01_l5_027", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_web01_l5_027_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "f98d0c453b8c"}
+{"task_id": "market01_l2_034", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_034_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "bbd9a40a812c"}
+{"task_id": "market01_l2_034", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_034_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "bbd9a40a812c"}
+{"task_id": "market01_l2_034", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_034_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "bbd9a40a812c"}
+{"task_id": "market01_l2_034", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_034_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "bbd9a40a812c"}
+{"task_id": "market01_l2_035", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_035_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "fa306f2d840a"}
+{"task_id": "market01_l2_035", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_035_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "fa306f2d840a"}
+{"task_id": "market01_l2_035", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_035_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "fa306f2d840a"}
+{"task_id": "market01_l2_035", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_035_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "fa306f2d840a"}
+{"task_id": "market01_l2_036", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_036_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c0fac75fb0d2"}
+{"task_id": "market01_l2_036", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_036_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c0fac75fb0d2"}
+{"task_id": "market01_l2_036", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_036_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c0fac75fb0d2"}
+{"task_id": "market01_l2_036", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_036_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c0fac75fb0d2"}
+{"task_id": "market01_l2_037", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_037_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "7c6d9e00c159"}
+{"task_id": "market01_l2_037", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_037_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "7c6d9e00c159"}
+{"task_id": "market01_l2_037", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_037_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "7c6d9e00c159"}
+{"task_id": "market01_l2_037", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l2_037_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "7c6d9e00c159"}
+{"task_id": "market01_l3_038", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l3_038_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "e9d797a8ef58"}
+{"task_id": "market01_l3_038", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l3_038_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "e9d797a8ef58"}
+{"task_id": "market01_l3_038", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l3_038_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "e9d797a8ef58"}
+{"task_id": "market01_l3_038", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_market01_l3_038_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "e9d797a8ef58"}
+{"task_id": "saas01_l2_049", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_049_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c6d312bcd758"}
+{"task_id": "saas01_l2_049", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_049_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c6d312bcd758"}
+{"task_id": "saas01_l2_049", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_049_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c6d312bcd758"}
+{"task_id": "saas01_l2_049", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l2_049_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "c6d312bcd758"}
+{"task_id": "saas01_l4_052", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_052_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "9b44715ef893"}
+{"task_id": "saas01_l4_052", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_052_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "9b44715ef893"}
+{"task_id": "saas01_l4_052", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_052_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "9b44715ef893"}
+{"task_id": "saas01_l4_052", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_saas01_l4_052_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "9b44715ef893"}
+{"task_id": "mktg01_l2_059", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "f0377006f9da"}
+{"task_id": "mktg01_l2_059", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "f0377006f9da"}
+{"task_id": "mktg01_l2_059", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "f0377006f9da"}
+{"task_id": "mktg01_l2_059", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": true, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_059_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "f0377006f9da"}
+{"task_id": "mktg01_l2_060", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_060_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "a512354321f4"}
+{"task_id": "mktg01_l2_060", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_060_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "a512354321f4"}
+{"task_id": "mktg01_l2_060", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_060_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "a512354321f4"}
+{"task_id": "mktg01_l2_060", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_060_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "a512354321f4"}
+{"task_id": "mktg01_l2_061", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "3bf37c10f883"}
+{"task_id": "mktg01_l2_061", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "3bf37c10f883"}
+{"task_id": "mktg01_l2_061", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "3bf37c10f883"}
+{"task_id": "mktg01_l2_061", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l2_061_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "3bf37c10f883"}
+{"task_id": "mktg01_l4_063", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_063_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "d9458275cb67"}
+{"task_id": "mktg01_l4_063", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_063_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "d9458275cb67"}
+{"task_id": "mktg01_l4_063", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_063_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "d9458275cb67"}
+{"task_id": "mktg01_l4_063", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_mktg01_l4_063_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "d9458275cb67"}
+{"task_id": "payments01_l2_073", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "dccd51f87fbe"}
+{"task_id": "payments01_l2_073", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "dccd51f87fbe"}
+{"task_id": "payments01_l2_073", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "dccd51f87fbe"}
+{"task_id": "payments01_l2_073", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_payments01_l2_073_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "dccd51f87fbe"}
+{"task_id": "ops01_l4_088", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l4_088_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "4022c6737638"}
+{"task_id": "ops01_l4_088", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l4_088_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "4022c6737638"}
+{"task_id": "ops01_l4_088", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l4_088_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "4022c6737638"}
+{"task_id": "ops01_l4_088", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_ops01_l4_088_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "4022c6737638"}
+{"task_id": "support01_l2_095", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_095_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "86079cf042c9"}
+{"task_id": "support01_l2_095", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_095_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "86079cf042c9"}
+{"task_id": "support01_l2_095", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_095_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "86079cf042c9"}
+{"task_id": "support01_l2_095", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_095_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "86079cf042c9"}
+{"task_id": "support01_l2_097", "strategy": "R0_no_retry", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_097_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "04f0af552de5"}
+{"task_id": "support01_l2_097", "strategy": "R2_generic", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_097_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "04f0af552de5"}
+{"task_id": "support01_l2_097", "strategy": "R6_relation_name", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_097_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "04f0af552de5"}
+{"task_id": "support01_l2_097", "strategy": "R7_witness", "initial_wrong": true, "repaired_correct": false, "regressed": false, "program_id": "claude_haiku_4_5_support01_l2_097_s123", "model": "claude-haiku-4-5", "seed": 123, "source_hash": "04f0af552de5"}

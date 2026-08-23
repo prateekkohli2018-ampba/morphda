@@ -82,7 +82,8 @@ B) CROSS-SEED CORRECTED (98 tasks, same P42 re-executed on seeds 7,123)
   claude-sonnet-4-6        89.2%   67.3%   76.7%   8.2%   26.2%
   claude-opus-4-5          79.2%   79.2%   79.2%   20.8%   20.8%
 
-C) MULTI-SEED MORPH-DA (Condition B ground truth + rng_seed={42,7}; flag if either fires)
+C) MULTI-TRANSFORMATION SENSITIVITY (Condition B ground truth + rng_seed={42,7}; flag if either fires)
+     Recall gain: 0-2pp; FPR increase: 2pp. Use when recall > FPR in deployment priority.
   claude-haiku-4-5         86.0%   81.1%   83.5%   16.3%   21.7%
   claude-sonnet-4-6        86.8%   67.3%   75.9%   10.2%   26.7%
   claude-opus-4-5          78.0%   81.2%   79.6%   22.9%   19.6%
@@ -102,6 +103,14 @@ n10=0 for all: MORPH-DA strictly dominates Universal.
 
 
 Table 8: Confusion Matrix — Condition B (98 tasks, corrected methodology)
+NOTE on denominators: programs that failed execution on seed=42 are excluded.
+  claude-haiku-4-5: 2 exe-fails excluded → CM total=96
+  claude-sonnet-4-6: 0 exe-fails excluded → CM total=98
+  claude-opus-4-5:  2 exe-fails excluded → CM total=96
+Seed-42 breakdown (98-task eval set):
+  Haiku:  59 correct + 37 wrong-but-executable + 2 execution failures = 98
+  Sonnet: 62 correct + 36 wrong-but-executable + 0 execution failures = 98
+  Opus:   61 correct + 35 wrong-but-executable + 2 execution failures = 98
 ============================================================================
 Model                   TP    FP    TN    FN   Precision  Recall   FPR
 ----------------------------------------------------------------------------
@@ -120,8 +129,9 @@ Strategy              Description                       Fixed    Rate
 ------------------------------------------------------------------------------
   R0 — No retry       Submit again unchanged             0/91     0.0%
   R2 — Generic        "Your program has a bug"           5/91     5.5%
-  R6 — Relation name  "You may have violated MR-F1"     11/91    12.1%
-  R7 — Witness        Full counterexample + diagnosis    11/91    12.1%
+  R6 — Relation name  "You may have violated MR-F1"     11/91    12.1%  (n01=6 vs R2, n10=0)
+  R7 — Witness        Full counterexample + diagnosis    11/91    12.1%  (n01=6 vs R2, n10=0)
+  NOTE: R7 vs R6 McNemar n01=4, n10=4 (p=0.29) — fix different programs, not the same.
 ==============================================================================
 
 
