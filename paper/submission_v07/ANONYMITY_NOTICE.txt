@@ -1,0 +1,9 @@
+This archive is prepared for double-blind review.
+
+It intentionally omits:
+- author names and affiliations,
+- the named public repository URL,
+- source-provenance files containing identifying information,
+- local build artifacts and file-system paths.
+
+Before submission, compile main.tex with the official neurips_2026.sty and inspect the resulting official-template PDF. Do not submit the fallback Preview PDF as the final paper.

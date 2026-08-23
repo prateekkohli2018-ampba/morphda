@@ -1,0 +1,9 @@
+The included MORPH_DA_VerifyAgents_2026_Anonymous_Preview_v07.pdf is a visually checked layout preview. It is not the final official-template submission PDF.
+
+Before OpenReview upload:
+1. Download the official NeurIPS 2026 formatting package.
+2. Copy neurips_2026.sty into this directory beside main.tex.
+3. Run ./build_official.sh.
+4. Render and inspect MORPH_DA_VerifyAgents_2026_Anonymous.pdf.
+5. Confirm that the main paper remains within 4-9 pages, excluding references and appendices.
+6. Upload the official-template PDF, not the file whose name contains Preview.
