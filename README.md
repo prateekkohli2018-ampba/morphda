@@ -49,7 +49,7 @@ This is **metamorphic testing**: instead of checking the final answer, check tha
 |---|---|---|---|
 | Execution-only | 0% | — | — |
 | Universal relations only | 1.6% | — | baseline |
-| **Full MORPH-DA (single rng-seed)** | **64.7%** | [58.5%, 70.5%] | **p < 0.000001** |
+| **Full MORPH-DA (single rng-seed)** | **64.7%** | [58.4%, 70.5%] | **p < 0.000001** |
 
 MORPH-DA is **40× more effective** than the universal-only baseline.
 
@@ -100,7 +100,7 @@ McNemar χ² vs universal baseline: all p < 0.0001 (Holm-Bonferroni corrected).
 | R6 — Relation name | "You violated MR-F1 (filter/scope)" | **12.1%** |
 | R7 — Witness-guided | Full counterexample + diagnosis | **12.1%** |
 
-Naming the violated relation doubles the one-shot repair rate. For multi-round repair, use R7 witnesses iteratively.
+Naming the violated relation doubles the one-shot repair rate. Evaluating multi-round repair with witnesses is future work.
 
 ---
 

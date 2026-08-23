@@ -8,7 +8,7 @@
 
 Data-analysis agents increasingly generate and execute Python programs to answer business questions, but successful execution does not guarantee that an analysis implements the correct filters, aggregation operators, grouping dimensions, denominators, or date windows. We introduce **MORPH-DA**, a mutation-grounded benchmark and runtime-verification framework for detecting wrong-but-executable data-analysis programs. MORPH-DA combines 101 structured analytical tasks across 8 business scenarios and 5 difficulty levels with 563 validated semantic mutants, operator-aware metamorphic relations, and a counterfactual witness generator — all without exposing the gold answer. The verifier is **gold-answer-free but specification-conditioned**: it receives a structured task specification (filters, metric operations, grouping, date windows) but not the correct output.
 
-Across 563 mutants, MORPH-DA detects **64.7%** [58.5%, 70.5%] of controlled faults versus 1.6% for universal robustness checks — 364 vs 9 detections, McNemar χ²=353, p=9.4×10⁻⁷⁹. On natural agent programs from three Claude models, a key finding emerges: single-seed gold-answer evaluation is unreliable because **13–16 programs per model** (20–26% of programs that appear correct on seed=42) fail when the same program is re-executed unchanged on held-out seeds 7 and 123. These **accidental corrects** are structurally wrong programs that coincidentally pass one evaluation. After correcting for them, MORPH-DA achieves **79–89% precision** and **67–79% recall** (execution-successful programs only) at 8–21% false-positive rate. Adding a second metamorphic transformation seed increases recall by 0–2 percentage points, at the cost of 2pp higher FPR. For repair, naming the violated relation achieves **12.1%** one-shot fix rate versus 5.5% for generic feedback on 91 wrong programs.
+Across 563 mutants, MORPH-DA detects **64.7%** [58.4%, 70.5%] of controlled faults versus 1.6% for universal robustness checks — 364 vs 9 detections, McNemar χ²=353, p=9.4×10⁻⁷⁹. On natural agent programs from three Claude models, a key finding emerges: single-seed gold-answer evaluation is unreliable because **13–16 programs per model** (20–26% of programs that appear correct on seed=42) fail when the same program is re-executed unchanged on held-out seeds 7 and 123. These **accidental corrects** are structurally wrong programs that coincidentally pass one evaluation. After correcting for them, MORPH-DA achieves **79–89% precision** and **67–79% recall** (execution-successful programs only) at 8–21% false-positive rate. Adding a second metamorphic transformation seed increases recall by 0–2 percentage points (observed: +1.9pp, 0.0pp, +2.1pp across three models), at the cost of approximately 2pp higher FPR. For repair, naming the violated relation achieves **12.1%** one-shot fix rate versus 5.5% for generic feedback on 91 wrong programs.
 
 ---
 
@@ -205,7 +205,7 @@ The intermediate baseline (Universal + Filter + Aggregation relations, 61.5%) wa
 | Execution only | 0 | 563 | 0.0% | — | — |
 | Universal-only | 9 | 563 | 1.6% | — | baseline |
 | Universal + Filter + Agg | 346 | 563 | 61.5% | — | — |
-| **Full MORPH-DA** | **364** | **563** | **64.7%** | **[58.5%, 70.5%]** | **p=9.4×10⁻⁷⁹** |
+| **Full MORPH-DA** | **364** | **563** | **64.7%** | **[58.4%, 70.5%]** | **p=9.4×10⁻⁷⁹** |
 
 McNemar full vs universal: χ²=353, n₀₁=355, n₁₀=0. MORPH-DA is a strict superset of universal detection. The intermediate step shows filter and aggregation relations account for most detection (346/364 kills); remaining relation families add 18 detections. The 64.7/1.6 ≈ 40× ratio reflects the weakness of the universal-only baseline, which cannot detect operator-specific faults by design.
 
@@ -261,7 +261,7 @@ CIs: task-clustered bootstrap, 3,000 iterations. AAR = Accepted-Answer Risk = FN
 
 ### 7.5 Repair experiment (Table 5)
 
-**Procedure**: 91 wrong-but-executable programs from claude-haiku-4-5 seed=42 (55 distinct tasks, 26 tasks with multiple wrong programs from different seeds). Raw logs: `runs/repair/repair_results.jsonl` (364 records = 91 programs × 4 strategies), enriched with `program_id`, `seed`, and `source_hash` for row verification.
+**Procedure**: 91 wrong-but-executable claude-haiku-4-5 programs across seeds 7, 42, and 123 (seed=42: 38 programs; seed=7: 25; seed=123: 28; 55 distinct tasks). Raw logs: `runs/repair/repair_results.jsonl` (364 records = 91 programs × 4 strategies), enriched with `program_id`, `seed`, and `source_hash` for row verification.
 
 | Strategy | Feedback provided | Fixed | Rate |
 |---|---|---|---|
@@ -270,7 +270,7 @@ CIs: task-clustered bootstrap, 3,000 iterations. AAR = Accepted-Answer Risk = FN
 | R6 — Relation name | "You may have violated MR-F1 (filter/scope)" | 11/91 | **12.1%** |
 | R7 — Witness | Source=X, follow-up=Y, transformation, likely issue | 11/91 | **12.1%** |
 
-Naming the violated relation doubles the one-shot fix rate vs generic feedback. R6 and R7 achieve the same aggregate rate (11/91 = 12.1%) but fix different programs (row-paired McNemar R7 vs R6: n₀₁=4, n₁₀=4, p=0.29 — not significant). Both strategies outperform R2 (R7 vs R2: n₀₁=6, n₁₀=0; R6 vs R2: n₀₁=6, n₁₀=0). For programs where witnesses exist, multi-round R7 is recommended.
+Relation-name and witness feedback each achieved a higher observed one-shot fix rate than generic feedback — 12.1% versus 5.5% — though the sample remains limited (McNemar R6 vs R2: n₀₁=6, n₁₀=0, p=0.041 unadjusted; p=0.082 Holm-corrected for two co-primary comparisons). R6 and R7 fix different programs (row-paired McNemar R7 vs R6: n₀₁=4, n₁₀=4, p=0.29 — not significant). Both strategies outperform R2 (R7 vs R2: n₀₁=6, n₁₀=0; R6 vs R2: n₀₁=6, n₁₀=0). Whether richer witnesses help across multiple repair rounds is future work.
 
 ---
 

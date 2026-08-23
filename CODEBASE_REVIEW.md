@@ -1272,7 +1272,7 @@ n₁₀=0: MORPH-DA strictly dominates universal-only detection.
 | Ranking | 109 | 83 | **76.1%** | [65.8%,85.6%] | 0.0% |
 | Filter/Scope | 173 | 117 | **67.6%** | [57.1%,77.5%] | 0.6% |
 | Aggregation | 131 | 37 | **28.2%** | [17.2%,39.0%] | 6.1% |
-| **TOTAL** | **563** | **364** | **64.6%** | **[58.4%,70.5%]** | **1.6%** |
+| **TOTAL** | **563** | **364** | **64.7%** | **[58.4%,70.5%]** | **1.6%** |
 
 McNemar vs Universal: χ²=353.0, p=9.4×10⁻⁷⁹ (n₀₁=355, n₁₀=0)
 
@@ -1317,7 +1317,7 @@ Intermediate: Universal + Filter + Agg = 61.5% (346/563 killed) — genuine veri
 | AAR (Cond B) | 22.9% | 26.2% | 20.8% |
 | Recall (Cond C) | 81.1% | 67.3% | 81.2% |
 | McNemar p | p=1.95e-11 | p=3.25e-09 | p=1.17e-11 |
-| Mutation score | **64.6% [58.4%,70.5%]** | | |
+| Mutation score | **64.7% [58.4%,70.5%]** | | |
 | Mutation p (exact) | **p=9.4×10⁻⁷⁹** | | |
 | Repair R6/R7 (n=91) | **12.1%** | | |
 
