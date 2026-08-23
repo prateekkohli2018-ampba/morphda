@@ -1,0 +1,5 @@
+method,python_runs_per_program,micro_mutation_score
+no_verifier,0,0.0000
+universal_only,4,0.0160
+filter_agg,25,0.6146
+full_morph_da,40,0.6465

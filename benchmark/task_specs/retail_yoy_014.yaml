@@ -1,0 +1,64 @@
+# Example task spec from paper Section 8.2
+task_id: retail_yoy_014
+scenario_id: retail03
+question_family: grouped_ratio_rank
+difficulty_level: 4
+
+inputs:
+  - orders
+  - sessions
+
+filters:
+  - column: order_status
+    operator: not_equal
+    value: cancelled
+  - column: customer_type
+    operator: equal
+    value: new
+
+date:
+  column: event_date
+  current_start: "2025-04-01"
+  current_end: "2025-06-30"
+  previous_start: "2024-04-01"
+  previous_end: "2024-06-30"
+  inclusive_bounds: true
+
+joins:
+  - left_table: orders
+    right_table: sessions
+    keys: [session_id]
+    cardinality: many_to_one
+
+metric:
+  name: conversion_rate
+  operation: ratio
+  numerator:
+    operation: count_distinct
+    column: converting_session_id
+  denominator:
+    operation: count_distinct
+    column: session_id
+
+group_by: [category]
+
+post_filter:
+  minimum_denominator: 100
+
+comparison:
+  operation: percentage_change
+
+ranking:
+  direction: descending
+  k: 1
+  tie_break:
+    - current_period_revenue: descending
+
+output_type: label
+missing_value_rule: skip
+
+canonical_question: >
+  Which category had the largest year-over-year percentage increase in
+  conversion rate in Q2 2025 versus Q2 2024, among new customers with
+  non-cancelled orders, counting distinct sessions as the denominator
+  and only considering categories with at least 100 eligible sessions?

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "morphda"
+version = "0.1.0"
+description = "MORPH-DA: Mutation-Grounded Benchmark for Metamorphic Verification of Data Analysis Agents"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "langgraph>=0.2",
+    "langchain-core>=0.2",
+    "libcst>=1.4",
+    "pyyaml>=6.0",
+    "jsonschema>=4.22",
+    "scipy>=1.13",
+    "statsmodels>=0.14",
+    "rich>=13.7",
+    "typer>=0.12",
+    "pydantic>=2.7",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2",
+    "pytest-cov>=5.0",
+    "ruff>=0.4",
+]
+llm = [
+    "anthropic>=0.28",
+    "openai>=1.30",
+]
+
+[project.scripts]
+morphda = "morphda.cli:app"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

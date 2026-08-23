@@ -1,0 +1,9 @@
+
+============================================================
+REFERENCE VALIDATION SUMMARY
+============================================================
+Total tasks:       101
+Passed:            101
+Failed:            0
+Pass rate:         100.0%
+MR violations:     0 (must be 0)

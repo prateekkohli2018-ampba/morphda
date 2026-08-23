@@ -1,0 +1,75 @@
+{
+  "natural_agent_results": {
+    "claude-haiku-4-5": {
+      "n_exe": 300,
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "naive_accuracy": 0.6967,
+      "naive_wer": 0.3033,
+      "morph_recall": 0.7582,
+      "morph_precision": 0.5308,
+      "morph_fpr": 0.2919,
+      "note": "naive metrics; see corrected metrics in paper (lucky-correct removed)"
+    },
+    "claude-sonnet-4-6": {
+      "n_exe": 270,
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "naive_accuracy": 0.7407,
+      "naive_wer": 0.2593,
+      "morph_recall": 0.6857,
+      "morph_precision": 0.5161,
+      "morph_fpr": 0.225,
+      "note": "naive metrics; see corrected metrics in paper (lucky-correct removed)"
+    },
+    "claude-opus-4-5": {
+      "n_exe": 300,
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "naive_accuracy": 0.7133,
+      "naive_wer": 0.2867,
+      "morph_recall": 0.7326,
+      "morph_precision": 0.5339,
+      "morph_fpr": 0.257,
+      "note": "naive metrics; see corrected metrics in paper (lucky-correct removed)"
+    }
+  },
+  "mutant_corpus": {
+    "n_valid": 563,
+    "full_morph_da_micro_ms": 0.6465,
+    "per_family": {
+      "aggregation": 0.2824,
+      "filter": 0.6763,
+      "grouping": 0.8095,
+      "hardcoding": 0.8527,
+      "ranking": 0.7615
+    }
+  },
+  "repair": {
+    "R0_no_retry": {
+      "n": 25,
+      "repaired": 0
+    },
+    "R2_generic": {
+      "n": 25,
+      "repaired": 1
+    },
+    "R6_relation_name": {
+      "n": 25,
+      "repaired": 1
+    },
+    "R7_witness": {
+      "n": 25,
+      "repaired": 1
+    }
+  }
+}

@@ -1,0 +1,6 @@
+mutation_family,killed,total,kill_rate
+aggregation,37,131,0.2824
+filter,117,173,0.6763
+grouping,17,21,0.8095
+hardcoding,110,129,0.8527
+ranking,83,109,0.7615

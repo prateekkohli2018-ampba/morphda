@@ -1,0 +1,21 @@
+{
+  "generated": 3030,
+  "equivalent": 146,
+  "not_applicable": 1922,
+  "valid": 398,
+  "op_AM-01b": 58,
+  "contract_invalid": 155,
+  "op_HM-02": 23,
+  "exec_invalid": 409,
+  "op_AM-01": 12,
+  "op_AM-02b": 15,
+  "op_RM-01": 77,
+  "op_HM-01": 69,
+  "op_FM-01": 58,
+  "op_FM-04": 61,
+  "op_FM-05": 2,
+  "op_GM-03": 7,
+  "op_AM-10": 4,
+  "op_AM-03": 6,
+  "op_GM-02": 6
+}

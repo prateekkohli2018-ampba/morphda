@@ -1,0 +1,75 @@
+
+Table 1: Benchmark Composition
+======================================================================
+Component                              Count
+----------------------------------------------------------------------
+  Controlled task specifications         101
+  Dataset scenarios                        8
+  Single-table tasks                     101
+  Multi-table tasks                        0
+  Difficulty L1-L2 (easy)                 72
+  Difficulty L3-L5 (hard)                 29
+
+  By difficulty level:             
+    L1                                    24
+    L2                                    48
+    L3                                    11
+    L4                                    16
+    L5                                     2
+
+  By scenario:                     
+    market01                              12
+    mktg01                                12
+    ops01                                 12
+    payments01                            12
+    retail01                              12
+    saas01                                12
+    support01                             12
+    web01                                 17
+======================================================================
+
+
+Table 2: Mutant Corpus Quality
+===========================================================================
+Component                              Count
+---------------------------------------------------------------------------
+  Generated candidates                  3030
+  Not applicable                        1922
+  Syntax invalid                           0
+  Execution invalid                      409
+  Contract invalid                       155
+  Provisionally equivalent               146
+  Valid non-equivalent (corpus)          398
+
+  By fault family:                 
+    aggregation                          131
+    filter                               173
+    grouping                              21
+    hardcoding                           129
+    ranking                              109
+===========================================================================
+
+
+Table 3: Verification on Controlled Mutants
+=====================================================================================
+Method                     Micro MS  Macro MS   Killed   Total
+-------------------------------------------------------------------------------------
+  Execution only (B0)         0.0%      0.0%       0     563
+  Universal MRs only (B7)     1.6%      8.6%        9     563
+  Universal+Filter+Agg MRs    61.5%     64.9%      346     563
+  Full MORPH-DA (B8)         64.7%     67.6%      364     563
+=====================================================================================
+
+
+Table 4: Detection Rate by Fault Family
+================================================================================
+Fault Family            Universal  Filter+Agg  Full MORPH      N
+--------------------------------------------------------------------------------
+  aggregation               0.0%     28.2%     28.2%    131
+  filter                    0.0%     67.6%     67.6%    173
+  grouping                 42.9%     81.0%     81.0%     21
+  hardcoding                0.0%     71.3%     85.3%    129
+  ranking                   0.0%     76.1%     76.1%    109
+--------------------------------------------------------------------------------
+  OVERALL                     1.6%     61.5%     64.7%    563
+================================================================================
