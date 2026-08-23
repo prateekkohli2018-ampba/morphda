@@ -1,83 +1,176 @@
 {
   "claude_haiku_4_5": {
     "name": "claude-haiku-4-5",
+    "methodology": "seed42_program_reexecuted_on_seeds_7_123",
+    "n_correct_seed42": 61,
+    "true_lucky_correct": 16,
+    "truly_correct": 45,
+    "morph_catches_lucky": 13,
+    "morph_lucky_catch_rate": 0.8125,
     "naive": {
-      "precision": 0.6202,
-      "recall": 0.7018,
-      "fpr": 0.2678,
-      "f1": 0.6584,
-      "aar": 0.2024
+      "precision": 0.5882,
+      "recall": 0.7895,
+      "fpr": 0.3443,
+      "f1": 0.6742,
+      "aar": 0.1667,
+      "tp": 30,
+      "fp": 21,
+      "tn": 40,
+      "fn": 8
     },
     "cross_seed": {
-      "precision": 0.876,
-      "recall": 0.6795,
-      "fpr": 0.1136,
-      "f1": 0.7653,
-      "aar": 0.2994
+      "precision": 0.875,
+      "recall": 0.7925,
+      "fpr": 0.1395,
+      "f1": 0.8317,
+      "aar": 0.2292,
+      "tp": 42,
+      "fp": 6,
+      "tn": 37,
+      "fn": 11,
+      "prec_ci": [
+        0.7708,
+        0.9583
+      ],
+      "rec_ci": [
+        0.6792,
+        0.9057
+      ],
+      "fpr_ci": [
+        0.0465,
+        0.2558
+      ]
     },
     "multi_seed_morph": {
-      "precision": 0.8652,
-      "recall": 0.7821,
-      "fpr": 0.1439,
-      "f1": 0.8215,
-      "aar": 0.2313
+      "precision": 0.86,
+      "recall": 0.8113,
+      "fpr": 0.1628,
+      "f1": 0.835,
+      "aar": 0.2174,
+      "tp": 43,
+      "fp": 7,
+      "tn": 36,
+      "fn": 10
     },
-    "accidental_corrects": 45,
-    "morph_catches": 29,
-    "morph_catch_rate": 0.6444
+    "mcnemar_chi2": 45.02,
+    "mcnemar_p": 1.9490522561169273e-11,
+    "mcnemar_n01": 47,
+    "mcnemar_n10": 0
   },
   "claude_sonnet_4_6": {
     "name": "claude-sonnet-4-6",
+    "methodology": "seed42_program_reexecuted_on_seeds_7_123",
+    "n_correct_seed42": 65,
+    "true_lucky_correct": 13,
+    "truly_correct": 52,
+    "morph_catches_lucky": 7,
+    "morph_lucky_catch_rate": 0.5385,
     "naive": {
-      "precision": 0.6509,
-      "recall": 0.6389,
-      "fpr": 0.1897,
-      "f1": 0.6449,
-      "aar": 0.198
+      "precision": 0.6667,
+      "recall": 0.7222,
+      "fpr": 0.2,
+      "f1": 0.6933,
+      "aar": 0.1613,
+      "tp": 26,
+      "fp": 13,
+      "tn": 52,
+      "fn": 10
     },
     "cross_seed": {
-      "precision": 0.8485,
-      "recall": 0.56,
-      "fpr": 0.1042,
-      "f1": 0.6747,
-      "aar": 0.3385
+      "precision": 0.8919,
+      "recall": 0.6735,
+      "fpr": 0.0816,
+      "f1": 0.7674,
+      "aar": 0.2623,
+      "tp": 33,
+      "fp": 4,
+      "tn": 45,
+      "fn": 16,
+      "prec_ci": [
+        0.7838,
+        0.973
+      ],
+      "rec_ci": [
+        0.5306,
+        0.7959
+      ],
+      "fpr_ci": [
+        0.0204,
+        0.1837
+      ]
     },
     "multi_seed_morph": {
-      "precision": 0.8142,
-      "recall": 0.6133,
-      "fpr": 0.1458,
-      "f1": 0.6996,
-      "aar": 0.3204
+      "precision": 0.8684,
+      "recall": 0.6735,
+      "fpr": 0.102,
+      "f1": 0.7586,
+      "aar": 0.2667,
+      "tp": 33,
+      "fp": 5,
+      "tn": 44,
+      "fn": 16
     },
-    "accidental_corrects": 42,
-    "morph_catches": 15,
-    "morph_catch_rate": 0.3571
+    "mcnemar_chi2": 35.03,
+    "mcnemar_p": 3.251606172649687e-09,
+    "mcnemar_n01": 37,
+    "mcnemar_n10": 0
   },
   "claude_opus_4_5": {
     "name": "claude-opus-4-5",
+    "methodology": "seed42_program_reexecuted_on_seeds_7_123",
+    "n_correct_seed42": 62,
+    "true_lucky_correct": 13,
+    "truly_correct": 49,
+    "morph_catches_lucky": 10,
+    "morph_lucky_catch_rate": 0.7692,
     "naive": {
-      "precision": 0.614,
-      "recall": 0.6306,
-      "fpr": 0.2378,
-      "f1": 0.6222,
-      "aar": 0.2253
+      "precision": 0.5882,
+      "recall": 0.8108,
+      "fpr": 0.3387,
+      "f1": 0.6818,
+      "aar": 0.1458,
+      "tp": 30,
+      "fp": 21,
+      "tn": 41,
+      "fn": 7
     },
     "cross_seed": {
-      "precision": 0.8113,
-      "recall": 0.6014,
-      "fpr": 0.1389,
-      "f1": 0.6908,
-      "aar": 0.3149
+      "precision": 0.7917,
+      "recall": 0.7917,
+      "fpr": 0.2083,
+      "f1": 0.7917,
+      "aar": 0.2083,
+      "tp": 38,
+      "fp": 10,
+      "tn": 38,
+      "fn": 10,
+      "prec_ci": [
+        0.6875,
+        0.8958
+      ],
+      "rec_ci": [
+        0.6667,
+        0.8958
+      ],
+      "fpr_ci": [
+        0.1042,
+        0.3333
+      ]
     },
     "multi_seed_morph": {
-      "precision": 0.8,
-      "recall": 0.7273,
-      "fpr": 0.1806,
-      "f1": 0.7619,
-      "aar": 0.2484
+      "precision": 0.78,
+      "recall": 0.8125,
+      "fpr": 0.2292,
+      "f1": 0.7959,
+      "aar": 0.1957,
+      "tp": 39,
+      "fp": 11,
+      "tn": 37,
+      "fn": 9
     },
-    "accidental_corrects": 38,
-    "morph_catches": 21,
-    "morph_catch_rate": 0.5526
+    "mcnemar_chi2": 46.02,
+    "mcnemar_p": 1.1700213117066312e-11,
+    "mcnemar_n01": 48,
+    "mcnemar_n10": 0
   }
 }
