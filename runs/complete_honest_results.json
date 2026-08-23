@@ -1,0 +1,83 @@
+{
+  "claude_haiku_4_5": {
+    "name": "claude-haiku-4-5",
+    "naive": {
+      "precision": 0.6202,
+      "recall": 0.7018,
+      "fpr": 0.2678,
+      "f1": 0.6584,
+      "aar": 0.2024
+    },
+    "cross_seed": {
+      "precision": 0.876,
+      "recall": 0.6795,
+      "fpr": 0.1136,
+      "f1": 0.7653,
+      "aar": 0.2994
+    },
+    "multi_seed_morph": {
+      "precision": 0.8652,
+      "recall": 0.7821,
+      "fpr": 0.1439,
+      "f1": 0.8215,
+      "aar": 0.2313
+    },
+    "accidental_corrects": 45,
+    "morph_catches": 29,
+    "morph_catch_rate": 0.6444
+  },
+  "claude_sonnet_4_6": {
+    "name": "claude-sonnet-4-6",
+    "naive": {
+      "precision": 0.6509,
+      "recall": 0.6389,
+      "fpr": 0.1897,
+      "f1": 0.6449,
+      "aar": 0.198
+    },
+    "cross_seed": {
+      "precision": 0.8485,
+      "recall": 0.56,
+      "fpr": 0.1042,
+      "f1": 0.6747,
+      "aar": 0.3385
+    },
+    "multi_seed_morph": {
+      "precision": 0.8142,
+      "recall": 0.6133,
+      "fpr": 0.1458,
+      "f1": 0.6996,
+      "aar": 0.3204
+    },
+    "accidental_corrects": 42,
+    "morph_catches": 15,
+    "morph_catch_rate": 0.3571
+  },
+  "claude_opus_4_5": {
+    "name": "claude-opus-4-5",
+    "naive": {
+      "precision": 0.614,
+      "recall": 0.6306,
+      "fpr": 0.2378,
+      "f1": 0.6222,
+      "aar": 0.2253
+    },
+    "cross_seed": {
+      "precision": 0.8113,
+      "recall": 0.6014,
+      "fpr": 0.1389,
+      "f1": 0.6908,
+      "aar": 0.3149
+    },
+    "multi_seed_morph": {
+      "precision": 0.8,
+      "recall": 0.7273,
+      "fpr": 0.1806,
+      "f1": 0.7619,
+      "aar": 0.2484
+    },
+    "accidental_corrects": 38,
+    "morph_catches": 21,
+    "morph_catch_rate": 0.5526
+  }
+}

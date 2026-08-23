@@ -1,0 +1,163 @@
+{
+  "ablation": {
+    "ms_full": 0.6465364120781527,
+    "ms_filter_agg": 0.6145648312611013,
+    "ms_universal": 0.015985790408525755,
+    "ms_drop_from_filter_agg": 0.031971580817051426,
+    "ms_drop_from_universal": 0.6305506216696269,
+    "per_family_rates": {
+      "aggregation": 0.2824427480916031,
+      "filter": 0.6763005780346821,
+      "grouping": 0.8095238095238095,
+      "hardcoding": 0.8527131782945736,
+      "ranking": 0.7614678899082569
+    }
+  },
+  "pr_tradeoff": {
+    "claude_haiku_4_5": {
+      "1": {
+        "precision": 0.846,
+        "recall": 0.679,
+        "fpr": 0.145,
+        "f1": 0.753,
+        "tp": 110,
+        "fp": 20,
+        "tn": 118,
+        "fn": 52
+      },
+      "2": {
+        "precision": 0.907,
+        "recall": 0.302,
+        "fpr": 0.036,
+        "f1": 0.454,
+        "tp": 49,
+        "fp": 5,
+        "tn": 133,
+        "fn": 113
+      },
+      "3": {
+        "precision": 0.844,
+        "recall": 0.167,
+        "fpr": 0.036,
+        "f1": 0.278,
+        "tp": 27,
+        "fp": 5,
+        "tn": 133,
+        "fn": 135
+      }
+    },
+    "claude_sonnet_4_6": {
+      "1": {
+        "precision": 0.792,
+        "recall": 0.56,
+        "fpr": 0.144,
+        "f1": 0.656,
+        "tp": 84,
+        "fp": 22,
+        "tn": 131,
+        "fn": 66
+      },
+      "2": {
+        "precision": 0.786,
+        "recall": 0.293,
+        "fpr": 0.078,
+        "f1": 0.427,
+        "tp": 44,
+        "fp": 12,
+        "tn": 141,
+        "fn": 106
+      },
+      "3": {
+        "precision": 0.756,
+        "recall": 0.207,
+        "fpr": 0.065,
+        "f1": 0.325,
+        "tp": 31,
+        "fp": 10,
+        "tn": 143,
+        "fn": 119
+      }
+    },
+    "claude_opus_4_5": {
+      "1": {
+        "precision": 0.805,
+        "recall": 0.621,
+        "fpr": 0.156,
+        "f1": 0.701,
+        "tp": 95,
+        "fp": 23,
+        "tn": 124,
+        "fn": 58
+      },
+      "2": {
+        "precision": 0.886,
+        "recall": 0.255,
+        "fpr": 0.034,
+        "f1": 0.396,
+        "tp": 39,
+        "fp": 5,
+        "tn": 142,
+        "fn": 114
+      },
+      "3": {
+        "precision": 1.0,
+        "recall": 0.124,
+        "fpr": 0.0,
+        "f1": 0.221,
+        "tp": 19,
+        "fp": 0,
+        "tn": 147,
+        "fn": 134
+      }
+    }
+  },
+  "effect_sizes": {
+    "claude_haiku_4_5": {
+      "odds_ratio": Infinity,
+      "or_ci_lo": "inf",
+      "or_ci_hi": "inf"
+    },
+    "claude_sonnet_4_6": {
+      "odds_ratio": Infinity,
+      "or_ci_lo": "inf",
+      "or_ci_hi": "inf"
+    },
+    "claude_opus_4_5": {
+      "odds_ratio": Infinity,
+      "or_ci_lo": "inf",
+      "or_ci_hi": "inf"
+    },
+    "mutation": {
+      "odds_ratio": Infinity
+    }
+  },
+  "latency_ms": {
+    "n": 20,
+    "mean": 500.2,
+    "median": 525.4,
+    "p95": 1143.5,
+    "max": 1143.5,
+    "min": 5.2
+  },
+  "repair_equivalence": {
+    "upper_bound_90ci": 0.088,
+    "n_pairs": 25
+  },
+  "per_seed_accuracy": {
+    "claude_haiku_4_5": {
+      "7": 0.752,
+      "42": 0.604,
+      "123": 0.713
+    },
+    "claude_sonnet_4_6": {
+      "7": 0.772,
+      "42": 0.644,
+      "123": 0.733
+    },
+    "claude_opus_4_5": {
+      "7": 0.743,
+      "42": 0.614,
+      "123": 0.762
+    }
+  }
+}

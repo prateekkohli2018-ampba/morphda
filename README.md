@@ -9,62 +9,98 @@
 AI agents that answer business questions work by writing and running Python code. A program can **execute successfully and return a confident answer that is completely wrong** — because it silently:
 
 - Forgot to exclude cancelled orders
-- Used `mean` instead of `median`
+- Used `mean` instead of `sum`
 - Applied the date filter to the wrong column
 - Counted total sessions instead of distinct customers
-- Used `sum` when the question asked for a year-over-year change
+- Used absolute change when the question asked for year-over-year percentage
 
-There is no error. No crash. The answer just looks correct.
+There is no error. No crash. The answer just looks correct. We call these **wrong-but-executable programs**.
 
-We call these **wrong-but-executable programs**. The current industry-standard check — "did it run?" — catches **0% of them**.
+There are two ways they slip through:
+
+**1. Execution-only testing catches 0%** — if the program runs without crashing, it passes.
+
+**2. Single-seed gold-answer comparison is unreliable** — a program can accidentally return the correct answer on one dataset but fail on others. We call these **accidental corrects**: their filter or aggregation logic is wrong, but it doesn't happen to matter on that particular data distribution. In our experiments, **38–45 programs per model** passed single-seed evaluation this way.
 
 ---
 
 ## What MORPH-DA Does
 
-MORPH-DA verifies data-analysis programs by running them on **controlled data transformations** and checking whether the outputs satisfy algebraic invariants — without ever seeing the gold answer.
+MORPH-DA verifies data-analysis programs by running them on **controlled data transformations** and checking whether outputs satisfy mathematical invariants — without ever seeing the gold answer.
 
-**Example:** A question asks for the top revenue category in 2025. MORPH-DA secretly adds fake rows with dates in 2024 and extreme revenue values. A correct program ignores them (they're outside the requested year). If the answer changes, the program almost certainly has a date-filter bug.
+**Example 1 — Filter bug detection (MR-F1):**
+Question asks for top revenue category among non-cancelled orders in 2025. MORPH-DA adds rows with `order_status='cancelled'` and extreme revenue values. A correct program ignores them. If the answer changes, the status filter is missing.
 
-This is **metamorphic testing** applied to analytical programs: instead of checking the final answer, we check that the program *behaves* correctly under structured data variations.
+**Example 2 — Aggregation bug detection (MR-A1):**
+MORPH-DA doubles all rows. The `mean` must be unchanged; the `sum` must double. A program using `sum` instead of `mean` is exposed.
+
+**Example 3 — Period swap detection (MR-T4):**
+MORPH-DA inserts a synthetic group with a huge year-over-year increase. A correct program reports it as the winner. A program with swapped current/prior periods does not.
+
+This is **metamorphic testing**: instead of checking the final answer, check that the program *behaves correctly* under structured input variations.
 
 ---
 
 ## Key Results
 
-### Controlled Mutation Detection (563 known bugs)
+### Controlled Mutation Detection (563 validated mutants)
 
-| Method | Bugs Caught | Statistical Significance |
-|---|---|---|
-| Execution-only ("did it run?") | **0%** | — |
-| Universal robustness checks | 1.6% | p=0.008 |
-| MORPH-DA Filter+Aggregation | 61.5% | p<0.001 ★★★ |
-| **Full MORPH-DA** | **64.7%** [60–69%] | **p<0.001 ★★★** |
+| Method | Bugs Caught | 95% CI | McNemar p |
+|---|---|---|---|
+| Execution-only | 0% | — | — |
+| Universal relations only | 1.6% | — | baseline |
+| **Full MORPH-DA (single rng-seed)** | **64.7%** | [58.5%, 70.5%] | **p < 0.000001** |
 
-McNemar's test (Holm-corrected). Task-clustered 95% CI.
+MORPH-DA is **40× more effective** than the universal-only baseline.
 
 **Per-fault-family detection rate:**
 
-| Fault Type | Example | Caught |
-|---|---|---|
-| Hardcoding | Return `'Electronics'` regardless of data | **85%** |
-| Wrong grouping | Group by `department` instead of `category` | **81%** |
-| Wrong sort direction | Ascending instead of descending | **76%** |
-| Missing filter | Forget `status != cancelled` | **68%** |
-| Wrong aggregation | `sum` instead of `mean` | **28%** |
+| Fault Family | Example bug | Kill rate | 95% CI |
+|---|---|---|---|
+| Hardcoding | Return `'Electronics'` instead of computing | **85.3%** | [77.6%, 92.0%] |
+| Grouping | Wrong GROUP BY column | **81.0%** | [54.5%, 100%] |
+| Ranking | Ascending instead of descending sort | **76.1%** | [65.8%, 85.6%] |
+| Filter/Scope | Missing `status != 'cancelled'` filter | **67.6%** | [57.1%, 77.5%] |
+| Aggregation | `.sum()` instead of `.mean()` | **28.2%** | [17.2%, 39.0%] |
 
-### Natural Agent Evaluation (909 programs, 3 models × 3 seeds)
+*Note: Aggregation family is hardest — for label (ranking winner) output, the wrong aggregation may still produce the correct winner. MORPH-DA catches these when output type is scalar.*
 
-We ran three Claude models on 101 business analytics tasks. A critical finding: **single-seed gold-answer comparison is too lenient** — 25–33% of programs labeled "correct" on one dataset fail on held-out datasets. After cross-seed correction:
+### Natural Agent Evaluation (3 models × 3 seeds × 101 tasks)
 
-| Model | Programs | True WER† | MORPH Recall | Precision | FPR |
+Results are reported under three conditions with increasing rigor:
+
+| Condition | What it measures |
+|---|---|
+| **A) Naive** | Single-seed evaluation, no correction. Represents production setting. |
+| **B) Cross-seed corrected** | Programs correct on seed=42 but wrong on seeds 7 or 123 are reclassified as wrong (accidental corrects removed). 98-task set (3 filter-non-discriminating tasks excluded). |
+| **C) Multi-seed MORPH-DA** | Condition B ground truth + MORPH-DA run with 2 transformation seeds (rng=42 and rng=7). Flagged if either fires. |
+
+| Model | Condition | Precision | Recall | FPR | F1 |
 |---|---|---|---|---|---|
-| claude-haiku-4-5 | 300 | **53.7%** | 70% | **87%** | 12% |
-| claude-sonnet-4-6 | 270 | **44.4%** | 61% | **79%** | 13% |
-| claude-opus-4-5 | 300 | **48.3%** | 63% | **77%** | 17% |
-| **Average** | **870** | **~49%** | **65%** | **81%** | **14%** |
+| claude-haiku-4-5 | A) Naive | 62.0% | 70.2% | 26.8% | 65.8% |
+| | B) Cross-seed corrected | **87.6%** | 67.9% | **11.4%** | 76.5% |
+| | C) Multi-seed MORPH-DA | 86.5% | **78.2%** | 14.4% | **82.2%** |
+| claude-sonnet-4-6 | A) Naive | 65.1% | 63.9% | 19.0% | 64.5% |
+| | B) Cross-seed corrected | **84.9%** | 56.0% | **10.4%** | 67.5% |
+| | C) Multi-seed MORPH-DA | 81.4% | **61.3%** | 14.6% | **70.0%** |
+| claude-opus-4-5 | A) Naive | 61.4% | 63.1% | 23.8% | 62.2% |
+| | B) Cross-seed corrected | **81.1%** | 60.1% | **13.9%** | 69.1% |
+| | C) Multi-seed MORPH-DA | 80.0% | **72.7%** | 18.1% | **76.2%** |
 
-†WER = wrong-but-executable rate; programs that run successfully but return wrong answers.
+McNemar χ² vs universal baseline: all p < 0.0001 (Holm-Bonferroni corrected).
+
+**MORPH-DA catches 36–64% of accidental corrects** using single-seed transformations alone, without cross-seed access.
+
+### Repair Experiment (n=91 wrong programs)
+
+| Strategy | Description | Fix rate |
+|---|---|---|
+| R0 — No retry | Baseline | 0.0% |
+| R2 — Generic feedback | "Your program has a bug" | 5.5% |
+| R6 — Relation name | "You violated MR-F1 (filter/scope)" | **12.1%** |
+| R7 — Witness-guided | Full counterexample + diagnosis | **12.1%** |
+
+Naming the violated relation doubles the one-shot repair rate. For multi-round repair, use R7 witnesses iteratively.
 
 ---
 
@@ -73,53 +109,54 @@ We ran three Claude models on 101 business analytics tasks. A critical finding: 
 ```
 morph-da/
 ├── morphda/                    # Core Python package
-│   ├── tasks/                  # Task specification DSL + factory + validator
+│   ├── tasks/                  # Task specification DSL (Pydantic) + 101-task factory
 │   ├── data/                   # Seeded data generators (8 business scenarios)
-│   ├── reference/              # Reference program compiler (L1–L5 tasks)
-│   ├── relations/              # 30 metamorphic relations across 8 families
-│   ├── mutations/              # 34 AST-level mutation operators
-│   ├── verification/           # Verification engine + scoring + witnesses
-│   ├── execution/              # Safe sandbox + output normalization
+│   ├── reference/              # Reference program compiler (L1–L5)
+│   ├── relations/              # 20+ metamorphic relations across 8 families
+│   ├── mutations/              # AST-level mutation operators (5 families)
+│   ├── verification/           # Engine: relations → decision + witnesses
+│   ├── execution/              # Sandboxed Python runner + output normalization
 │   ├── evaluation/             # Metrics, bootstrap CI, McNemar tests
-│   ├── baselines/              # B0–B6 comparison baselines
-│   ├── agents/                 # LLM agent + Code-Puppy gateway
-│   ├── repair/                 # R0–R7 repair prompt strategies
+│   ├── baselines/              # Comparison baselines (B0–B5)
+│   ├── agents/                 # LLM agent harness (Anthropic-compatible)
+│   ├── repair/                 # Repair prompt strategies (R0–R7)
 │   └── logging/                # Structured JSONL experiment logging
 ├── benchmark/
-│   ├── task_specs/             # YAML task specification examples
+│   ├── task_specs/             # YAML task specifications
 │   └── frozen_mutants/         # Mutant corpus statistics
 ├── configs/                    # Benchmark, model, relation configs
-├── scripts/                    # Experiment runners
-│   ├── validate_references.py  # Phase 1: verify reference programs (0 FP)
-│   ├── generate_rule_mutants.py # Generate deterministic mutant corpus
-│   ├── run_verification.py     # Run MORPH-DA on mutant corpus
-│   ├── run_natural_agents.py   # Run LLM agents on benchmark tasks
-│   ├── run_repair.py           # Repair experiment (R0–R7)
-│   ├── make_paper_figures.py   # Figures 4 & 5
-│   └── monitor_quota.py        # Gateway quota monitor
-├── tests/                      # 103 pytest tests
-├── paper/
-│   ├── morph_da_paper.md       # Full paper draft
-│   ├── executive_summary.md    # Non-technical summary
-│   └── figures/                # Kill matrix, detection curve CSVs
-└── runs/
-    └── results_summary.json    # Machine-readable experiment results
+├── scripts/
+│   ├── validate_references.py  # Phase 1: verify 0 false positives on references
+│   ├── generate_rule_mutants.py
+│   ├── run_verification.py
+│   ├── run_natural_agents.py
+│   ├── run_natural_agents_parallel.py
+│   ├── run_repair.py
+│   └── make_paper_figures.py
+├── tests/                      # pytest test suite
+├── runs/
+│   ├── paper_results.json      # All computed statistics
+│   ├── complete_honest_results.json  # Three-condition metrics
+│   ├── filter_discriminability.json  # Filter non-discriminating task analysis
+│   └── zero_cost_analyses.json       # Ablation, latency, PR tradeoff
+├── CODEBASE_REVIEW.md          # Deep-dive: every module explained
+└── CODEBASE_REVIEW.html        # Standalone interactive HTML (open directly)
 ```
 
 ---
 
 ## Metamorphic Relation Families
 
-| Family | Example Relation | Detects |
+| Family | Relations | What it detects |
 |---|---|---|
-| **Universal** | Row shuffle must not change output | Positional dependence, index use |
-| **Filter/Scope** | Out-of-scope rows must be ignored | Missing filters, wrong date bounds |
-| **Aggregation** | Row duplication: mean unchanged, sum doubles | Sum vs mean, count vs distinct |
-| **Grouping** | Insert dominant group → winner must switch | Hardcoded labels, wrong groupby |
-| **Time** | Prior-period boost → YoY metric changes directionally | Period swap, absolute vs. relative |
-| **Statistics** | Translation invariance of variance | Wrong aggregation operator |
-| **Join** | Ghost dimension rows must be ignored | Cartesian products, wrong join key |
-| **Hardcoding** | 1000× scaling → output must change | Hardcoded answers, ignored data |
+| **Universal** | MR-U1 to MR-U4 | Row order dependence, index use, column position access |
+| **Filter/Scope** | MR-F1 to MR-F4 | Missing filters, wrong date bounds, AND→OR conversion |
+| **Aggregation** | MR-A1 to MR-A9 | sum↔mean, count↔distinct, wrong denominator |
+| **Grouping** | MR-G1 to MR-G4 | Wrong GROUP BY, hardcoded labels |
+| **Time** | MR-T1 to MR-T5 | Period swap, absolute vs relative change, wrong date window |
+| **Statistics** | MR-S* | Translation invariance, variance computation |
+| **Joins** | MR-J* | Cartesian products, wrong join key |
+| **Hardcoding** | MR-H* | Answers that ignore input data entirely |
 
 ---
 
@@ -128,95 +165,89 @@ morph-da/
 ### Install
 
 ```bash
-cd morph-da
 pip install -e ".[dev]"
 ```
 
-### Validate the benchmark (Phase 1 exit condition)
+### Validate the benchmark
 
 ```bash
 python scripts/validate_references.py
-# Expected: 101/101 PASS, 0 MR violations
+# Expected: 101/101 PASS, 0 MR violations on reference programs
 ```
 
-### Generate and verify mutants
+### Run agents
 
 ```bash
-python scripts/generate_rule_mutants.py
-python scripts/run_verification.py --workers 6
+export ANTHROPIC_API_KEY=sk-ant-...
+
+# Sequential (pilot)
+python scripts/run_natural_agents.py --model claude-haiku-4-5 --seeds 42 7 123
+
+# Parallel (full run)
+python scripts/run_natural_agents_parallel.py \
+  --model claude-haiku-4-5 --seeds 42 7 123 --workers 8
 ```
 
-### Run agents (requires Anthropic API key or compatible gateway)
+### Custom / compatible LLM endpoint
 
 ```bash
-# With Anthropic API key
-ANTHROPIC_API_KEY=... python scripts/run_natural_agents.py --model claude-haiku-4-5 --seeds 42 7 123
+# Any Anthropic-compatible endpoint
+export MORPH_DA_API_URL=https://your-proxy.example.com/v1/messages
+export MORPH_DA_API_KEY=your-key
 
-# With any OpenAI-compatible gateway
-python scripts/run_natural_agents.py --model claude-opus-4-5
+python scripts/run_natural_agents.py --model claude-haiku-4-5
 ```
 
-### Check quota and experiment status
+### Verify a program directly
 
-```bash
-python scripts/monitor_quota.py --interval 5
-```
+```python
+from morphda.relations import ALL_RELATIONS
+from morphda.verification.engine import VerificationEngine
+from morphda.tasks.factory import generate_task_set
+from morphda.data.generators import generate_scenario
 
-### Verify a single program (CLI)
+task   = generate_task_set()[5]          # pick any task
+tables = generate_scenario(task.scenario_id, seed=42)
+engine = VerificationEngine(ALL_RELATIONS)
 
-```bash
-python -m morphda info         # benchmark summary
-python -m morphda validate     # Phase 1 check
+report = engine.verify(
+    program_source=your_program_string,
+    tables=tables,
+    task_spec=task,
+)
+print(report.decision)      # "pass" | "fail" | "error"
+print(report.witnesses)     # counterexamples if fail
 ```
 
 ---
 
-## Benchmark Design
+## Benchmark Design Principles
 
-**101 tasks** across 8 realistic business scenarios:
-
-| Scenario | Domain | Tables |
-|---|---|---|
-| `retail01` | Orders and products | orders |
-| `web01` | Sessions and conversions | sessions, conversions |
-| `market01` | Seller marketplace | seller_orders |
-| `saas01` | SaaS subscriptions | subscriptions |
-| `mktg01` | Marketing campaigns | campaigns |
-| `payments01` | Payments and refunds | transactions |
-| `ops01` | Fulfillment operations | shipments |
-| `support01` | Customer tickets | tickets |
-
-**5 difficulty levels:**
-
-| Level | Operators | Example |
-|---|---|---|
-| L1 | Scalar aggregation | "What is the total revenue?" |
-| L2 | Grouped ranking + optional date/filter | "Which category had the highest revenue in 2025?" |
-| L3 | Ratio with minimum support | "Which category had the highest conversion rate (≥100 sessions)?" |
-| L4 | Year-over-year percentage change | "Which category grew the most vs. last year?" |
-| L5 | Multi-filter + ratio + YoY + threshold | "Among new customers, which category improved conversion rate the most, for categories with ≥30 sessions?" |
+- **101 tasks**, 8 business scenarios, 5 difficulty levels (L1 scalar → L5 cohort ratio + YoY)
+- **Deterministic data**: every seed always produces the same tables — correctness is exact, not probabilistic
+- **Filter discriminability**: data generators ensure required filters always change the answer
+- **No gold answer in verifier**: MORPH-DA relations are mathematically derived — the verifier never sees the reference output
+- **Mutation operators blind to relations**: mutation operators don't import relation code, ensuring mutation score is a genuine test
 
 ---
 
-## The Lucky-Correct Problem
+## Documentation
 
-A key finding from our evaluation: **single-seed gold-answer comparison is insufficient** for evaluating agent correctness. Programs that happen to return the right answer on one dataset may fail on others — because their filter logic is wrong but the bug doesn't matter for that specific data distribution.
-
-We call these **lucky-correct programs**. In our experiments, **25–33% of programs labeled "correct" by single-seed evaluation flip wrong on held-out seeds**. After correcting for this:
-
-- Naive single-seed WER: **25–37%**
-- Cross-seed corrected true WER: **44–54%**
-- MORPH-DA precision rises from ~51% → **77–87%** (flagged programs are more reliably wrong)
-
-**Recommendation:** Always evaluate agent correctness on ≥3 independent data seeds before drawing conclusions about accuracy.
+| File | Contents |
+|---|---|
+| `CODEBASE_REVIEW.md` | Every module explained: what it does, why, how it connects, known edge cases |
+| `CODEBASE_REVIEW.html` | Same content as interactive webpage — open directly in any browser, no server needed |
+| `runs/paper_results.json` | All computed statistics (precision, recall, CIs, McNemar tests) |
+| `runs/complete_honest_results.json` | Three-condition metrics side by side |
+| `paper/morph_da_paper.md` | Full paper draft |
 
 ---
 
 ## Citation
 
 ```bibtex
-@misc{kohli2026morph,
-  title  = {{MORPH-DA}: A Mutation-Grounded Benchmark for Metamorphic
+@misc{kohli2026morphda,
+  title  = {{MORPH-DA}: Mutation-Grounded Benchmark for Metamorphic
              Verification of Data Analysis Agents},
   author = {Kohli, Prateek},
   year   = {2026},
@@ -229,6 +260,3 @@ We call these **lucky-correct programs**. In our experiments, **25–33% of prog
 ## License
 
 MIT
-
----
-

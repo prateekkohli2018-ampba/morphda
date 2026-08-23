@@ -1,0 +1,609 @@
+{
+  "models": {
+    "claude_haiku_4_5": {
+      "name": "claude-haiku-4-5",
+      "n_tasks": 101,
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "truly_correct": 46,
+      "lucky_correct": 15,
+      "tp": 110,
+      "fp": 20,
+      "tn": 118,
+      "fn": 52,
+      "precision": 0.8462,
+      "recall": 0.679,
+      "fpr": 0.1449,
+      "f1": 0.7534,
+      "accepted_answer_risk": 0.3059,
+      "prec_ci": [
+        0.746,
+        0.9323
+      ],
+      "rec_ci": [
+        0.589,
+        0.7669
+      ],
+      "fpr_ci": [
+        0.058,
+        0.2391
+      ],
+      "univ_precision": 1.0,
+      "univ_recall": 0.0062,
+      "mcnemar_chi2": 127.01,
+      "mcnemar_p": 1.8504929373502363e-29,
+      "mcnemar_n01": 129,
+      "mcnemar_n10": 0,
+      "by_difficulty": {
+        "1": {
+          "precision": 0.5,
+          "recall": 0.3333,
+          "fpr": 0.0145,
+          "tp": 1,
+          "fp": 1,
+          "tn": 68,
+          "fn": 2
+        },
+        "2": {
+          "precision": 0.8831,
+          "recall": 0.7556,
+          "fpr": 0.1667,
+          "tp": 68,
+          "fp": 9,
+          "tn": 45,
+          "fn": 22
+        },
+        "3": {
+          "precision": 0.75,
+          "recall": 0.875,
+          "fpr": 0.7778,
+          "tp": 21,
+          "fp": 7,
+          "tn": 2,
+          "fn": 3
+        },
+        "4": {
+          "precision": 0.8636,
+          "recall": 0.4524,
+          "fpr": 0.5,
+          "tp": 19,
+          "fp": 3,
+          "tn": 3,
+          "fn": 23
+        },
+        "5": {
+          "precision": 1.0,
+          "recall": 0.3333,
+          "fpr": 0,
+          "tp": 1,
+          "fp": 0,
+          "tn": 0,
+          "fn": 2
+        }
+      },
+      "by_scenario": {
+        "market01": {
+          "precision": 0.8421,
+          "recall": 0.8889,
+          "fpr": 0.1667,
+          "tp": 16,
+          "fp": 3,
+          "tn": 15,
+          "fn": 2
+        },
+        "mktg01": {
+          "precision": 1.0,
+          "recall": 0.375,
+          "fpr": 0.0,
+          "tp": 9,
+          "fp": 0,
+          "tn": 12,
+          "fn": 15
+        },
+        "ops01": {
+          "precision": 0.7273,
+          "recall": 0.5333,
+          "fpr": 0.1429,
+          "tp": 8,
+          "fp": 3,
+          "tn": 18,
+          "fn": 7
+        },
+        "payments01": {
+          "precision": 0.7857,
+          "recall": 0.6111,
+          "fpr": 0.1667,
+          "tp": 11,
+          "fp": 3,
+          "tn": 15,
+          "fn": 7
+        },
+        "retail01": {
+          "precision": 0.8571,
+          "recall": 0.8571,
+          "fpr": 0.2,
+          "tp": 18,
+          "fp": 3,
+          "tn": 12,
+          "fn": 3
+        },
+        "saas01": {
+          "precision": 1.0,
+          "recall": 0.7778,
+          "fpr": 0.0,
+          "tp": 14,
+          "fp": 0,
+          "tn": 18,
+          "fn": 4
+        },
+        "support01": {
+          "precision": 0.4615,
+          "recall": 0.5,
+          "fpr": 0.2917,
+          "tp": 6,
+          "fp": 7,
+          "tn": 17,
+          "fn": 6
+        },
+        "web01": {
+          "precision": 0.9655,
+          "recall": 0.7778,
+          "fpr": 0.0833,
+          "tp": 28,
+          "fp": 1,
+          "tn": 11,
+          "fn": 8
+        }
+      },
+      "mcnemar_p_holm": 0.0,
+      "lucky_correct_morph_confirmed": 12,
+      "lucky_correct_morph_missed": 3,
+      "seed42_correct": 61,
+      "seed42_wrong": 40,
+      "lucky_correct_note": "Lucky-correct = passes seed=42 but fails >=1 other seed. Data is deterministic so this is ALWAYS a structural bug. MORPH-DA confirms most; missed ones represent recall gap not data variation."
+    },
+    "claude_sonnet_4_6": {
+      "name": "claude-sonnet-4-6",
+      "n_tasks": 101,
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "truly_correct": 51,
+      "lucky_correct": 14,
+      "tp": 84,
+      "fp": 22,
+      "tn": 131,
+      "fn": 66,
+      "precision": 0.7925,
+      "recall": 0.56,
+      "fpr": 0.1438,
+      "f1": 0.6562,
+      "accepted_answer_risk": 0.335,
+      "prec_ci": [
+        0.6634,
+        0.9072
+      ],
+      "rec_ci": [
+        0.4467,
+        0.6733
+      ],
+      "fpr_ci": [
+        0.0588,
+        0.2353
+      ],
+      "univ_precision": 0,
+      "univ_recall": 0.0,
+      "mcnemar_chi2": 104.01,
+      "mcnemar_p": 2.0135501579388846e-24,
+      "mcnemar_n01": 106,
+      "mcnemar_n10": 0,
+      "by_difficulty": {
+        "1": {
+          "precision": 0,
+          "recall": 0,
+          "fpr": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "tn": 72,
+          "fn": 0
+        },
+        "2": {
+          "precision": 0.7917,
+          "recall": 0.7308,
+          "fpr": 0.2273,
+          "tp": 57,
+          "fp": 15,
+          "tn": 51,
+          "fn": 21
+        },
+        "3": {
+          "precision": 0.72,
+          "recall": 0.75,
+          "fpr": 0.7778,
+          "tp": 18,
+          "fp": 7,
+          "tn": 2,
+          "fn": 6
+        },
+        "4": {
+          "precision": 1.0,
+          "recall": 0.0714,
+          "fpr": 0.0,
+          "tp": 3,
+          "fp": 0,
+          "tn": 6,
+          "fn": 39
+        },
+        "5": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "fpr": 0,
+          "tp": 6,
+          "fp": 0,
+          "tn": 0,
+          "fn": 0
+        }
+      },
+      "by_scenario": {
+        "market01": {
+          "precision": 0.9333,
+          "recall": 0.7778,
+          "fpr": 0.0556,
+          "tp": 14,
+          "fp": 1,
+          "tn": 17,
+          "fn": 4
+        },
+        "mktg01": {
+          "precision": 1.0,
+          "recall": 0.2857,
+          "fpr": 0.0,
+          "tp": 6,
+          "fp": 0,
+          "tn": 15,
+          "fn": 15
+        },
+        "ops01": {
+          "precision": 0.4,
+          "recall": 0.1667,
+          "fpr": 0.125,
+          "tp": 2,
+          "fp": 3,
+          "tn": 21,
+          "fn": 10
+        },
+        "payments01": {
+          "precision": 0.6,
+          "recall": 0.6,
+          "fpr": 0.2857,
+          "tp": 9,
+          "fp": 6,
+          "tn": 15,
+          "fn": 6
+        },
+        "retail01": {
+          "precision": 0.7857,
+          "recall": 0.5238,
+          "fpr": 0.2,
+          "tp": 11,
+          "fp": 3,
+          "tn": 12,
+          "fn": 10
+        },
+        "saas01": {
+          "precision": 0.9231,
+          "recall": 0.8,
+          "fpr": 0.0476,
+          "tp": 12,
+          "fp": 1,
+          "tn": 20,
+          "fn": 3
+        },
+        "support01": {
+          "precision": 0.4444,
+          "recall": 0.3333,
+          "fpr": 0.2083,
+          "tp": 4,
+          "fp": 5,
+          "tn": 19,
+          "fn": 8
+        },
+        "web01": {
+          "precision": 0.8966,
+          "recall": 0.7222,
+          "fpr": 0.2,
+          "tp": 26,
+          "fp": 3,
+          "tn": 12,
+          "fn": 10
+        }
+      },
+      "mcnemar_p_holm": 0.0,
+      "lucky_correct_morph_confirmed": 4,
+      "lucky_correct_morph_missed": 10,
+      "seed42_correct": 65,
+      "seed42_wrong": 36,
+      "lucky_correct_note": "Lucky-correct = passes seed=42 but fails >=1 other seed. Data is deterministic so this is ALWAYS a structural bug. MORPH-DA confirms most; missed ones represent recall gap not data variation."
+    },
+    "claude_opus_4_5": {
+      "name": "claude-opus-4-5",
+      "n_tasks": 101,
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "truly_correct": 49,
+      "lucky_correct": 13,
+      "tp": 95,
+      "fp": 23,
+      "tn": 124,
+      "fn": 58,
+      "precision": 0.8051,
+      "recall": 0.6209,
+      "fpr": 0.1565,
+      "f1": 0.7011,
+      "accepted_answer_risk": 0.3187,
+      "prec_ci": [
+        0.6923,
+        0.9106
+      ],
+      "rec_ci": [
+        0.5235,
+        0.7219
+      ],
+      "fpr_ci": [
+        0.0748,
+        0.2517
+      ],
+      "univ_precision": 0,
+      "univ_recall": 0.0,
+      "mcnemar_chi2": 116.01,
+      "mcnemar_p": 4.7326982919297275e-27,
+      "mcnemar_n01": 118,
+      "mcnemar_n10": 0,
+      "by_difficulty": {
+        "1": {
+          "precision": 0,
+          "recall": 0,
+          "fpr": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "tn": 72,
+          "fn": 0
+        },
+        "2": {
+          "precision": 0.8077,
+          "recall": 0.75,
+          "fpr": 0.25,
+          "tp": 63,
+          "fp": 15,
+          "tn": 45,
+          "fn": 21
+        },
+        "3": {
+          "precision": 0.7692,
+          "recall": 0.8333,
+          "fpr": 0.6667,
+          "tp": 20,
+          "fp": 6,
+          "tn": 3,
+          "fn": 4
+        },
+        "4": {
+          "precision": 0.8,
+          "recall": 0.1951,
+          "fpr": 0.3333,
+          "tp": 8,
+          "fp": 2,
+          "tn": 4,
+          "fn": 33
+        },
+        "5": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "fpr": 0,
+          "tp": 4,
+          "fp": 0,
+          "tn": 0,
+          "fn": 0
+        }
+      },
+      "by_scenario": {
+        "market01": {
+          "precision": 0.9474,
+          "recall": 0.8571,
+          "fpr": 0.0667,
+          "tp": 18,
+          "fp": 1,
+          "tn": 14,
+          "fn": 3
+        },
+        "mktg01": {
+          "precision": 1.0,
+          "recall": 0.3333,
+          "fpr": 0.0,
+          "tp": 7,
+          "fp": 0,
+          "tn": 15,
+          "fn": 14
+        },
+        "ops01": {
+          "precision": 0.6667,
+          "recall": 0.4,
+          "fpr": 0.1429,
+          "tp": 6,
+          "fp": 3,
+          "tn": 18,
+          "fn": 9
+        },
+        "payments01": {
+          "precision": 0.8462,
+          "recall": 0.6111,
+          "fpr": 0.1111,
+          "tp": 11,
+          "fp": 2,
+          "tn": 16,
+          "fn": 7
+        },
+        "retail01": {
+          "precision": 0.7059,
+          "recall": 0.7059,
+          "fpr": 0.2778,
+          "tp": 12,
+          "fp": 5,
+          "tn": 13,
+          "fn": 5
+        },
+        "saas01": {
+          "precision": 0.7692,
+          "recall": 0.6667,
+          "fpr": 0.1429,
+          "tp": 10,
+          "fp": 3,
+          "tn": 18,
+          "fn": 5
+        },
+        "support01": {
+          "precision": 0.4545,
+          "recall": 0.4167,
+          "fpr": 0.25,
+          "tp": 5,
+          "fp": 6,
+          "tn": 18,
+          "fn": 7
+        },
+        "web01": {
+          "precision": 0.8966,
+          "recall": 0.7647,
+          "fpr": 0.2,
+          "tp": 26,
+          "fp": 3,
+          "tn": 12,
+          "fn": 8
+        }
+      },
+      "mcnemar_p_holm": 0.0,
+      "lucky_correct_morph_confirmed": 10,
+      "lucky_correct_morph_missed": 3,
+      "seed42_correct": 62,
+      "seed42_wrong": 39,
+      "lucky_correct_note": "Lucky-correct = passes seed=42 but fails >=1 other seed. Data is deterministic so this is ALWAYS a structural bug. MORPH-DA confirms most; missed ones represent recall gap not data variation."
+    }
+  },
+  "mutation": {
+    "total": 563,
+    "killed": 364,
+    "mutation_score": 0.6465,
+    "ms_ci": [
+      0.5844,
+      0.7047
+    ],
+    "universal_ms": 0.016,
+    "mcnemar_chi2": 353.0,
+    "mcnemar_p": 9.40246109661622e-79,
+    "n01": 355,
+    "n10": 0,
+    "by_family": {
+      "aggregation": {
+        "n": 131,
+        "killed": 37,
+        "rate": 0.2824,
+        "ci": [
+          0.1719,
+          0.3897
+        ]
+      },
+      "filter": {
+        "n": 173,
+        "killed": 117,
+        "rate": 0.6763,
+        "ci": [
+          0.5714,
+          0.7747
+        ]
+      },
+      "grouping": {
+        "n": 21,
+        "killed": 17,
+        "rate": 0.8095,
+        "ci": [
+          0.5455,
+          1.0
+        ]
+      },
+      "hardcoding": {
+        "n": 129,
+        "killed": 110,
+        "rate": 0.8527,
+        "ci": [
+          0.776,
+          0.9203
+        ]
+      },
+      "ranking": {
+        "n": 109,
+        "killed": 83,
+        "rate": 0.7615,
+        "ci": [
+          0.6577,
+          0.8559
+        ]
+      }
+    }
+  },
+  "repair": {
+    "R0_no_retry": {
+      "n": 25,
+      "fixed": 0,
+      "rate": 0.0
+    },
+    "R2_generic": {
+      "n": 25,
+      "fixed": 1,
+      "rate": 0.04
+    },
+    "R6_relation_name": {
+      "n": 25,
+      "fixed": 1,
+      "rate": 0.04
+    },
+    "R7_witness": {
+      "n": 25,
+      "fixed": 1,
+      "rate": 0.04
+    },
+    "mcnemar_R7_vs_R0": [
+      0.0,
+      1.0
+    ],
+    "mcnemar_R7_vs_R2": [
+      0.0,
+      1.0
+    ]
+  },
+  "meta": {
+    "n_tasks": 101,
+    "n_scenarios": 8,
+    "n_difficulty_levels": 5,
+    "n_models": 3,
+    "seeds": [
+      7,
+      42,
+      123
+    ],
+    "bootstrap_n": 3000,
+    "bootstrap_method": "task_clustered_bootstrap",
+    "holm_corrected_mcnemar_ps": [
+      5.55147881205071e-29,
+      2.0135501579388846e-24,
+      9.465396583859455e-27
+    ],
+    "significance_threshold": 0.05
+  }
+}
