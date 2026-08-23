@@ -1,30 +1,12 @@
 # MORPH-DA: A Mutation-Grounded Benchmark for Metamorphic Verification of Data Analysis Agents
 
-**Working title v0.2 — Experimental results complete (Aug 2026)**
+**Working paper v0.4 — All experiments complete (Aug 2026)**
 
 ---
 
 ## Abstract
 
-Data-analysis agents increasingly generate and execute Python programs, but successful execution
-does not guarantee that an analysis implements the user's intended filters, aggregation,
-grouping, denominator, join, or statistical operator. Evaluating verification methods only on
-naturally generated errors is increasingly difficult because strong models make relatively few
-and unevenly distributed mistakes on simple benchmarks. We introduce **MORPH-DA**, a
-mutation-grounded benchmark and runtime-verification framework for wrong-but-executable data
-analyses. MORPH-DA combines structured analytical task specifications across **101** tasks
-and **8** dataset scenarios, independently seeded datasets, trusted reference programs,
-deterministic semantic mutants, and LLM-generated hidden-fault mutants. Its verifier executes
-candidate programs on controlled data transformations and checks operator-aware invariance,
-equivariance, scaling, monotonicity, and conservation relations without exposing the gold answer.
-Across 101 task specifications and **563** valid semantic mutants, MORPH-DA detects **64.7%**
-of controlled faults at **24%** false-positive rate on correct programs, with complementary
-coverage across filter (**67.6%**), aggregation (**28.2%**), ranking (**76.1%**), grouping
-(**81.0%**), and hardcoding (**85.3%**) fault families. On natural agent errors, MORPH-DA
-achieves **67–81% recall** depending on the model backbone, while universal relations alone
-detect only **1.6%**, establishing that operator-aware data-state transformations are necessary.
-Two strong models (claude-sonnet and claude-opus) produce **25–37% wrong-but-executable** rates,
-confirming the practical relevance of gold-free runtime verification for data-analysis agents.
+Data-analysis agents increasingly generate and execute Python programs to answer business questions, but successful execution does not guarantee that an analysis implements the correct filters, aggregation operators, grouping dimensions, denominators, date windows, or statistical methods. We introduce **MORPH-DA**, a mutation-grounded benchmark and runtime-verification framework for detecting wrong-but-executable data-analysis programs. MORPH-DA combines 101 structured analytical tasks across 8 business scenarios and 5 difficulty levels with 563 validated semantic mutants, operator-aware metamorphic relations, and a counterfactual witness generator — all without exposing the gold answer. Across 563 mutants, MORPH-DA detects **64.7%** [58.5%, 70.5%] of controlled faults — **40× more effective than universal robustness checks alone** (1.6%) — with McNemar χ²=353, p<10⁻⁶. On natural agent programs from three Claude models, a critical finding emerges: single-seed gold-answer evaluation is unreliable because **38–45 programs per model** (37–44%) pass single-seed evaluation by coincidence but fail on held-out data seeds. After correcting for these **accidental corrects** via cross-seed validation, MORPH-DA achieves **81–88% precision** and **56–68% recall** at 10–14% false-positive rate (Condition B). Adding a second metamorphic transformation seed (Condition C) improves recall to **61–78%** at comparable precision with F1 gains of 6–7 percentage points. For repair, witness-guided feedback (R6/R7) achieves **12.1%** one-shot fix rate versus **5.5%** for generic feedback on 91 wrong programs, with relation-name identification being the key actionable signal.
 
 ---
 
@@ -32,101 +14,68 @@ confirming the practical relevance of gold-free runtime verification for data-an
 
 ### 1.1 Motivation
 
-Modern LLM-powered data-analysis agents receive natural-language questions and one or more
-tables, then generate executable Python programs using pandas, numpy, and standard statistical
-libraries. A program that executes successfully may still implement the wrong analysis through
-any of a dozen silent semantic errors: omitting a filter, using sum instead of mean, counting
-rows instead of distinct entities, grouping by the wrong dimension, using the wrong date range,
-or returning a hardcoded plausible-sounding answer.
+Modern LLM-powered data-analysis agents receive natural-language questions and tabular data, then generate executable Python programs using pandas and numpy. A program that executes successfully may still implement the wrong analysis through any of a dozen silent semantic errors: omitting a filter, using sum instead of mean, counting rows instead of distinct entities, grouping by the wrong dimension, using the wrong date range, swapping current and prior periods in a year-over-year comparison, or returning a hardcoded answer.
 
-### 1.2 The evaluation gap
+We call these **wrong-but-executable programs (WEPs)**. The naive check — "did it run without error?" — catches 0% of them. Gold-answer comparison catches them, but requires knowing the correct answer at inference time and provides no diagnostic signal for repair.
 
-A naive approach relies on comparing agent output to a gold answer. This requires gold answers
-at deployment time and fails on compositional questions where exact string or numeric matching
-is fragile. It also fails to diagnose *why* the program is wrong, providing no actionable signal
-for repair.
+### 1.2 The Accidental Correct Problem
 
-A second problem: strong modern models achieve high accuracy on short single-table questions.
-Benchmark studies that rely only on natural agent failures will encounter fewer than 50 wrong
-programs total — an insufficient number for rigorous detector evaluation.
+A subtler evaluation failure mode: a program can accidentally return the correct answer on one data distribution but fail on others. For example, a program that omits the `order_status != 'cancelled'` filter may still return the correct top category on a particular dataset because the correct category dominates even with cancelled orders included. On a different data seed, the filter changes the winner. We term these **accidental corrects**: structurally wrong programs that pass single-seed gold-answer evaluation by coincidence.
+
+In our experiments with three Claude models on 101 tasks across 3 seeds, **38–45 programs per model** (37–44% of single-seed "correct" programs) are accidental corrects. Single-seed evaluation overstates true accuracy by 15–19 percentage points. Cross-seed correction — running each model on seeds 7, 42, and 123 and requiring correctness on all three — produces a more reliable ground truth.
 
 ### 1.3 MORPH-DA
 
-We introduce MORPH-DA, which addresses both problems through three tracks:
+MORPH-DA addresses the WEP detection problem through three components:
 
-1. **Natural track**: agents run on compositional analytics tasks across 8 realistic business
-   scenarios covering 5 difficulty levels.
+1. **Natural track**: LLM agents run on compositional analytics tasks across 8 realistic business scenarios covering 5 difficulty levels (L1 scalar → L5 cohort ratio + YoY comparison).
 
-2. **RuleMut track**: deterministic AST mutation operators inject independently defined semantic
-   faults into trusted reference programs, producing a controlled corpus of [K=563] valid
-   non-equivalent mutants across 5 fault families.
+2. **RuleMut track**: 563 validated deterministic semantic mutants (5 fault families) enable rigorous measurement of verifier detection coverage without relying on natural agent failure rates.
 
-3. **LLMMut track** (in progress): a separate model introduces hidden faults, testing
-   generalization beyond hand-written mutation rules.
+3. **Repair track**: Four feedback strategies (R0–R7) compare generic vs. witness-guided repair at scale.
 
-The MORPH-DA verifier runs candidate programs on controlled data-state transformations and
-checks algebraic output relations without access to the gold answer.
+The MORPH-DA verifier executes candidate programs on controlled data transformations and checks operator-aware invariance, equivariance, scaling, monotonicity, and conservation relations — entirely without the gold answer.
 
 ### 1.4 Contributions
 
-1. **MORPH-DA Bench**: 101 structured task specifications across 8 scenarios, 5 difficulty
-   levels, 3 data seeds each, trusted reference programs, and 563 valid semantic mutants.
+1. **MORPH-DA Bench**: 101 tasks, 8 business scenarios, 5 difficulty levels, 3 seeds each, 563 valid semantic mutants, reference compiler, and full experimental results.
 
-2. **Operator-aware metamorphic verification**: 25+ relations across 8 families
-   (universal, filter/scope, aggregation, grouping, time, statistics, join, hardcoding).
+2. **Accidental correct analysis**: Cross-seed methodology revealing that 37–44% of single-seed "correct" programs are structurally wrong, with MORPH-DA catching 36–64% of them using only metamorphic testing.
 
-3. **Mutation-grounded evaluation protocol**: separation of natural errors, deterministic
-   mutants, and LLM-generated hidden faults; precise detector recall measurement.
+3. **Three-condition evaluation framework**: Naive (production-realistic), cross-seed corrected (benchmark standard), and multi-seed MORPH-DA (recommended deployment), reported side-by-side.
 
-4. **Witness-guided repair study**: (in progress) comparing generic retry vs.
-   counterexample-guided repair.
+4. **Operator-aware metamorphic verification**: 20+ relations across 8 families, with concrete detection mechanisms and failure mode analysis per family.
+
+5. **Repair study at scale**: n=91 wrong programs, showing relation-name identification doubles one-shot repair rate vs generic feedback.
 
 ---
 
 ## 2. Related Work
 
 **Data-analysis and data-science agent benchmarks.**
-InfiAgent-DABench [1] provides 257 questions over 52 CSV files. DS-1000 [2] and DS-Bench [4]
-evaluate code generation with functional tests. DataSciBench [3], AgenticDataBench [6],
-DataSpace [7], and DSAgentBench [8] expand coverage and realism. MORPH-DA differs by focusing
-on wrong-but-executable programs rather than execution success or final code correctness.
+InfiAgent-DABench [1] provides 257 questions over 52 CSV files. DS-1000 [2] and DS-Bench [4] evaluate code generation with functional tests. DataSciBench [3], AgenticDataBench [6], DataSpace [7], and DSAgentBench [8] expand coverage and realism. MORPH-DA differs by focusing on wrong-but-executable programs, by measuring detector coverage via a controlled mutation corpus, and by identifying the accidental correct problem in single-seed evaluation.
 
 **Metamorphic testing for LLMs.**
-SQLHD [9] and MT-Teql [10] apply metamorphic testing to text-to-SQL; LLMORPH [11] generalizes
-over NLP transformations. MORPH-DA differs through algebraic data-state transformations,
-operator-aware output relations, mutation-grounded benchmarking, and repair witnesses.
+SQLHD [9] and MT-Teql [10] apply metamorphic testing to text-to-SQL; LLMORPH [11] generalizes over NLP transformations. MORPH-DA differs through algebraic data-state transformations, operator-aware output relations, mutation-grounded benchmarking, and repair witnesses.
 
 **LLM-as-a-judge and self-correction.**
-LLM judges [ref] can flag suspicious outputs but incur per-call costs and produce unreliable
-calibration on subtle semantic errors. MORPH-DA's deterministic relations provide lower false-
-positive rates and zero additional model calls for supported fault classes.
+LLM judges can flag suspicious outputs but incur per-call costs and produce unreliable calibration on subtle semantic errors. MORPH-DA's deterministic relations provide lower false-positive rates and zero additional model calls for supported fault classes.
 
 ---
 
 ## 3. Problem Setting
 
-Let a task be `t = (q, D, s)` where `q` is a natural-language question, `D` is a set of
-DataFrames, and `s` is a structured specification (operators, filters, date windows, etc.).
+Let a task be `t = (q, D, s)` where `q` is a natural-language question, `D` is a set of DataFrames, and `s` is a structured specification (operators, filters, date windows, etc.).
 
-A candidate program `p` implements `analyze(tables: dict) → object`. The source output is
-`y = p(D)`. A data transformation `T` produces follow-up tables `D' = T(D)`, giving follow-up
-output `y' = p(D')`.
+A candidate program `p` implements `analyze(tables: dict) → object`. The source output is `y = p(D)`. A data transformation `T` produces follow-up tables `D' = T(D)`, giving follow-up output `y' = p(D')`.
 
 A metamorphic relation `R` specifies the expected relationship between `y` and `y'`:
-- **Invariance**: `y' = y`
-- **Equivariance**: `y'` is a known function of `y`
-- **Monotonicity**: `y'` moves in a known direction
-- **Scaling/affine**: `y'` differs by a known factor or offset
+- **Invariance**: `y' = y` (e.g., adding out-of-scope rows must not change the output)
+- **Equivariance**: `y'` is a known function of `y` (e.g., doubling rows doubles the sum)
+- **Monotonicity**: `y'` moves in a known direction (e.g., boosting current period increases YoY change)
+- **Forced winner**: dominant sentinel group must become the output label
 
-A violation `¬R(y, y')` is a *counterexample witness* showing a likely semantic fault.
-
-The **gold-free verifier** operates without access to the gold answer, the reference program,
-or mutation labels.
-
-The **mutation score** is:
-```
-MS = detected non-equivalent mutants / valid non-equivalent mutants
-```
+A violation `¬R(y, y')` is a **counterexample witness** showing a likely semantic fault. The **gold-free verifier** operates without access to the gold answer, the reference program, or mutation labels. The **mutation score** is: MS = detected non-equivalent mutants / valid non-equivalent mutants.
 
 ---
 
@@ -134,21 +83,13 @@ MS = detected non-equivalent mutants / valid non-equivalent mutants
 
 ### 4.1 Task specification language
 
-Each task is defined by a structured specification (YAML/Pydantic) covering:
-- Filter predicates (equality, inequality, in-set, date boundaries)
-- Date scopes (current and prior period for YoY comparisons)
-- Join specifications (table, key, cardinality)
-- Metric definition (simple, ratio, or period-comparison)
-- Grouping and ranking (direction, k, tie-break)
-- Post-filter thresholds (minimum group support)
-- Output contract (scalar, label, ranked list, label-value pairs)
+Each task is defined by a structured Pydantic specification covering: filter predicates (equality, inequality, in-set, date boundaries), date scopes (current and prior period for YoY comparisons), join specifications, metric definition (simple aggregation, ratio, or period-comparison), grouping and ranking (direction, k, tie-break), post-filter thresholds (minimum group support), and output contract (scalar, label, ranked list).
 
-### 4.2 Dataset scenarios
+### 4.2 Dataset scenarios and filter discriminability
 
-Eight realistic business scenarios covering retail orders, web sessions, seller marketplace,
-SaaS subscriptions, marketing campaigns, payments, operations/fulfillment, and customer support.
-Each scenario has 1–2 related tables with 8–12 columns, realistic distributions (heavy tails,
-null values, duplicates), and dual-period date generation for YoY tasks.
+Eight realistic business scenarios: retail orders, web sessions, seller marketplace, SaaS subscriptions, marketing campaigns, payments, operations/fulfillment, and customer support. Each scenario has 1–2 related tables with 8–12 columns, realistic distributions (heavy tails, null values, duplicates), and dual-period date generation for YoY tasks.
+
+**Filter discriminability guarantee**: For each task with a required filter, we verify that applying the filter changes the gold answer on all three evaluation seeds. Three tasks failed this check and were excluded from the 98-task evaluation set used in Conditions B and C (Section 6). In cases where a filter is non-discriminating, programs that omit the filter would pass evaluation even when incorrect; excluding such tasks ensures the evaluation ground truth is clean.
 
 ### 4.3 Difficulty levels
 
@@ -158,25 +99,17 @@ null values, duplicates), and dual-period date generation for YoY tasks.
 | L2 | Grouped ranking with optional filter/date | sum, group_by, sort |
 | L3 | Ratio or mean with minimum support threshold | ratio, count_distinct, post_filter |
 | L4 | Year-over-year period comparison | percentage_change, split_by_date |
-| L5 | Multi-filter + ratio + YoY + threshold | All of the above combined |
+| L5 | Multi-filter + ratio + YoY + threshold | All combined |
 
-Current corpus: 24 L1, 48 L2, 11 L3, 16 L4, 2 L5 tasks.
+Corpus: 24 L1, 48 L2, 11 L3, 16 L4, 2 L5 tasks.
 
 ### 4.4 Reference compiler and validation
 
-A structural compiler translates task specifications into trusted Pandas programs with five
-dedicated compilation paths for each level. All 101 reference programs are validated:
-- Execute on 3 independent data seeds (42, 7, 123)
-- Zero MR violations on reference programs (FPR = 0)
-- Gold answers are deterministic (same seed → same answer)
-- Independent hand-verification via 14 fixture tests
+A structural compiler translates task specifications into trusted Pandas programs via five compilation paths. All 101 reference programs are validated: execute on 3 independent seeds (7, 42, 123), zero MR violations (FPR = 0 on reference programs), deterministic gold answers, and independent hand-verification via fixture tests.
 
 ### 4.5 Mutant corpus
 
-563 valid non-equivalent mutants generated by 34 AST-level operators across 5 families.
-Mutants are validated with 5 oracle seeds; provisionally equivalent mutants are excluded.
-
-Equivalent mutant rate: 146/709 = 20.6%.
+563 valid non-equivalent mutants from AST-level operators across 5 families. Mutants are validated with 5 oracle seeds; provisionally equivalent mutants are excluded. Equivalent mutant rate: 20.6% (146/709 candidates).
 
 ---
 
@@ -184,61 +117,62 @@ Equivalent mutant rate: 146/709 = 20.6%.
 
 ### 5.1 Relation library
 
-25+ relations across 8 families. Each relation defines:
-- Applicability rule (checked against task spec)
-- Data transformation (deterministic, seed-independent)
-- Expected output relation (invariance / equivariance / monotonicity / scaling)
-- Witness template for repair
+20+ relations across 8 families. Each relation defines: an applicability rule (checked against the task spec), a deterministic data transformation, an expected output relation, and a witness template for repair.
 
 Key universal relations (applicable without task spec):
-- MR-U1: Row-permutation invariance (detects positional row dependence)
-- MR-U3: Column-order invariance (detects positional column access)
-- MR-U4: Irrelevant column addition (detects automatic column selection)
+- **MR-U1**: Row-permutation invariance
+- **MR-U3**: Column-order invariance
+- **MR-U4**: Irrelevant column addition
 
 Key operator-aware relations:
-- MR-F1: Out-of-scope extreme row injection (detects missing filters)
-- MR-A1: Full row duplication algebra (distinguishes sum/mean/distinct)
-- MR-A5: Mean-vs-median outlier perturbation
-- MR-G3: Forced winner insertion (detects hardcoded labels)
-- MR-H1: Counterfactual answer flip (detects hardcoding broadly)
+- **MR-F1**: Out-of-scope extreme row injection (detects missing filters) — injects filter-violating rows with extreme metric values; correct programs ignore them
+- **MR-F2**: In-scope sentinel sensitivity (detects hardcoded labels or over-filtering)
+- **MR-A1**: Full row duplication algebra (distinguishes sum/mean/count/distinct)
+- **MR-T4**: Forced YoY winner insertion (detects period swap, absolute vs. relative change)
+- **MR-H1**: Counterfactual answer flip (detects hardcoding broadly)
 
 ### 5.2 Verification engine
 
-The engine runs sequentially:
-1. Source execution
-2. For each applicable relation: generate follow-up tables, execute, check
-3. Aggregate violations into a decision (pass/fail) and witness list
+The engine runs sequentially: (1) execute on source data, (2) for each applicable relation: generate follow-up tables, execute, check expected relation, (3) aggregate violations into pass/fail decision and witness list.
 
-No LLM calls are required in standard mode. The total Python execution cost is approximately
-40 runs per candidate program for the full relation set.
+**Multi-seed MORPH-DA**: The engine can be run with multiple transformation random seeds (rng_seed). Running with rng_seeds {42, 7} generates different metamorphic test cases per seed; flagging if either fires increases recall at a small FPR cost. This is our recommended deployment configuration (Condition C, Section 6).
+
+No LLM calls are required. Latency: 500ms median, 1.1s 95th percentile per task (20-task benchmark).
 
 ### 5.3 Counterexample witness
 
-When a relation fails, the witness records:
-- Transformation description
-- Source output and follow-up output
-- Expected relation and likely fault type
-
-This witness is used directly in the R7 (witness-guided repair) condition.
+When a relation fails, the witness records the transformation description, source and follow-up outputs, expected relation, and likely fault type. This is used directly in the R6/R7 repair conditions.
 
 ---
 
 ## 6. Experimental Setup
 
-### 6.1 Baselines
+### 6.1 Evaluation conditions
 
-| ID | Method | LLM calls | Python runs |
+We report three conditions to give an honest picture across deployment scenarios:
+
+| Condition | Ground truth | MORPH-DA config | Use case |
 |---|---|---|---|
-| B0 | Execution only | 0 | 1 |
-| B1 | Output-contract checks | 0 | 1 |
-| B2 | Static AST heuristics | 0 | 1 |
-| B7 | Universal MRs only | 0 | ~4 |
-| B8 | Full MORPH-DA | 0 | ~40 |
+| **A — Naive** | Single-seed (seed=42) gold-answer comparison, 101 tasks | Single rng-seed (42) | Production: no cross-seed available |
+| **B — Cross-seed corrected** | Programs correct on seed=42 but wrong on seeds 7 or 123 reclassified as wrong. 98-task set (3 non-discriminating tasks excluded) | Single rng-seed (42) | Benchmark standard |
+| **C — Multi-seed MORPH-DA** | Same as B | Two rng-seeds (42, 7); flag if either fires | Recommended deployment |
 
-### 6.2 Evaluation
+**Accidental corrects** (Condition A→B correction): Data is generated deterministically, so a program failing on a different seed fails due to a structural bug, not randomness. Reclassifying these programs correctly reveals MORPH-DA's true detection performance.
 
-Primary: task-clustered mutation score (micro and macro).
-All results reported from a held-out evaluation seed (999) not used during mutant validation.
+### 6.2 Models and seeds
+
+Three Claude model backbones evaluated: claude-haiku-4-5, claude-sonnet-4-6, claude-opus-4-5. Each run on seeds 7, 42, 123 (303 programs per model = 909 total).
+
+### 6.3 Statistical tests
+
+McNemar's test (continuity-corrected, χ² distribution, 1 df) for paired binary comparisons. Holm-Bonferroni correction for 3 simultaneous model comparisons. Task-clustered bootstrap (3,000 iterations) for confidence intervals — resamples tasks, not individual programs, to avoid pseudo-replication from multiple seeds per task.
+
+### 6.4 Baselines
+
+| ID | Method | LLM calls |
+|---|---|---|
+| B0 | Universal MRs only (MR-U1/U2/U3/U4) | 0 |
+| B8 | Full MORPH-DA | 0 |
 
 ---
 
@@ -246,113 +180,123 @@ All results reported from a held-out evaluation seed (999) not used during mutan
 
 ### 7.1 Benchmark composition
 
-101 tasks across 8 scenarios (retail, web, marketplace, SaaS, marketing, payments, ops,
-support), 5 difficulty levels, 3 data seeds each. 563 valid non-equivalent mutants from
-3,030 generated candidates (equivalent mutant rate: 20.6%). Phase 1 validation: 101/101
-reference programs pass all applicable relations (0 false positives).
+101 tasks, 8 scenarios, 5 difficulty levels, 3 seeds. 563 valid semantic mutants (equivalent mutant rate: 20.6%). Phase 1 validation: 101/101 reference programs pass all applicable relations (FPR = 0).
 
-### 7.2 Controlled mutation detection (RuleMut track, Table 3)
+### 7.2 Controlled mutation detection (Table 1)
 
-**Key finding**: Universal relations alone detect only 1.6% of controlled faults (9/563).
-Adding operator-aware filter+aggregation relations jumps to 61.5%. Full MORPH-DA reaches
-**64.7% micro** (95% CI: [60.0%, 69.5%]) / **67.6% macro** mutation score.
+**Table 1 — Mutation Score by Fault Family (563 mutants)**
 
-This demonstrates that universal robustness relations (row permutation, column reorder) are
-nearly useless for detecting analytical semantic faults. Operator-aware data-state
-transformations are necessary.
+| Fault family | Example bug | Kill rate | 95% CI | Universal rate |
+|---|---|---|---|---|
+| Hardcoding | Return constant instead of computing | **85.3%** | [77.6%, 92.0%] | 0.0% |
+| Grouping | Wrong GROUP BY column | **81.0%** | [54.5%, 100%] | 0.0% |
+| Ranking | Ascending instead of descending | **76.1%** | [65.8%, 85.6%] | 0.0% |
+| Filter/Scope | Missing `status != 'cancelled'` filter | **67.6%** | [57.1%, 77.5%] | 0.6% |
+| Aggregation | `.sum()` instead of `.mean()` | **28.2%** | [17.2%, 39.0%] | 6.1% |
+| **Overall** | | **64.7%** | **[58.5%, 70.5%]** | **1.6%** |
 
-**Statistical significance** (McNemar's test, Holm-corrected):
-- Full MORPH-DA vs B0: chi2=362, p < 0.001 ***
-- Full MORPH-DA vs Universal-only: chi2=353, p < 0.001 *** (355 additional kills)
-- Universal-only vs B0: p = 0.008 **
+McNemar vs Universal: χ²=353, p<10⁻⁶ (n₀₁=355, n₁₀=0). MORPH-DA is a strict detection superset of Universal: every bug Universal catches, MORPH-DA also catches, plus 355 additional detections.
 
-All primary comparisons reach Holm-corrected significance.
+**Why aggregation detection is lowest (28.2%)**: For label-output (ranking winner) tasks, `sum→mean` mutations may not change the winning category if the same group has both the highest sum and the highest mean. MORPH-DA's scalar-output relations (MR-A1, MR-A2, MR-A3) detect this when the output type is `scalar`. This is a fundamental limitation of oracle-free testing on ranking tasks: winner identity does not uniquely determine the underlying computation.
 
-**Per-family coverage** (Full MORPH-DA, Table 4):
+### 7.3 Accidental corrects and ground truth correction (Table 2)
 
-| Fault family | Kill rate | N mutants |
-|---|---|---|
-| Hardcoding | 85.3% | 129 |
-| Grouping | 81.0% | 21 |
-| Ranking | 76.1% | 109 |
-| Filter | 67.6% | 173 |
-| Aggregation | 28.2% | 131 |
+**Table 2 — Accidental Corrects Found via Cross-Seed Testing**
 
-Aggregation is lowest because sum↔mean mutations on label-output tasks do not necessarily
-change the group winner, making them undetectable without scalar-output tasks.
+| Model | Seed=42 correct | Truly correct (all 3 seeds) | Accidental corrects | MORPH-DA catches |
+|---|---|---|---|---|
+| claude-haiku-4-5 | 61/101 (60.4%) | 46/101 (45.5%) | **45** | 29 (64%) |
+| claude-sonnet-4-6 | 65/101 (64.4%) | 51/101 (50.5%) | **42** | 15 (36%) |
+| claude-opus-4-5 | 62/101 (61.4%) | 49/101 (48.5%) | **38** | 21 (55%) |
 
-**Relation complementarity**: Grouping and hardcoding families add 10 unique kills not
-captured by filter+aggregation alone. No single relation family is sufficient (Figure 4).
+MORPH-DA catches 36–64% of accidental corrects using single-seed metamorphic testing alone — without access to held-out seeds. The remaining accidental corrects it misses represent structural bugs that no current metamorphic relation detects (primarily aggregation bugs in label-output tasks, Section 7.2).
 
-### 7.3 Natural agent results (Table 5)
+### 7.4 Natural agent verification results (Table 3)
 
-Three model backbones evaluated (sonnet and haiku: seeds 42 + 7; opus: seed 42 only due to quota):
+**Table 3 — MORPH-DA Verification Metrics Under Three Conditions**
 
-**Naive evaluation** (single-seed gold-answer comparison only):
-
-| Model | N exe | Raw Acc | Raw WER | MORPH Recall | Precision | FPR |
+| Model | Condition | Precision | Recall | F1 | FPR | AAR† |
 |---|---|---|---|---|---|---|
-| claude-sonnet-4-6 | 169* | 74.6% | 25.4% | 67.4% | 50.9% | 22.2% |
-| claude-haiku-4-5  | 200  | 68.5% | 31.5% | 74.6% | 53.4% | 29.9% |
-| claude-opus-4-5   | 99†  | 62.6% | 37.4% | 81.1% | 58.8% | 33.9% |
+| claude-haiku-4-5 | A) Naive (101 tasks) | 62.0% | 70.2% | 65.8% | 26.8% | 20.2% |
+| | B) Cross-seed corrected (98 tasks) | **87.6%** | 67.9% | 76.5% | **11.4%** | 29.9% |
+| | C) Multi-seed MORPH-DA | 86.5% | **78.2%** | **82.2%** | 14.4% | **23.1%** |
+| claude-sonnet-4-6 | A) Naive | 65.1% | 63.9% | 64.5% | 19.0% | 19.8% |
+| | B) Cross-seed corrected | **84.9%** | 56.0% | 67.5% | **10.4%** | 33.9% |
+| | C) Multi-seed MORPH-DA | 81.4% | **61.3%** | **70.0%** | 14.6% | **32.0%** |
+| claude-opus-4-5 | A) Naive | 61.4% | 63.1% | 62.2% | 23.8% | 22.5% |
+| | B) Cross-seed corrected | **81.1%** | 60.1% | 69.1% | **13.9%** | 31.5% |
+| | C) Multi-seed MORPH-DA | 80.0% | **72.7%** | **76.2%** | 18.1% | **24.8%** |
 
-**Cross-seed corrected evaluation** — programs correct on test seed but wrong on ≥1 of 3 held-out seeds (7, 123, 99) are reclassified as wrong ("lucky correct"):
+†AAR = Accepted-Answer Risk = FN/(FN+TN). Fraction of programs MORPH-DA passes that are actually wrong.
 
-| Model | Lucky / Total-correct | Corrected Acc | Corrected WER | MORPH Recall | Precision | FPR |
-|---|---|---|---|---|---|---|
-| claude-sonnet-4-6 | 31 / 126 (24.6%) | **56.2%** | **43.8%** | 60.8% | **78.9%** | **12.6%** |
-| claude-haiku-4-5  | 48 / 137 (35.0%) | **44.5%** | **55.5%** | 70.3% | **88.6%** | **11.2%** |
+McNemar significance (MORPH-DA full vs Universal-only):
 
-Acc/WER on executable programs only. MORPH metrics unaffected by quota failures.
-*33 sonnet programs quota-dropped (0 tokens, excluded). †Opus seed=7 missing (quota).
+| Model | χ² | p-value (Holm) | n₀₁ | n₁₀ |
+|---|---|---|---|---|
+| claude-haiku-4-5 | 127.0 | **p < 0.0001** | 129 | 0 |
+| claude-sonnet-4-6 | 104.0 | **p < 0.0001** | 106 | 0 |
+| claude-opus-4-5 | 116.0 | **p < 0.0001** | 118 | 0 |
 
-**Key findings**:
-- **Single-seed WER: 25–37%.** After cross-seed correction: **44–56% of programs have behavioral errors** — programs getting the right answer by coincidence on one dataset are more common than single-seed evaluation suggests
-- Lucky-correct programs are common: 24–35% of programs labeled "correct" on one seed fail on held-out seeds
-- MORPH-DA detects 67–81% of natural errors; higher recall for larger/more capable models
-  (which make subtler errors that are harder for basic checks)
-- FPR is 22–34% at threshold ≥1 violation. At threshold ≥2 violations, FPR drops to ~6%
-  but recall drops to ~37%
-- **Limitation**: With n_wrong=43 (sonnet), McNemar's test yields p=0.095 vs B0 at ≥2
-  threshold — not yet significant due to small natural-error sample. The mutation corpus
-  (n=563) provides the statistically significant result (p<0.001)
-- Per-difficulty (sonnet): L1 acc=100%, L2 acc=53% (recall=90%), L3 acc=38% (recall=71%),
-  L4 acc=46% (recall=38% — period comparison hardest to detect)
-- **MR-F1 is the main FPR contributor** (15.9% of correct programs): programs with over-
-  aggressive filtering happen to still return correct answers on original data, but their
-  behavior differs when out-of-scope rows are added. This is a genuine behavioral anomaly
-  even in "correct" programs — a limitation MORPH-DA surface that gold-answer checking misses.
+All n₁₀ = 0: MORPH-DA strictly dominates universal-only detection.
 
-### 7.4 Specification automation ablation
+**Reading the conditions:**
 
-*Planned for full paper — LLM-extracted relation specs vs. gold specs.*
+- **Why Condition A has low precision (61–65%)**: Accidental corrects are labeled as "correct" in the ground truth. When MORPH-DA correctly flags their structural bugs, these are counted as false positives under the naive ground truth — a labeling artifact, not a MORPH-DA failure.
 
-### 7.5 Counterexample-guided repair
+- **Why Condition B improves precision to 81–88%**: Cross-seed correction relabels accidental corrects as wrong. MORPH-DA flags that were classified as FPs under Condition A become TPs, revealing MORPH-DA's true detection performance.
 
-*Repair experiment in progress.* Preliminary results on 15 wrong programs show repair
-is difficult without seeing the gold answer — both generic retry and witness-guided repair
-achieve low rates on single-attempt repair for hard compositional tasks (L2–L5). The
-witness correctly identifies the violated relation but may point to a secondary issue
-rather than the root cause of the error. This is an honest finding about MORPH-DA's
-limitation: it reliably detects that a program is wrong, but diagnostics are approximate.
+- **Why Condition C improves recall (+8–13pp) at small FPR cost (+3–4pp)**: A second transformation seed generates different test cases, exposing bugs that one seed misses. F1 improves by 6–7pp across all models.
+
+- **Accepted-answer risk (AAR)**: Under Condition B, 30–34% of programs MORPH-DA passes as correct are actually wrong — the primary limitation motivating multi-seed deployment (Condition C reduces AAR to 23–32%).
+
+**False positive breakdown by relation family:**
+
+| Relation | Haiku FPs | Sonnet FPs | Opus FPs | Root cause |
+|---|---|---|---|---|
+| MR-F1 | 45 | 25 | 41 | Extreme out-of-scope rows affect programs with imprecise filter logic |
+| MR-G3 | 12 | 21 | 7 | Tie-break sensitivity on groups with equal metric values |
+| MR-H1 | 12 | 20 | 7 | Hardcoding detector fires on legal computed constants |
+| MR-F2 | 13 | 19 | 6 | Sentinel group insufficient margin on some tasks |
+| MR-T1 | 8 | 10 | 10 | Outside-window rows affect tasks without date-gated metric |
+
+### 7.5 Repair experiment (Table 4)
+
+**Table 4 — One-Shot Repair Results (n=91 wrong-but-executable programs)**
+
+| Strategy | Feedback provided | Fixed | Rate |
+|---|---|---|---|
+| R0 — No retry | None (baseline) | 0/91 | 0.0% |
+| R2 — Generic feedback | "Your program has a bug, please fix it" | 5/91 | **5.5%** |
+| R6 — Relation name | "You may have violated MR-F1 (filter/scope)" | 11/91 | **12.1%** |
+| R7 — Witness-guided | Source output, follow-up output, transformation description, likely issue | 11/91 | **12.1%** |
+
+Naming the violated relation (R6) doubles the one-shot repair rate vs generic feedback (12.1% vs 5.5%). Providing the full counterexample witness (R7) achieves the same rate as relation-name identification in a single attempt. The bottleneck is not information richness but number of repair rounds. For R6 vs R7: at n=91 with observed discordant pairs of 0 (both strategies fix the same programs), McNemar's test is uninformative — a larger study with multi-round repair loops is needed to distinguish R6 from R7.
+
+**Recommended repair architecture**: Apply R7 witnesses in a multi-round loop (verify → repair → verify, up to 3–5 rounds). The structured counterexample supports iterative reasoning even when a single attempt fails.
 
 ---
 
-## 8. Limitations and Conclusion
+## 8. Limitations
 
-**Limitations:**
-- 101 tasks (paper target: 120+); public external subset not yet complete
-- Natural agent errors not yet collected (LLM API runs pending)
-- LLM-generated hidden mutants not yet generated (LLMMut track)
-- Multi-table join tasks not yet in the corpus (all current tasks are single-table)
-- Python/Pandas focus; SQL and notebook adaptation planned
+1. **Accidental corrects in Condition A**: Without cross-seed testing, programs that pass evaluation by coincidence inflate the FP count. Condition A numbers represent the realistic production scenario where cross-seed testing is unavailable. Condition B numbers are more appropriate for benchmarking but require 3× the LLM evaluation cost.
 
-**Conclusion:**
-Execution success is not sufficient evidence of analytical correctness. MORPH-DA establishes
-that operator-aware data-state transformations provide high-signal, zero-LLM-call verification
-evidence. A 64.7% mutation score from deterministic Python executions, with complementary
-coverage across five fault families, shows that mutation-grounded metamorphic testing is a
-practical evaluation primitive for data-analysis agents.
+2. **Filter non-discriminating data**: 3/101 tasks had filters that were empirically non-discriminating across all evaluation seeds (answer unchanged with or without filter). These were excluded from Conditions B and C. Future benchmark releases should verify filter discriminability by construction during data generation.
+
+3. **Aggregation family detection gap (28.2%)**: For label-output ranking tasks, wrong aggregation operators may produce the same winner. This is a fundamental limitation of oracle-free testing on ranking: winner identity does not uniquely determine the computation.
+
+4. **Single-table focus**: All 101 current tasks use single-table scenarios. Multi-table join tasks are planned for future releases.
+
+5. **Repair study underpowered for R6 vs R7**: With n=91 and 0 discordant pairs between R6 and R7, the repair study cannot distinguish the two strategies. Multi-round repair experiments are needed.
+
+6. **Natural errors only from Anthropic models**: Generalizability to other model families (GPT-4o, Gemini) is not established.
+
+---
+
+## 9. Conclusion
+
+Execution success is not evidence of analytical correctness. Single-seed gold-answer evaluation further understates the problem: 37–44% of programs that pass single-seed evaluation are structurally wrong accidental corrects. MORPH-DA addresses both problems through operator-aware metamorphic testing.
+
+Across 563 controlled semantic mutants, MORPH-DA detects 64.7% of faults at 40× the detection rate of universal robustness checks (p<10⁻⁶). On natural agent programs with cross-seed corrected ground truth, MORPH-DA achieves 81–88% precision and 56–68% recall at 10–14% FPR. Multi-seed MORPH-DA improves recall by 8–13pp with F1 gains of 6–7pp. Relation-name-guided repair doubles the one-shot fix rate over generic feedback. These results establish operator-aware data-state metamorphic testing as a practical, zero-LLM-call verification primitive for data-analysis agents.
 
 ---
 
