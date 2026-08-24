@@ -1,0 +1,9 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{trimspaces}[2009/09/17 v1.1 Trim spaces around a token list]
+\def\trim@spaces@noexp#1{\expandafter\trim@spaces@aux\expandafter{#1}}
+\def\trim@spaces#1{\trim@spaces@noexp{#1}}
+\def\trim@spaces@aux#1{\trim@spaces@in{#1}}
+\def\trim@spaces@in#1{\romannumeral-`\0\trim@spaces@right{#1} }
+\def\trim@spaces@right#1 \@nil{\trim@spaces@left{#1}}
+\let\trim@spaces@right\@firstofone
+\def\trim@spaces@left#1{ \romannumeral-`\0 #1}

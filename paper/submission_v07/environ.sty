@@ -1,0 +1,12 @@
+% Minimal environ.sty shim for environments where the full package is unavailable
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{environ}[2014/05/04 v0.3 A new interface for environments]
+\RequirePackage{trimspaces}
+\newcommand{\BODY}{}
+\newcommand{\NewEnviron}[2]{%
+  \newenvironment{#1}{\def\BODY{##1}}{\let\environ@body\BODY #2}%
+}
+% Simpler approach: just define the commands neurips_2026.sty needs
+\DeclareRobustCommand*{\environ@save}[2]{%
+  \expandafter\def\csname #1\endcsname{#2}%
+}
