@@ -63,7 +63,7 @@ Metamorphic Verification of Data-Analysis Agents}
 \maketitle
 
 \begin{abstract}
-Data-analysis agents increasingly generate and execute Python programs, but successful execution does not establish that the program implemented the requested filters, aggregation, grouping, denominator, or date window. We introduce \morph, a benchmark and environment-grounded runtime verifier for such \emph{wrong-but-executable} programs. The verifier is gold-answer-free at runtime but specification-conditioned: it receives a structured analytical specification, never the reference output, and checks operator-aware metamorphic relations by rerunning the same program on controlled data transformations. The benchmark contains 101 compositional tasks and 563 validated, non-equivalent semantic mutants. \morph detects 364/563 faults (64.7\%, 95\% task-clustered CI [58.4, 70.5]) versus 9/563 for universal robustness checks ($p=9.4\times10^{-79}$). Re-executing each seed-42 agent program unchanged on held-out data seeds reveals that 13--16 programs per model (20--26\% of apparently correct programs) are \emph{accidental corrects}. With this corrected ground truth, \morph obtains 79--89\% precision and 67--79\% recall on executable programs, with 8--21\% false-positive rate. A one-step repair study on 91 wrong programs yields 12.1\% fixes from relation-specific feedback versus 5.5\% from generic feedback. These results position metamorphic execution as a complementary, zero-additional-LLM-call verifier rather than a correctness certificate.
+Data-analysis agents increasingly generate and execute Python programs, but successful execution does not establish that the program implemented the requested filters, aggregation, grouping, denominator, or date window. We introduce \morph, a benchmark and environment-grounded runtime verifier for such \emph{wrong-but-executable} programs. The verifier is gold-answer-free at runtime but specification-conditioned: it receives a structured analytical specification, never the reference output, and checks operator-aware metamorphic relations by rerunning the same program on controlled data transformations. The benchmark contains 101 compositional tasks and 563 validated, non-equivalent semantic mutants. \morph detects 364/563 faults (64.7\%, 95\% task-clustered CI [58.4, 70.5]) versus 9/563 for universal robustness checks ($p=9.4\times10^{-79}$). Re-executing each seed-42 agent program unchanged on held-out data seeds reveals that 13--16 programs per model (20--26\% of apparently correct programs) are \emph{accidental corrects}: correct on the source seed but wrong on at least one held-out seed. With cross-seed evaluation labels, \morph obtains 79--89\% precision and 67--79\% recall on executable programs, with 8--21\% false-positive rate. These results position metamorphic execution as a complementary, zero-additional-LLM-call verifier rather than a correctness certificate.
 \end{abstract}
 
 \section{Introduction}
@@ -115,6 +115,9 @@ The program is flagged if any applicable relation violates. Relations express eq
 
 For controlled evaluation, a semantic mutant is \emph{killed} when at least one relation flags it. Mutation score is the fraction of validated, non-equivalent mutants killed. For natural programs, we report precision, recall, false-positive rate (FPR), and accepted-answer risk $\mathrm{AAR}=\mathrm{FN}/(\mathrm{FN}+\mathrm{TN})$, the probability that an accepted executable program is wrong.
 
+\paragraph{Trust model.}
+The analytical contract encoded in $s$ and the transformation engine are assumed trusted; the agent-generated program $p$ and its output $y$ are untrusted. The runtime verifier does not consume a precomputed numeric answer: it checks only necessary behavioral properties. In the controlled benchmark, the complete \taskSpec is compilable, so we do not claim that metamorphic checks dominate trusted reference execution when such an implementation is available. The intended deployment setting is one where governed analytical properties are available but maintaining an independently trusted reference implementation for every generated analysis is impractical. The method is gold-answer-free at runtime, not supervision-free. \morph verifies the executable analytical artifact produced by the agent, not the agent's planning trace or tool-selection policy.
+
 \section{MORPH-DA}
 \label{sec:method}
 
@@ -162,7 +165,7 @@ AST operators generate 3,030 candidate mutations. Applicability, syntax, executi
 A LangGraph code agent generates one Python program per task from the question and schema summary using Claude Haiku 4.5, Sonnet 4.6, or Opus 4.5. Evaluation centers on the 101 seed-42 programs per model. The framework is an implementation substrate, not part of the claimed method.
 
 \paragraph{Three evaluation conditions.}
-Condition A uses seed-42 gold labels on all 101 tasks and therefore treats accidental corrects as correct. Condition B saves each seed-42 program and re-executes that exact source unchanged on seeds 7 and 123; failure on either reclassifies it as wrong. Conditions B and C use the 98 filter-discriminating tasks. Condition C retains the same corrected ground truth but runs \morph with two transformation seeds instead of one. Precision, recall, and FPR exclude original execution failures; their counts are reported separately.
+All three conditions use the same 98 filter-discriminating tasks. Condition A uses naive seed-42 gold labels (treating accidental corrects as correct). Condition B saves each seed-42 program and re-executes that exact source unchanged on seeds 7 and 123; failure on either reclassifies it as wrong (cross-seed evaluation labels). Condition C retains the same cross-seed ground truth but runs \morph with two transformation seeds instead of one. Precision, recall, and FPR exclude original execution failures; their counts are reported separately. For reference, Condition A on the full 101-task set is reported in Appendix~\ref{app:cond_a_full}.
 
 \paragraph{Statistics.}
 We use continuity-corrected McNemar tests for paired detector comparisons, Holm correction across the three natural-agent comparisons, and a task-clustered bootstrap with 3,000 resamples for confidence intervals. The mutation confidence interval also clusters by base task to avoid treating multiple mutants of one task as independent.
@@ -202,14 +205,14 @@ Detection varies by family (\figref{fig:families}): hardcoding 85.3\%, grouping 
 
 \subsection{Accidental correctness}
 
-On seed 42, 61/101 Haiku, 65/101 Sonnet, and 62/101 Opus programs appear correct. Re-executing those same programs unchanged on held-out seeds reduces structurally correct counts to 45, 52, and 49 (\figref{fig:accidental}). Therefore, 16, 13, and 13 programs -- 26.2\%, 20.0\%, and 21.0\% of apparent successes -- are accidental corrects. Without seeing held-out seeds, single-seed \morph catches 13/16 (81\%), 7/13 (54\%), and 10/13 (77\%) of them.
+On seed 42, 61/101 Haiku, 65/101 Sonnet, and 62/101 Opus programs appear correct. Re-executing those same programs unchanged on held-out seeds reduces cross-seed-correct counts to 45, 52, and 49 (\figref{fig:accidental}). Therefore, 16, 13, and 13 programs -- 26.2\%, 20.0\%, and 21.0\% of apparent successes -- are accidental corrects: correct on seed 42 but wrong on at least one held-out seed. Without seeing held-out seeds, single-seed \morph catches 13/16 (81\%), 7/13 (54\%), and 10/13 (77\%) of them.
 
 Manual inspection of the accidental-correct programs reveals three recurring failure modes. The dominant pattern is a \textbf{missing status or eligibility filter}: the program omits or substitutes the required row-level condition (e.g., applying \texttt{notna()} as a proxy for \texttt{status~!=~`open'}, or filtering for \texttt{status~!=~`returned'} when \texttt{status~!=~`cancelled'} is required), and the excluded segment happens not to shift the ranking winner on the seed-42 distribution. A second pattern is \textbf{elided date scope}: the program skips the required date window entirely and the dominant group is the same across historical data as within the target period. A third pattern appears in year-over-year and quarterly tasks: the program implements the correct temporal structure but omits a required status filter; because the excluded segment is proportionally similar across both periods on seed~42, the ranking winner is preserved. \morph detects the first two categories primarily through MR-F1 (filter injection) and MR-T (time scope) relations; the third is harder to detect because the filter omission is symmetric across periods and produces no observable difference under single-seed transformation.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{figures/accidental_corrects.pdf}
-  \caption{Programs correct on seed 42 split into truly correct and accidental correct after fixed-program re-execution on seeds 7 and 123.}
+  \caption{Programs correct on seed 42 split into cross-seed correct (correct on all evaluated seeds) and accidental correct (correct on seed 42 but wrong on seed 7 or 123) after fixed-program re-execution.}
   \label{fig:accidental}
 \end{figure}
 
@@ -217,7 +220,7 @@ Manual inspection of the accidental-correct programs reveals three recurring fai
 
 \begin{table*}[t]
 \centering
-\caption{Natural-program verification. Condition A uses 101 tasks and naive seed-42 labels. Conditions B/C use the 98-task filter-discriminating set and cross-seed corrected labels. Original execution failures (Haiku 2, Sonnet 0, Opus 2) are excluded from precision/recall/FPR denominators. CIs shown for the primary Condition B.}
+\caption{Natural-program verification. All three conditions use the same 98-task filter-discriminating set and exclude original execution failures (Haiku 2, Sonnet 0, Opus 2) from denominators. Condition A uses naive seed-42 gold labels; Conditions B/C use cross-seed evaluation labels from fixed-program re-execution on seeds 7 and 123. CIs shown for the primary Condition B. 101-task naive results (Condition A-101) are reported in Appendix~\ref{app:cond_a_full}.}
 \label{tab:natural}
 \small
 \begin{adjustbox}{max width=\textwidth}
@@ -226,17 +229,17 @@ Manual inspection of the accidental-correct programs reveals three recurring fai
 Model & Condition & Precision & Recall & FPR & F1 & AAR \\
 \midrule
 \multirow{3}{*}{Haiku 4.5}
- & A: naive & 58.8 & 79.0 & 34.4 & 67.4 & 16.7 \\
+ & A: naive (98 tasks) & 60.4 & 78.4 & 32.2 & 68.2 & 16.7 \\
  & \textbf{B: cross-seed} & \textbf{87.5} [77.1,95.8] & \textbf{79.2} [67.9,90.6] & \textbf{14.0} [4.7,25.6] & 83.2 & 22.9 \\
  & C: two transformations & 86.0 & 81.1 & 16.3 & 83.5 & 21.7 \\
 \midrule
 \multirow{3}{*}{Sonnet 4.6}
- & A: naive & 66.7 & 72.2 & 20.0 & 69.3 & 16.1 \\
+ & A: naive (98 tasks) & 70.3 & 72.2 & 17.7 & 71.2 & 16.4 \\
  & \textbf{B: cross-seed} & \textbf{89.2} [78.4,97.3] & \textbf{67.3} [53.1,79.6] & \textbf{8.2} [2.0,18.4] & 76.7 & 26.2 \\
  & C: two transformations & 86.8 & 67.3 & 10.2 & 75.9 & 26.7 \\
 \midrule
 \multirow{3}{*}{Opus 4.5}
- & A: naive & 58.8 & 81.1 & 33.9 & 68.2 & 14.6 \\
+ & A: naive (98 tasks) & 58.3 & 80.0 & 32.8 & 67.5 & 14.6 \\
  & \textbf{B: cross-seed} & \textbf{79.2} [68.8,89.6] & \textbf{79.2} [66.7,89.6] & \textbf{20.8} [10.4,33.3] & 79.2 & 20.8 \\
  & C: two transformations & 78.0 & 81.2 & 22.9 & 79.6 & 19.6 \\
 \bottomrule
@@ -244,7 +247,7 @@ Model & Condition & Precision & Recall & FPR & F1 & AAR \\
 \end{adjustbox}
 \end{table*}
 
-Under naive labels, correctly flagged accidental programs are counted as false positives, depressing apparent precision to 59--67\%. With fixed-program cross-seed ground truth, Condition B obtains 79--89\% precision and 67--79\% recall (\tabref{tab:natural}). Against universal-only relations, the full verifier adds 37--48 true detections and loses none (Holm-corrected $p\leq3.25\times10^{-9}$ for all models). False positives remain nontrivial: 8.2--20.8\%, driven mainly by extreme filter injections, tie-sensitive forced-group tests, and legal computed constants flagged by the hardcoding relation.
+Under naive labels on the same 98-task set, correctly flagged accidental programs are counted as false positives, depressing apparent precision to 58--70\%. With fixed-program cross-seed ground truth, Condition B obtains 79--89\% precision and 67--79\% recall (\tabref{tab:natural}). Against universal-only relations, the full verifier adds 37--48 additional flags and loses none ($n_{10}=0$ for all models; Holm-corrected $p\leq3.25\times10^{-9}$). These additional flags are predominantly true positives on wrong programs: TP counts are 33, 42, and 38 for Sonnet, Haiku, and Opus respectively. False positives remain nontrivial: 8.2--20.8\%, driven mainly by extreme filter injections, tie-sensitive forced-group tests, and legal computed constants flagged by the hardcoding relation.
 
 A second transformation seed changes recall by +1.9, 0.0, and +2.1 percentage points for Haiku, Sonnet, and Opus, while increasing FPR by about 2 points for each model. It slightly improves F1 for Haiku and Opus but lowers it for Sonnet. Condition C is therefore a multi-transformation sensitivity analysis rather than a default; deployments that value recall over false alarms may choose it.
 
@@ -302,6 +305,25 @@ Execution success is an inadequate verifier for analytical agents, and single-in
 
 \section{Additional Experimental Detail}
 
+\subsection{Condition A on 101 tasks (full task set)}
+\label{app:cond_a_full}
+For reference, the following reports Condition A (naive seed-42 labels) on all 101 tasks, including the 3 filter-non-discriminating tasks excluded from the main 98-task evaluation set. This result is not directly comparable to Conditions B/C because task membership differs.
+
+\begin{table}[h]
+\centering
+\caption{Condition A naive metrics on all 101 tasks. Not directly comparable to B/C (different task set).}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Model & Precision & Recall & FPR & F1 & AAR \\
+\midrule
+Haiku 4.5 & 58.8 & 79.0 & 34.4 & 67.4 & 16.7 \\
+Sonnet 4.6 & 66.7 & 72.2 & 20.0 & 69.3 & 16.1 \\
+Opus 4.5 & 58.8 & 81.1 & 33.9 & 68.2 & 14.6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{Condition-B confusion matrices}
 \begin{table}[h]
 \centering
@@ -334,16 +356,18 @@ Opus 4.5 & 61 & 35 & 2 \\
 \end{tabular}
 \end{table}
 
-\subsection{Relation-level false positives}
+\subsection{Apparent false positives under cross-seed labels}
+We treat cross-seed labels as conservative operational labels rather than semantic proof. Every verifier flag on a program that passes the evaluated seeds is counted as a false positive, even when manual inspection suggests imprecise logic that may fail on an untested distribution. We retain this conservative convention to avoid post-hoc relabeling.
+
 \begin{table}[h]
 \centering
-\caption{Condition-B false positives by dominant relation.}
+\caption{Condition-B apparent false positives by dominant relation. Some MR-F1 flags may reflect latent semantic errors not exposed by the two held-out seeds.}
 \small
 \begin{tabularx}{\columnwidth}{lrrrX}
 \toprule
 Relation & Haiku & Sonnet & Opus & Typical cause \\
 \midrule
-MR-F1 & 4 & 2 & 6 & Imprecise filter logic under extreme rows \\
+MR-F1 & 4 & 2 & 6 & Filter logic imprecision under extreme-row injection \\
 MR-G3 & 1 & 1 & 2 & Tie-break sensitivity \\
 MR-H1 & 1 & 1 & 2 & Legal computed constants \\
 \bottomrule
