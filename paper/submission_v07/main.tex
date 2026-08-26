@@ -15,6 +15,7 @@
 \usepackage{pifont}
 \usepackage{xspace}
 \usepackage{tabularx}
+\usepackage{caption}
 \usepackage{natbib}
 % Compatibility shims for unavailable packages
 \newcommand{\makecell}[2][]{\shortstack[l]{#2}}
@@ -327,46 +328,49 @@ Opus 4.5 & 58.8 & 81.1 & 33.9 & 68.2 & 14.6 \\
 \end{tabular}
 \end{table}
 
-\subsection{Condition-B confusion matrices}
-\begin{table}[h]
+\subsection{Condition-B confusion matrices and execution breakdown}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
 \centering
-\caption{Cross-seed corrected confusion matrices. Original execution failures are excluded.}
+\captionof{table}{Cross-seed corrected confusion matrices. Execution failures excluded.}
 \small
 \begin{tabular}{lrrrrr}
 \toprule
-Model & TP & FP & TN & FN & Evaluated \\
+Model & TP & FP & TN & FN & N \\
 \midrule
 Haiku 4.5 & 42 & 6 & 37 & 11 & 96 \\
 Sonnet 4.6 & 33 & 4 & 45 & 16 & 98 \\
 Opus 4.5 & 38 & 10 & 38 & 10 & 96 \\
 \bottomrule
 \end{tabular}
-\end{table}
-
-\subsection{Seed-42 execution breakdown}
-\begin{table}[h]
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
 \centering
-\caption{Original seed-42 program outcomes on the 98-task filter-discriminating set.}
+\captionof{table}{Seed-42 program outcomes on the 98-task set.}
 \small
 \begin{tabular}{lrrr}
 \toprule
-Model & Correct & Wrong executable & Execution failure \\
+Model & Correct & WEP & Fail \\
 \midrule
 Haiku 4.5 & 59 & 37 & 2 \\
 Sonnet 4.6 & 62 & 36 & 0 \\
 Opus 4.5 & 61 & 35 & 2 \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{minipage}
+
+\vspace{1em}
 
 \subsection{Apparent false positives under cross-seed labels}
 We treat cross-seed labels as conservative operational labels rather than semantic proof. Every verifier flag on a program that passes the evaluated seeds is counted as a false positive, even when manual inspection suggests imprecise logic that may fail on an untested distribution. We retain this conservative convention to avoid post-hoc relabeling.
 
 \begin{table}[h]
 \centering
-\caption{Condition-B apparent false positives by dominant relation. Some MR-F1 flags may reflect latent semantic errors not exposed by the two held-out seeds.}
+\caption{Condition-B apparent false positives by dominant relation.}
 \small
-\begin{tabularx}{\columnwidth}{lrrrX}
+\begin{tabular}{lrrrp{5cm}}
 \toprule
 Relation & Haiku & Sonnet & Opus & Typical cause \\
 \midrule
@@ -374,7 +378,7 @@ MR-F1 & 4 & 2 & 6 & Filter logic imprecision under extreme-row injection \\
 MR-G3 & 1 & 1 & 2 & Tie-break sensitivity \\
 MR-H1 & 1 & 1 & 2 & Legal computed constants \\
 \bottomrule
-\end{tabularx}
+\end{tabular}
 \end{table}
 
 \subsection{Mutant-generation funnel}
