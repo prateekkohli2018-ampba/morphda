@@ -180,7 +180,7 @@ We use continuity-corrected McNemar tests for paired detector comparisons, Holm 
 
 \begin{table}[t]
 \centering
-\caption{Detection on 563 validated, non-equivalent mutants. The intermediate configuration is a genuine run recorded alongside the full result.}
+\caption{Detection on 563 validated, non-equivalent mutants.}
 \label{tab:mutants}
 \small
 \begin{tabular}{lrrr}
@@ -378,7 +378,7 @@ MR-H1 & 1 & 1 & 2 & Legal computed constants \\
 \end{table}
 
 \subsection{Mutant-generation funnel}
-The verified funnel is $3{,}030 \rightarrow 709 \rightarrow 563$: generated candidates, executable candidates entering equivalence evaluation, and retained non-equivalent mutants, respectively. Of the 709 executable candidates, 146 (20.6\%) were equivalent across five oracle seeds and removed. An intermediate \texttt{rulemut\_stats.json} file from an earlier run is not used for final results.
+The verified funnel is $3{,}030 \rightarrow 709 \rightarrow 563$: generated candidates, executable candidates entering equivalence evaluation, and retained non-equivalent mutants, respectively. Of the 709 executable candidates, 146 (20.6\%) were equivalent across five oracle seeds and removed.
 
 \subsection{Repair pairing and provenance}
 The repair log contains 364 rows: 91 source programs crossed with four strategies. Each row includes a stable program identifier, model, data seed, and source hash, enabling row-paired comparisons. The source-program distribution is 25 programs from seed 7, 38 from seed 42, and 28 from seed 123.
