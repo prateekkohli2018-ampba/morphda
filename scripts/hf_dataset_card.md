@@ -81,8 +81,9 @@ type differs between tasks (`output_type`).
 answer; used to define the scope-discriminating evaluation subset), `gold_seed42`, `gold_seed7`,
 `gold_seed123`, and `task_spec` (the full machine-readable specification as a JSON string).
 
-**tables** — the columns of each CSV, as generated. The generators are deterministic per
-`(scenario, seed)`.
+**Tables** — generated deterministically per `(scenario, seed)`; dates are ISO strings:
+
+{{TABLE_SCHEMAS}}
 
 **`mutants`** — `mutant_id`, `task_id`, `mutation_family` (aggregation, filter, grouping,
 hardcoding, ranking), `mutation_operator`, `mutated_program`, `non_equivalent_seeds` (data seeds on

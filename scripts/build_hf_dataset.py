@@ -80,20 +80,23 @@ def build_tasks(out: Path) -> tuple[list, dict[str, str]]:
     return tasks, {t.task_id: t.scenario_id for t in tasks}
 
 
-def build_tables(out: Path, tasks: list) -> dict[str, list[str]]:
-    """One CSV per (table, seed). Returns {table_name: [scenario ids]}."""
+def build_tables(out: Path, tasks: list) -> tuple[dict[str, list[str]], dict[str, dict]]:
+    """One CSV per (table, seed). Returns ({table: [scenario ids]}, {table: schema info})."""
     owners: dict[str, set[str]] = {}
+    schemas: dict[str, dict] = {}
     for scenario in sorted({t.scenario_id for t in tasks}):
         for seed in SEEDS:
             for name, df in generate_scenario(scenario, seed=seed).items():
                 owners.setdefault(name, set()).add(scenario)
+                info = schemas.setdefault(name, {"columns": {c: str(t) for c, t in df.dtypes.items()}, "rows": {}})
+                info["rows"][seed] = len(df)
                 path = out / "data" / "tables" / name / f"seed{seed}.csv"
                 path.parent.mkdir(parents=True, exist_ok=True)
                 df.to_csv(path, index=False)
     clashes = {n: s for n, s in owners.items() if len(s) > 1}
     if clashes:
         raise SystemExit(f"table names shared by several scenarios: {clashes}")
-    return {n: sorted(s) for n, s in owners.items()}
+    return {n: sorted(s) for n, s in owners.items()}, schemas
 
 
 def build_mutants(out: Path) -> int:
@@ -138,7 +141,17 @@ def build_agent_programs(out: Path, scenarios: dict[str, str]) -> int:
     return len(rows)
 
 
-def write_card(out: Path, repo_id: str, tables: dict[str, list[str]], counts: dict) -> None:
+def _schema_markdown(tables: dict[str, list[str]], schemas: dict[str, dict]) -> str:
+    blocks = []
+    for name in tables:
+        rows = schemas[name]["rows"]
+        cols = ", ".join(f"`{c}` ({t})" for c, t in schemas[name]["columns"].items())
+        sizes = ", ".join(f"seed{s}: {rows[s]:,}" for s in SEEDS)
+        blocks.append(f"- **`{name}`** — scenario `{tables[name][0]}`; rows {sizes}.  \n  Columns: {cols}")
+    return "\n".join(blocks)
+
+
+def write_card(out: Path, repo_id: str, tables: dict[str, list[str]], schemas: dict[str, dict], counts: dict) -> None:
     configs = [
         "- config_name: tasks\n  data_files:\n  - split: train\n    path: data/tasks.jsonl",
         "- config_name: mutants\n  data_files:\n  - split: train\n    path: data/mutants.jsonl",
@@ -154,6 +167,7 @@ def write_card(out: Path, repo_id: str, tables: dict[str, list[str]], counts: di
         "{{REPO_ID}}": repo_id,
         "{{CONFIGS_YAML}}": "\n".join(configs),
         "{{TABLE_ROWS}}": "\n".join(table_lines),
+        "{{TABLE_SCHEMAS}}": _schema_markdown(tables, schemas),
         "{{N_TASKS}}": str(counts["tasks"]),
         "{{N_MUTANT_ROWS}}": str(counts["mutants"]),
         "{{N_PROGRAMS}}": str(counts["agent_programs"]),
@@ -174,7 +188,7 @@ def main() -> None:
     out.mkdir(parents=True)
 
     tasks, scenarios = build_tasks(out)
-    tables = build_tables(out, tasks)
+    tables, schemas = build_tables(out, tasks)
     counts = {
         "tasks": len(tasks),
         "mutants": build_mutants(out),
@@ -185,7 +199,7 @@ def main() -> None:
     for name in ("morphda_paper.pdf", "morphda_poster.pdf", "morphda_poster.png"):
         shutil.copy(ROOT / "paper" / name, out / "paper" / name)
     shutil.copy(ROOT / "LICENSE", out / "LICENSE")
-    write_card(out, args.repo_id, tables, counts)
+    write_card(out, args.repo_id, tables, schemas, counts)
 
     print(f"Built {out}: {counts}, tables={sorted(tables)}")
 
