@@ -47,6 +47,7 @@ dependencies = [
 [project.urls]
 Repository = "https://github.com/prateekkohli2018-ampba/morphda"
 Paper = "https://openreview.net/forum?id=JsrKw3nUSV"
+Dataset = "https://huggingface.co/datasets/prateekkohli1992/morph-da"
 Documentation = "https://github.com/prateekkohli2018-ampba/morphda#readme"
 
 [project.optional-dependencies]

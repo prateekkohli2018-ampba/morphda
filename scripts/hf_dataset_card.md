@@ -1,6 +1,6 @@
 ---
 pretty_name: MORPH-DA
-license: mit
+license: cc-by-4.0
 language:
 - en
 size_categories:
@@ -128,7 +128,12 @@ python scripts/build_hf_dataset.py --repo-id {{REPO_ID}} --out ../morphda-hf
 
 ## License
 
-MIT (see `LICENSE`). The data are synthetic and contain no personal information.
+The dataset (tasks, tables, mutants and agent programs) is released under
+[**Creative Commons Attribution 4.0 International (CC BY 4.0)**](https://creativecommons.org/licenses/by/4.0/);
+see `LICENSE`. Reuse is allowed, including commercially, with attribution — please cite the paper
+below. The data are synthetic and contain no personal information. The paper and poster PDFs in
+`paper/` are included for reference and remain © the authors. The verifier and tooling code in the
+[GitHub repository](https://github.com/prateekkohli2018-ampba/morphda) is licensed separately under MIT.
 
 ## Citation
 

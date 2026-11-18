@@ -8,7 +8,8 @@ Configs written:
     mutants          seeded-fault programs with fault family and operator
     agent_programs   programs written by three hosted models, with per-seed correctness
 
-The paper and poster are copied under paper/. Nothing is uploaded by this script.
+The paper and poster are copied under paper/. The dataset is licensed CC BY 4.0.
+Nothing is uploaded by this script.
 
 Usage:
     python scripts/build_hf_dataset.py --repo-id YOUR_NAME/morph-da --out ../morphda-hf
@@ -185,7 +186,7 @@ def main() -> None:
     out = Path(args.out).resolve()
     if out.exists() and any(out.iterdir()):
         shutil.rmtree(out)
-    out.mkdir(parents=True)
+    out.mkdir(parents=True, exist_ok=True)
 
     tasks, scenarios = build_tasks(out)
     tables, schemas = build_tables(out, tasks)
@@ -198,7 +199,7 @@ def main() -> None:
     (out / "paper").mkdir()
     for name in ("morphda_paper.pdf", "morphda_poster.pdf", "morphda_poster.png"):
         shutil.copy(ROOT / "paper" / name, out / "paper" / name)
-    shutil.copy(ROOT / "LICENSE", out / "LICENSE")
+    shutil.copy(Path(__file__).with_name("hf_dataset_LICENSE.txt"), out / "LICENSE")
     write_card(out, args.repo_id, tables, schemas, counts)
 
     print(f"Built {out}: {counts}, tables={sorted(tables)}")

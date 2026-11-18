@@ -40,6 +40,11 @@ def test_every_config_file_exists_and_card_has_no_placeholders(dataset):
             assert (dataset / f["path"]).is_file(), f["path"]
 
 
+def test_dataset_is_licensed_cc_by_4_0(dataset):
+    assert _front_matter(dataset / "README.md")["license"] == "cc-by-4.0"
+    assert (dataset / "LICENSE").read_text(encoding="utf-8").startswith("Attribution 4.0 International")
+
+
 def test_tasks_carry_the_question_and_a_reference_answer_per_seed(dataset):
     tasks = [json.loads(l) for l in (dataset / "data" / "tasks.jsonl").read_text().splitlines()]
     assert len(tasks) == 101

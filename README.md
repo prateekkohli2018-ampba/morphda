@@ -7,7 +7,9 @@
 Prateek Kohli and Karun Thankachan (Walmart)
 NeurIPS 2026 Workshop *Who Verifies the Agents? Toward Reliable Agent Development*
 
-[**Paper**](paper/morphda_paper.pdf) · [**Poster**](paper/morphda_poster.pdf) · [**OpenReview**](https://openreview.net/forum?id=JsrKw3nUSV) · [**Replicate**](#replicate-step-by-step)
+[**Paper**](paper/morphda_paper.pdf) · [**Poster**](paper/morphda_poster.pdf) · [**Dataset**](https://huggingface.co/datasets/prateekkohli1992/morph-da) · [**OpenReview**](https://openreview.net/forum?id=JsrKw3nUSV) · [**Replicate**](#replicate-step-by-step)
+
+[![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow)](https://huggingface.co/datasets/prateekkohli1992/morph-da) [![License: CC BY 4.0 (data)](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey)](https://huggingface.co/datasets/prateekkohli1992/morph-da)
 
 [![MORPH-DA poster: metamorphic verification and mutation testing of LLM data-analysis agents](paper/morphda_poster.png)](paper/morphda_poster.pdf)
 
@@ -111,6 +113,26 @@ MORPH-DA builds on, and is compared with, benchmarks and methods for data-analys
 (InfiAgent-DABench, DS-1000, DSCodeBench, DataSciBench, DS-STAR), metamorphic testing of
 text-to-SQL systems (MT-Teql) and of language models (LLMORPH), and mutation testing. Full
 references are in the [paper](paper/morphda_paper.pdf).
+
+---
+
+## Dataset on Hugging Face
+
+The benchmark is also published as a ready-to-load dataset:
+**[prateekkohli1992/morph-da](https://huggingface.co/datasets/prateekkohli1992/morph-da)** (CC BY 4.0) — the 101 tasks with reference answers,
+the synthetic input tables for seeds 42 / 7 / 123, the mutant corpus, and the programs written by
+three hosted models, plus the paper and poster.
+
+```python
+from datasets import load_dataset
+
+tasks    = load_dataset("prateekkohli1992/morph-da", "tasks", split="train")
+mutants  = load_dataset("prateekkohli1992/morph-da", "mutants", split="train")
+programs = load_dataset("prateekkohli1992/morph-da", "agent_programs", split="train")
+orders   = load_dataset("prateekkohli1992/morph-da", "orders", split="seed42")
+```
+
+Rebuild it from this repository with `python scripts/build_hf_dataset.py --repo-id <you>/morph-da`.
 
 ---
 
@@ -292,5 +314,5 @@ NL2SQL (related) · benchmark · reproducible research · Ollama · NeurIPS 2026
 }
 ```
 
-GitHub's "Cite this repository" button reads [`CITATION.cff`](CITATION.cff); the BibTeX entry is also in [`CITATION.bib`](CITATION.bib). Licensed under the
-[MIT License](LICENSE).
+GitHub's "Cite this repository" button reads [`CITATION.cff`](CITATION.cff); the BibTeX entry is also in [`CITATION.bib`](CITATION.bib). The code is licensed under the
+[MIT License](LICENSE); the Hugging Face dataset is released under CC BY 4.0.
