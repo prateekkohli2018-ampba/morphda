@@ -1,0 +1,46 @@
+# MORPH-DA Benchmark Configuration
+benchmark:
+  name: morph-da
+  version: "0.1.0"
+
+  controlled:
+    task_specs: 120
+    dataset_scenarios: 24
+    data_seeds_per_task: 3
+    difficulty_levels: [1, 2, 3, 4, 5]
+    target_difficulty_distribution:
+      L1: 0.10
+      L2: 0.20
+      L3: 0.30
+      L4: 0.25
+      L5: 0.15
+
+  public:
+    target_tasks: 50
+    sources: ["daeval", "ds1000_subset", "dsbench_subset"]
+
+  splits:
+    development: 0.60
+    validation: 0.20
+    test: 0.20
+    split_by: scenario  # never split within a scenario
+
+mutants:
+  rulemut:
+    target_valid: 1500
+    min_per_family: 100
+    validation_seeds: 5
+    held_out_operators:
+      - AM-05  # weighted vs unweighted mean
+      - JM-06  # as-of join direction
+      - RM-06  # pre-filter ranking
+      - MR-M4  # broad dropna error
+  llmmut:
+    target_valid: 400
+    candidates_per_task: 3
+    manual_audit_fraction: 0.20
+
+resources:
+  sandbox_timeout_seconds: 30
+  sandbox_memory_mb: 512
+  max_rows_per_table: 100_000

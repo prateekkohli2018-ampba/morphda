@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use MORPH-DA, please cite the paper below."
+title: "MORPH-DA: A Mutation-Grounded Benchmark for Metamorphic Verification of Data-Analysis Agents"
+type: software
+authors:
+  - given-names: Prateek
+    family-names: Kohli
+  - given-names: Karun
+    family-names: Thankachan
+repository-code: "https://github.com/prateekkohli2018-ampba/morphda"
+url: "https://openreview.net/forum?id=JsrKw3nUSV"
+license: MIT
+version: 0.1.0
+keywords:
+  - metamorphic testing
+  - mutation testing
+  - LLM agents
+  - data-analysis agents
+  - verification
+  - benchmark
+preferred-citation:
+  type: conference-paper
+  title: "MORPH-DA: A Mutation-Grounded Benchmark for Metamorphic Verification of Data-Analysis Agents"
+  authors:
+    - given-names: Prateek
+      family-names: Kohli
+    - given-names: Karun
+      family-names: Thankachan
+  collection-title: "NeurIPS 2026 Workshop Who Verifies the Agents? Toward Reliable Agent Development"
+  year: 2026
+  url: "https://openreview.net/forum?id=JsrKw3nUSV"

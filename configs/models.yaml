@@ -1,0 +1,35 @@
+# Model configurations for MORPH-DA experiments
+# Freeze exact versions before final runs; store hash in run manifest
+
+models:
+  primary_api:
+    id: claude-opus-4-5
+    provider: anthropic
+    max_tokens: 4096
+    temperature: 0.0
+    note: "Freeze exact API model version at experiment start"
+
+  secondary:
+    id: claude-sonnet-4-5
+    provider: anthropic
+    max_tokens: 4096
+    temperature: 0.0
+
+  judge:
+    id: claude-opus-4-5
+    provider: anthropic
+    max_tokens: 1024
+    temperature: 0.0
+    note: "Independent judge; must not share state with generator"
+
+  llm_mutator:
+    id: claude-sonnet-4-5
+    provider: anthropic
+    max_tokens: 2048
+    temperature: 0.7
+    note: "Different from primary agent; must not see relation library"
+
+agent:
+  max_program_tokens: 2000
+  max_repair_attempts: 1  # main experiment; 2 in appendix ablation
+  sandbox_timeout_seconds: 30

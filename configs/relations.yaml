@@ -1,0 +1,227 @@
+# MORPH-DA Metamorphic Relation Library Configuration
+# Each entry defines a relation family and its applicable operators
+
+families:
+
+  universal:
+    relations:
+      - id: MR-U1
+        name: row_permutation_invariance
+        transform: shuffle_rows
+        expected: equal
+        tolerance: 1e-9
+      - id: MR-U2
+        name: index_relabeling_invariance
+        transform: relabel_index
+        expected: equal
+      - id: MR-U3
+        name: column_order_invariance
+        transform: shuffle_columns
+        expected: equal
+      - id: MR-U4
+        name: irrelevant_column_addition
+        transform: add_random_columns
+        expected: equal
+
+  filter_scope:
+    relations:
+      - id: MR-F1
+        name: out_of_scope_extreme_row_invariance
+        transform: add_out_of_scope_rows
+        expected: equal
+        required_operators: [filter]
+      - id: MR-F2
+        name: in_scope_sentinel_sensitivity
+        transform: add_in_scope_sentinel
+        expected: monotone_or_change
+        required_operators: [filter, aggregate]
+      - id: MR-F3
+        name: boundary_quartet
+        transform: boundary_four_cases
+        expected: per_case_inclusive_exclusive
+        required_operators: [filter, date_range]
+      - id: MR-F4
+        name: conjunct_isolation
+        transform: conjunct_isolation_triple
+        expected: only_joint_satisfier_affects
+        required_operators: [filter_conjunction]
+      - id: MR-F5
+        name: exclusion_complement
+        transform: exclusion_complement_pair
+        expected: excluded_no_effect_included_effect
+        required_operators: [filter_exclusion]
+
+  aggregation:
+    relations:
+      - id: MR-A1
+        name: full_duplication_algebra
+        transform: duplicate_all_rows
+        expected: per_operator_algebraic
+      - id: MR-A2
+        name: single_value_perturbation
+        transform: perturb_one_included_value
+        expected: per_operator_delta
+      - id: MR-A3
+        name: global_additive_translation
+        transform: add_constant_to_measure
+        expected: per_operator_additive
+      - id: MR-A4
+        name: positive_scaling
+        transform: multiply_measure_by_positive
+        expected: per_operator_multiplicative
+      - id: MR-A5
+        name: mean_vs_median_outlier
+        transform: perturb_non_median_extreme
+        expected: mean_changes_median_stable
+      - id: MR-A6
+        name: count_vs_distinct_count
+        transform: duplicate_entity_rows
+        expected: rowcount_increases_distinct_stable
+      - id: MR-A7
+        name: weighted_mean
+        transform: weight_split_and_shift
+        expected: per_case_weighted
+        required_operators: [weighted_aggregation]
+      - id: MR-A8
+        name: ratio_numerator_denominator_isolation
+        transform: perturb_numerator_only_then_denominator_only
+        expected: opposite_directional_changes
+        required_operators: [ratio]
+      - id: MR-A9
+        name: percentage_change
+        transform: perturb_current_and_prior_separately
+        expected: directional_per_period
+        required_operators: [period_comparison]
+      - id: MR-A10
+        name: share_conservation
+        transform: duplicate_all_rows
+        expected: shares_sum_to_one_unchanged
+        required_operators: [share, proportion]
+
+  grouping:
+    relations:
+      - id: MR-G1
+        name: group_local_perturbation
+        transform: perturb_one_group_only
+        expected: only_that_group_changes
+      - id: MR-G2
+        name: dominated_group_insertion
+        transform: add_dominated_group
+        expected: winner_unchanged
+      - id: MR-G3
+        name: forced_winner_insertion
+        transform: add_dominant_group
+        expected: winner_changes_to_inserted
+      - id: MR-G4
+        name: group_label_permutation
+        transform: bijective_label_remap
+        expected: numeric_unchanged_labels_remapped
+
+  ranking:
+    relations:
+      - id: MR-R1
+        name: monotone_transform_ranking_invariance
+        transform: affine_transform_rank_measure
+        expected: ordering_unchanged
+      - id: MR-R2
+        name: controlled_winner_flip
+        transform: boost_runner_up_past_winner
+        expected: top1_switches
+      - id: MR-R3
+        name: topk_insertion
+        transform: add_group_at_rank_r
+        expected: inserted_at_rank_r
+      - id: MR-R4
+        name: tie_creation_and_tiebreak
+        transform: equalize_scores_keep_tiebreak_unique
+        expected: tiebreak_column_determines_winner
+      - id: MR-R5
+        name: threshold_before_ranking
+        transform: add_high_scorer_below_threshold
+        expected: ineligible_excluded
+
+  time:
+    relations:
+      - id: MR-T1
+        name: outside_window_extreme_injection
+        transform: add_outside_date_window_rows
+        expected: equal
+        required_operators: [date_filter]
+      - id: MR-T2
+        name: date_boundary_quartet
+        transform: date_boundary_four_cases
+        expected: per_inclusive_exclusive_semantics
+      - id: MR-T3
+        name: period_isolated_perturbation
+        transform: perturb_current_then_prior
+        expected: period_comparison_directional
+        required_operators: [period_comparison]
+      - id: MR-T5
+        name: full_period_duplication
+        transform: duplicate_both_periods
+        expected: means_rates_shares_unchanged_sums_double
+
+  join:
+    relations:
+      - id: MR-J1
+        name: unmatched_dimension_row_invariance
+        transform: add_unmatched_dimension_rows
+        expected: equal
+      - id: MR-J2
+        name: consistent_key_relabeling
+        transform: bijective_key_remap_all_tables
+        expected: metric_unchanged_keys_remapped
+      - id: MR-J3
+        name: duplicate_dimension_row_invariance
+        transform: duplicate_dimension_row_same_key
+        expected: equal
+        condition: dimension_uniqueness_semantics_explicit
+      - id: MR-J4
+        name: unmatched_fact_row
+        transform: add_fact_row_no_dimension_match
+        expected: per_join_type_semantics
+
+  missing:
+    relations:
+      - id: MR-M1
+        name: out_of_scope_null_injection
+        transform: add_null_heavy_out_of_scope_rows
+        expected: equal
+      - id: MR-M2
+        name: measure_null_rule
+        transform: set_measure_null_on_eligible_row
+        expected: per_skip_or_fill_semantics
+        condition: missingness_semantics_explicit
+      - id: MR-M3
+        name: identifier_null_rule
+        transform: add_row_with_null_entity_id
+        expected: per_eligibility_rule
+
+  statistics:
+    relations:
+      - id: MR-S1
+        name: variance_translation_invariance
+        transform: add_constant_to_all_values
+        expected: variance_sd_unchanged
+        required_operators: [variance, std]
+      - id: MR-S2
+        name: variance_scaling
+        transform: multiply_values_by_c
+        expected: variance_scales_c_squared_sd_scales_abs_c
+        required_operators: [variance, std]
+      - id: MR-S5
+        name: quantile_monotonicity
+        transform: nonneg_perturbation_all_values
+        expected: quantile_nondecreasing
+        required_operators: [quantile, median, percentile]
+
+  hardcoding:
+    relations:
+      - id: MR-H1
+        name: counterfactual_answer_flip
+        transform: modify_values_to_change_winner_reference_validated
+        expected: output_changes
+      - id: MR-H2
+        name: label_permutation
+        transform: bijective_output_label_remap
+        expected: labels_remapped_numerics_unchanged
