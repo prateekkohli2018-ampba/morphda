@@ -9,12 +9,16 @@ NeurIPS 2026 Workshop *Who Verifies the Agents? Toward Reliable Agent Developmen
 
 [**Paper**](paper/morphda_paper.pdf) · [**Poster**](paper/morphda_poster.pdf) · [**OpenReview**](https://openreview.net/forum?id=JsrKw3nUSV) · [**Replicate**](#replicate-step-by-step)
 
-[![MORPH-DA poster](paper/morphda_poster.png)](paper/morphda_poster.pdf)
+[![MORPH-DA poster: metamorphic verification and mutation testing of LLM data-analysis agents](paper/morphda_poster.png)](paper/morphda_poster.pdf)
 
 </div>
 
-**MORPH-DA verifies data-analysis agents without a numeric gold answer and without an additional
-model call.**
+**MORPH-DA is an open benchmark and verifier for LLM data-analysis agents.** It combines
+metamorphic testing and mutation testing to catch wrong filters, wrong aggregations and wrong
+time periods in agent-written Python/pandas analysis code — without a numeric gold answer and
+without an additional model call. Use it to evaluate data-science agents, test agent-generated
+analysis code, measure verifier quality with seeded faults, and detect answers that are only
+correct by chance.
 
 ---
 
@@ -67,6 +71,46 @@ the figures and tables.
 
 Passing the checks is evidence, not a proof of correctness. The data are synthetic and
 single-table, the specification must be trusted, and false positives and undetected faults remain.
+
+---
+
+## FAQ
+
+**What is metamorphic testing for data-analysis agents?**
+Instead of comparing an agent's answer with a stored number, you change the input data in a way
+whose effect on the answer is known (add rows outside a date window, shuffle rows, duplicate a
+period) and check that the same program's output obeys that relation. MORPH-DA ships 31 such
+relations and a task specification that selects the ones that apply.
+
+**How do I evaluate an LLM data-analysis agent without gold answers?**
+Run `scripts/run_natural_agents.py` to generate programs, then `scripts/run_verification.py` and
+`scripts/evaluate_natural_agents.py` to verify them. Gold answers are only used to label programs
+when you want precision and recall; verification itself needs none.
+
+**How do I measure how good a verifier or test suite is?**
+Mutation testing: the benchmark includes a corpus of seeded faults (wrong aggregation, missing
+filter, wrong grouping, hardcoded constant, wrong ranking) and reports how many each verifier
+catches. Add your own verifier alongside the three in `scripts/run_verification.py`.
+
+**What are accidental corrects?**
+Programs that give the right answer on one dataset by chance and fail when run unchanged on other
+data seeds. The held-out-seed protocol finds them.
+
+**Does it work for text-to-SQL / NL2SQL agents?**
+The tasks, relations and executor in this repository target Python/pandas programs; SQL is not
+executed. The underlying idea — re-run the same query or program on transformed tables and
+check necessary output relations — also appears in metamorphic testing of text-to-SQL systems
+(see below). Porting it to SQL means adding a SQL executor and SQL-specific mutation operators.
+
+**Can I run it with a local model?**
+Yes. `--provider ollama` runs any Ollama model with no API key and no data leaving your machine.
+
+## Related work
+
+MORPH-DA builds on, and is compared with, benchmarks and methods for data-analysis agents
+(InfiAgent-DABench, DS-1000, DSCodeBench, DataSciBench, DS-STAR), metamorphic testing of
+text-to-SQL systems (MT-Teql) and of language models (LLMORPH), and mutation testing. Full
+references are in the [paper](paper/morphda_paper.pdf).
 
 ---
 
@@ -229,6 +273,12 @@ runs/         frozen agent programs and evaluation outputs
 tests/        pytest suite (`pytest -q`)
 paper/        paper and poster (PDF)
 ```
+
+## Topics
+
+data-analysis agents · LLM agents · agent evaluation · agent verification · metamorphic testing ·
+mutation testing · LLM-as-analyst · data science agents · pandas code generation · text-to-SQL /
+NL2SQL (related) · benchmark · reproducible research · Ollama · NeurIPS 2026 workshop
 
 ## Citation
 

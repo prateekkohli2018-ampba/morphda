@@ -11,13 +11,19 @@ repository-code: "https://github.com/prateekkohli2018-ampba/morphda"
 url: "https://openreview.net/forum?id=JsrKw3nUSV"
 license: MIT
 version: 0.1.0
+abstract: "MORPH-DA is a benchmark and verifier for LLM data-analysis agents. It uses metamorphic testing and mutation testing to detect wrong filters, aggregations and time periods in agent-written analysis code without a numeric gold answer or an additional model call."
 keywords:
+  - data-analysis agents
+  - LLM agents
+  - agent evaluation
+  - agent verification
   - metamorphic testing
   - mutation testing
-  - LLM agents
-  - data-analysis agents
-  - verification
   - benchmark
+  - data science agents
+  - text-to-SQL
+  - NL2SQL
+  - reproducibility
 preferred-citation:
   type: conference-paper
   title: "MORPH-DA: A Mutation-Grounded Benchmark for Metamorphic Verification of Data-Analysis Agents"

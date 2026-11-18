@@ -5,14 +5,28 @@ build-backend = "hatchling.build"
 [project]
 name = "morphda"
 version = "0.1.0"
-description = "MORPH-DA: Mutation-Grounded Benchmark for Metamorphic Verification of Data Analysis Agents"
+description = "Benchmark and verifier for LLM data-analysis agents: metamorphic testing and mutation testing catch wrong filters, aggregations and periods in agent-written pandas code, with no gold answer and no extra LLM call."
 requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [
     { name = "Prateek Kohli" },
     { name = "Karun Thankachan" },
 ]
-keywords = ["metamorphic testing", "mutation testing", "llm agents", "data analysis", "verification", "benchmark"]
+keywords = [
+    "data analysis agents", "llm agents", "agent evaluation", "agent verification",
+    "metamorphic testing", "mutation testing", "benchmark", "llm evaluation",
+    "data science agents", "pandas", "code generation", "text-to-sql", "nl2sql",
+    "software testing", "reproducibility",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Testing",
+]
 dependencies = [
     "pandas>=2.2",
     "numpy>=1.26",
@@ -33,6 +47,7 @@ dependencies = [
 [project.urls]
 Repository = "https://github.com/prateekkohli2018-ampba/morphda"
 Paper = "https://openreview.net/forum?id=JsrKw3nUSV"
+Documentation = "https://github.com/prateekkohli2018-ampba/morphda#readme"
 
 [project.optional-dependencies]
 dev = [
