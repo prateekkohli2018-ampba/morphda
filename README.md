@@ -292,5 +292,5 @@ NL2SQL (related) · benchmark · reproducible research · Ollama · NeurIPS 2026
 }
 ```
 
-GitHub's "Cite this repository" button reads [`CITATION.cff`](CITATION.cff). Licensed under the
+GitHub's "Cite this repository" button reads [`CITATION.cff`](CITATION.cff); the BibTeX entry is also in [`CITATION.bib`](CITATION.bib). Licensed under the
 [MIT License](LICENSE).
