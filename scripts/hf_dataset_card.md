@@ -126,7 +126,7 @@ bash scripts/setup.sh && source .venv/bin/activate
 python scripts/build_hf_dataset.py --repo-id {{REPO_ID}} --out ../morphda-hf
 ```
 
-## License
+{{IDENTIFIERS}}## License
 
 The dataset (tasks, tables, mutants and agent programs) is released under
 [**Creative Commons Attribution 4.0 International (CC BY 4.0)**](https://creativecommons.org/licenses/by/4.0/);

@@ -60,3 +60,16 @@ def test_agent_programs_distinguish_accidental_corrects(dataset):
     assert any(r["correct_seed42"] and r["correct_seed7"] is False for r in rows)
     assert all(set(r) == {"model", "task_id", "scenario_id", "generated_program", "executed_on_seed42",
                           "correct_seed42", "correct_seed7", "correct_seed123"} for r in rows)
+
+
+def test_card_lists_dois_only_when_given(dataset, tmp_path):
+    assert "Persistent identifiers" not in (dataset / "README.md").read_text(encoding="utf-8")
+    out = tmp_path / "with_dois"
+    subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "build_hf_dataset.py"), "--repo-id", "someone/morph-da",
+         "--out", str(out), "--dataset-doi", "10.57967/hf/1", "--software-doi", "10.5281/zenodo.2"],
+        check=True, capture_output=True,
+    )
+    card = (out / "README.md").read_text(encoding="utf-8")
+    assert "https://doi.org/10.57967/hf/1" in card and "https://doi.org/10.5281/zenodo.2" in card
+    assert _front_matter(out / "README.md")["license"] == "cc-by-4.0"

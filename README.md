@@ -9,6 +9,10 @@ NeurIPS 2026 Workshop *Who Verifies the Agents? Toward Reliable Agent Developmen
 
 [**Paper**](paper/morphda_paper.pdf) · [**Poster**](paper/morphda_poster.pdf) · [**Dataset**](https://huggingface.co/datasets/prateekkohli1992/morph-da) · [**OpenReview**](https://openreview.net/forum?id=JsrKw3nUSV) · [**Replicate**](#replicate-step-by-step)
 
+<!-- dois:start -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24356106.svg)](https://doi.org/10.5281/zenodo.24356106)
+<!-- dois:end -->
+
 [![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow)](https://huggingface.co/datasets/prateekkohli1992/morph-da) [![License: CC BY 4.0 (data)](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey)](https://huggingface.co/datasets/prateekkohli1992/morph-da)
 
 [![MORPH-DA poster: metamorphic verification and mutation testing of LLM data-analysis agents](paper/morphda_poster.png)](paper/morphda_poster.pdf)
@@ -301,6 +305,14 @@ paper/        paper and poster (PDF)
 data-analysis agents · LLM agents · agent evaluation · agent verification · metamorphic testing ·
 mutation testing · LLM-as-analyst · data science agents · pandas code generation · text-to-SQL /
 NL2SQL (related) · benchmark · reproducible research · Ollama · NeurIPS 2026 workshop
+
+<!-- dois-section:start -->
+
+## Persistent identifiers
+
+- **Dataset DOI:** [10.57967/hf/11699](https://doi.org/10.57967/hf/11699)
+- **Software DOI:** [10.5281/zenodo.24356106](https://doi.org/10.5281/zenodo.24356106)
+<!-- dois-section:end -->
 
 ## Citation
 

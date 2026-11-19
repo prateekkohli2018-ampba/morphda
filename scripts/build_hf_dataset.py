@@ -12,7 +12,7 @@ The paper and poster are copied under paper/. The dataset is licensed CC BY 4.0.
 Nothing is uploaded by this script.
 
 Usage:
-    python scripts/build_hf_dataset.py --repo-id YOUR_NAME/morph-da --out ../morphda-hf
+    python scripts/build_hf_dataset.py --repo-id <you>/morph-da --out ../morphda-hf
 """
 
 from __future__ import annotations
@@ -152,7 +152,17 @@ def _schema_markdown(tables: dict[str, list[str]], schemas: dict[str, dict]) -> 
     return "\n".join(blocks)
 
 
-def write_card(out: Path, repo_id: str, tables: dict[str, list[str]], schemas: dict[str, dict], counts: dict) -> None:
+def _identifiers_markdown(dataset_doi: str | None, software_doi: str | None) -> str:
+    lines = []
+    if dataset_doi:
+        lines.append(f"- **Dataset DOI:** [{dataset_doi}](https://doi.org/{dataset_doi})")
+    if software_doi:
+        lines.append(f"- **Software DOI (code archive):** [{software_doi}](https://doi.org/{software_doi})")
+    return "## Persistent identifiers\n\n" + "\n".join(lines) + "\n\n" if lines else ""
+
+
+def write_card(out: Path, repo_id: str, tables: dict[str, list[str]], schemas: dict[str, dict], counts: dict,
+               dois: tuple[str | None, str | None] = (None, None)) -> None:
     configs = [
         "- config_name: tasks\n  data_files:\n  - split: train\n    path: data/tasks.jsonl",
         "- config_name: mutants\n  data_files:\n  - split: train\n    path: data/mutants.jsonl",
@@ -172,6 +182,7 @@ def write_card(out: Path, repo_id: str, tables: dict[str, list[str]], schemas: d
         "{{N_TASKS}}": str(counts["tasks"]),
         "{{N_MUTANT_ROWS}}": str(counts["mutants"]),
         "{{N_PROGRAMS}}": str(counts["agent_programs"]),
+        "{{IDENTIFIERS}}": _identifiers_markdown(*dois),
     }.items():
         card = card.replace(key, value)
     (out / "README.md").write_text(card, encoding="utf-8")
@@ -181,6 +192,8 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo-id", required=True, help="Hugging Face repo id, e.g. your-name/morph-da")
     ap.add_argument("--out", default="../morphda-hf")
+    ap.add_argument("--dataset-doi", help="DOI of the Hugging Face dataset, e.g. 10.57967/hf/XXXX")
+    ap.add_argument("--software-doi", help="DOI of the code archive on Zenodo, e.g. 10.5281/zenodo.XXXX")
     args = ap.parse_args()
 
     out = Path(args.out).resolve()
@@ -200,7 +213,7 @@ def main() -> None:
     for name in ("morphda_paper.pdf", "morphda_poster.pdf", "morphda_poster.png"):
         shutil.copy(ROOT / "paper" / name, out / "paper" / name)
     shutil.copy(Path(__file__).with_name("hf_dataset_LICENSE.txt"), out / "LICENSE")
-    write_card(out, args.repo_id, tables, schemas, counts)
+    write_card(out, args.repo_id, tables, schemas, counts, (args.dataset_doi, args.software_doi))
 
     print(f"Built {out}: {counts}, tables={sorted(tables)}")
 
