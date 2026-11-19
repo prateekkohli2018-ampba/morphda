@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "morphda"
-version = "0.1.0"
+version = "0.1.1"
 description = "Benchmark and verifier for LLM data-analysis agents: metamorphic testing and mutation testing catch wrong filters, aggregations and periods in agent-written pandas code, with no gold answer and no extra LLM call."
 requires-python = ">=3.11"
 license = { text = "MIT" }

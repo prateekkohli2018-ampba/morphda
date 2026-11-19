@@ -12,16 +12,16 @@ repository-code: "https://github.com/prateekkohli2018-ampba/morphda"
 url: "https://openreview.net/forum?id=JsrKw3nUSV"
 license: MIT
 # dois:start
-doi: 10.5281/zenodo.24356106
+doi: 10.5281/zenodo.24356105
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.24356106
+    value: 10.5281/zenodo.24356105
     description: "Software archive (Zenodo)"
   - type: doi
     value: 10.57967/hf/11699
     description: "Dataset (Hugging Face)"
 # dois:end
-version: 0.1.0
+version: 0.1.1
 abstract: "MORPH-DA is a benchmark and verifier for LLM data-analysis agents. It uses metamorphic testing and mutation testing to detect wrong filters, aggregations and time periods in agent-written analysis code without a numeric gold answer or an additional model call."
 keywords:
   - data-analysis agents
